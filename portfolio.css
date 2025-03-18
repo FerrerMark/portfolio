@@ -134,7 +134,8 @@ h2{
 #welcome-section img {
     width: 350px;
     height: 350px;
-    border-radius: 50%;
+    /* border-radius: 50%; */
+    border-radius: 74px 92px 43px 120px;
     margin: 2rem;
     border: 3px solid var(--accent-color);
     box-shadow: -5px 1px 1px var(--shadow-color);
