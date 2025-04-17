@@ -66,8 +66,8 @@ const nextBtn = document.getElementById('nextImage');
 
 const profileImages = [
     './img/pic/image.png',
-    './img/pic/image copy 2.png',
-    './img/pic/image copy.png',
+    './img/pic/gradpic1.jpeg',
+    './img/pic/gradpic2.jpeg',
 ];
 
 let currentImageIndex = 0;
