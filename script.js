@@ -24,7 +24,6 @@ sections.forEach(section => {
     observer.observe(section);
 });
 
-// Project Image Modal
 const projectModal = document.getElementById('imageModal');
 const modalImg = document.getElementById('modalImage');
 const projectCloseBtn = document.querySelector('#imageModal .close');
@@ -65,12 +64,10 @@ const profileCloseBtn = document.querySelector('#profileModal .close');
 const prevBtn = document.getElementById('prevImage');
 const nextBtn = document.getElementById('nextImage');
 
-// Array of image paths in the pic folder (adjust as needed)
 const profileImages = [
     './img/pic/image.png',
     './img/pic/image copy 2.png',
     './img/pic/image copy.png',
-    // Add more image paths as needed
 ];
 
 let currentImageIndex = 0;
