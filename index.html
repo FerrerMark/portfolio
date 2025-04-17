@@ -1,140 +1,169 @@
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>John Mark S. Ferrer - Web Developer Portfolio</title>
-        <link rel="icon" type="image/x-icon" href="img/image.png">
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="portfolio.css">
-        <link rel="stylesheet" href="effects/effects.css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Mark S. Ferrer - Web Developer Portfolio</title>
+    <link rel="icon" type="image/x-icon" href="img/image.png">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="portfolio.css">
+    <link rel="stylesheet" href="effects/effects.css">
+</head>
+<body>
+    <header>
+        <span class="mingcute--menu-fill" id="menu" onclick="menu()"></span>
+        <h3 id="logo"><a href="#welcome-section">JMF</a></h3>
+        <nav id="navbar">
+            <p id="icon" onclick="menu()">X</p>
+            <ul>
+                <li><a href="#welcome-section">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#certifications">Certificates</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    </head>
-    <body>
-        <header>
-            <span class="mingcute--menu-fill" id="menu" onclick="menu()"></span>
-            <h3 id="logo"><a href="#welcome-section">JMF</a></h3>
-            <nav id="navbar">
-                <p id="icon" onclick="menu()">X</p>
+    <section id="welcome-section">
+        <div>
+            <h1>Hi, I'm John Mark S. Ferrer</h1>
+            <p>A passionate Web Developer crafting modern solutions</p>
+            <div id="skills">
+                <h2>Skills</h2>
                 <ul>
-                    <li><a href="#welcome-section">About</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#certifications">Certificates</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li class="hover">HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>React</li>
+                    <li>Node.js</li>
+                    <li>Python</li>
+                    <li>Java</li>
+                    <li>SQL</li>
+                    <li>PHP</li>
                 </ul>
-            </nav>
-        </header>
-
-        <section id="welcome-section">
-            <div>
-                <h1>Hi, I'm John Mark S. Ferrer</h1>
-                <p>A passionate Web Developer crafting modern solutions</p>
-                <div id="skills">
-                    <h2>Skills</h2>
-                    <ul>
-                        <li class="hover">HTML</li>
-                        <li>CSS</li>
-                        <li>JavaScript</li>
-                        <li>React</li>
-                        <li>Node.js</li>
-                        <li>Python</li>
-                        <li>Java</li>
-                        <li>SQL</li>
-                        <li>PHP</li>
-                    </ul>
-                </div>
             </div>
-            <img src="./img/image.png" class="hover">
-        </section>
+        </div>
+        <img src="./img/pic/image.png" class="hover" id="profile-pic" onclick="openProfileModal()">
+    </section>
 
-        <section id="certifications">
-            <h2>My Certifications</h2>
-            <div class="certificates">
-                <div class="certificate-tile">
+    <section id="certifications">
+        <h2>My Certifications</h2>
+        <div class="certificates">
+            <div class="certificate-tile">
+                <div class="div">
                     <h3>Information Management in the Digital Age</h3>
                     <p>2024 - Cultivating a Multidisciplinary Research Culture with Artificial Intelligence</p>
                 </div>
-                <div class="certificate-tile">
+            </div>
+            <div class="certificate-tile">
+                <div class="div">
                     <h3>Artificial Intelligence: Innovation and Impact</h3>
                     <p>2024 - BITZ 2023 Session 2: Understanding the Innovator's Role in Digital Transformation</p>
                 </div>
-                <div class="certificate-tile">
+                <a href="./img/certificates/image_copy_2.png" target="_blank" class="certificate-link">
+                    View Certificate
+                </a>
+            </div>
+            <div class="certificate-tile">
+                <div class="div">
                     <h3>PHP Course Certificate</h3>
                     <p>2022 - SoloLearn</p>
                 </div>
-                <div class="certificate-tile">
+                <a href="./img/certificates/phpCourse.png" target="_blank" class="certificate-link">
+                    View Certificate
+                </a>
+            </div>
+            <div class="certificate-tile">
+                <div class="div">
                     <h3>Responsive Web Design Certification</h3>
                     <p>2025 - freeCodeCamp (300 hours of work)</p>
-                    <a href="https://freecodecamp.org/certification/markkkkk/responsive-web-design" target="_blank" class="certificate-link">
-                        View Certificate
-                    </a>
                 </div>
-                
-                <div class="certificate-tile">
+                <a href="https://freecodecamp.org/certification/markkkkk/responsive-web-design" target="_blank" class="certificate-link">
+                    View Certificate
+                </a>
+            </div>
+            <div class="certificate-tile">
+                <div class="div">
                     <h3>Advanced AI Research Certification</h3>
                     <p>2024 - Cultivating a Multidisciplinary Research Culture with Artificial Intelligence: Innovation and Impact</p>
                 </div>
-
-                <div class="certificate-tile">
-                    <h3>Microsoft excel</h3>
+            </div>
+            <div class="certificate-tile">
+                <div class="div">
+                    <h3>Microsoft Excel</h3>
                     <p>2025 - Get Certified as an Excel Pro! - Microsoft Essentials (Microsoft Skills for Job) - Jobstreet</p>
                 </div>
-                
-            </div>
-        </section>
-
-        <section id="projects">
-            <h2>My Projects</h2>
-            <div class="tiles">
-                <div class="project-tile">
-                    <img src="./img/image3.png" alt="Project 1">
-                    <h3>SMS:Faculty Loading. HTML, CSS, JS, PHP</h3>
-                    <p>A Faculty Loading and Scheduling System. With integration</p>
-                    <a href="https://faculty.schoolmanagementsystem2.com/" target="_blank">View More</a>
-                </div>
-                <div class="project-tile">
-                    <img src="./img/image2.png" alt="Project 2">
-                    <h3>Excel Assistant using Gemini API</h3>
-                    <p>An AI that can help you wit.h your Excel tasks</p>
-                    <a href="#">View More</a>
-                </div>
-                <div class="project-tile">
-                    <img src="./img/Screenshot_17.png" alt="Project 3">
-                    <h3>Quiz scraper. Node JS with puppeteer</h3>
-                    <p>A program that don't automate quiz in LMS using an AI.</p>
-                    <!-- <a href="#">View More</a> -->
-                </div>
-                <div class="project-tile">
-                    <img src="./img/weaterapp.png" alt="Project 4">
-                    <h3>Simple weather app using js fetch</h3>
-                    <p>Simple weather app using js fetch.</p>
-                    <!-- <a href="#">View More</a> -->
-                </div>
-            </div>
-        </section>
-
-        <!-- Modal for image popup -->
-        <div id="imageModal" class="modal">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <img id="modalImage" src="" alt="Project Image">
+                <a href="./img/certificates/excelCert.png" target="_blank" class="certificate-link">
+                    View Certificate
+                </a>
             </div>
         </div>
+    </section>
 
-        <section id="contact">
-            <h2>Let's Work Together</h2>
-            <p>Feel free to reach out for collaborations or just to say hi!</p>
-            <div class="contact-links">
-                <a href="https://github.com/yourusername" id="profile-link" target="_blank" aria-label="GitHub Profile">
-                    <span class="mdi--github"></span><p>GitHub</p>
-                </a>
-                <a href="#" target="_blank" aria-label="Facebook"><span class="ic--baseline-facebook"></span><p>Facebook</p></a>
-                <a href="#" target="_blank" aria-label="Instagram"><span class="mdi--instagram"></span><p>Instagram</p></a>
-                <a href="#" target="_blank" aria-label="TikTok"><span class="ic--baseline-tiktok"></span><p>TikTok</p></a>
+    <section id="projects">
+        <h2>My Projects</h2>
+        <div class="tiles">
+            <div class="project-tile">
+                <img src="./img/projects/image3.png" alt="Project 1">
+                <h3>SMS: Faculty Loading. HTML, CSS, JS, PHP</h3>
+                <p>A Faculty Loading and Scheduling System. With integration</p>
+                <a href="https://faculty.schoolmanagementsystem2.com/" target="_blank">View More</a>
             </div>
-        </section>
+            <div class="project-tile">
+                <img src="./img/projects/image2.png" alt="Project 2">
+                <h3>Excel Assistant using Gemini API</h3>
+                <p>An AI that can help you with your Excel tasks</p>
+                <a href="#">View More</a>
+            </div>
+            <div class="project-tile">
+                <img src="./img/projects/Screenshot_17.png" alt="Project 3">
+                <h3>Quiz scraper. Node JS with puppeteer</h3>
+                <p>A program that doesn't automate quiz in LMS using an AI.</p>
+            </div>
+            <div class="project-tile">
+                <img src="./img/projects/weaterapp.png" alt="Project 4">
+                <h3>Simple weather app using js fetch</h3>
+                <p>Simple weather app using js fetch.</p>
+            </div>
+            <div class="project-tile">
+                <img src="./img/projects/image.png" alt="Project 5">
+                <h3>DBMS</h3>
+                <p>Simple Database Management System made with Laravel.</p>
+            </div>
+        </div>
+    </section>
 
-        <script src="script.js"></script>
+    <div id="imageModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img id="modalImage" src="" alt="Project Image">
+        </div>
+    </div>
 
-    </body>
-    </html>
+    <div id="profileModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img id="profileModalImage" src="" alt="Profile Image">
+            <div class="modal-nav">
+                <button id="prevImage" class="modal-btn">Previous</button>
+                <button id="nextImage" class="modal-btn">Next</button>
+            </div>
+        </div>
+    </div>
+
+    <section id="contact">
+        <h2>Let's Work Together</h2>
+        <p>Feel free to reach out for collaborations or just to say hi!</p>
+        <div class="contact-links">
+            <a href="https://github.com/FerrerMark/" id="profile-link" target="_blank" aria-label="GitHub Profile">
+                <span class="mdi--github"></span><p>GitHub</p>
+            </a>
+            <a href="https://www.facebook.com/ferrer.johnmark.5" target="_blank" aria-label="Facebook"><span class="ic--baseline-facebook"></span><p>Facebook</p></a>
+            <a href="#" target="_blank" aria-label="Instagram"><span class="mdi--instagram"></span><p>Instagram</p></a>
+            <a href="#" target="_blank" aria-label="TikTok"><span class="ic--baseline-tiktok"></span><p>TikTok</p></a>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

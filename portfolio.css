@@ -19,14 +19,13 @@ body {
     color: var(--txt-color);
 }
 
-
 header {
     background-color: var(--bg-color);
     padding: 1rem 2rem;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    position: fixed; 
+    position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
@@ -79,8 +78,7 @@ nav a:hover {
     flex-wrap: wrap;
     padding: 2rem;
     background: linear-gradient(135deg, var(--sec-bg-color), var(--bg-color));
-    margin-top: 60px; 
-    
+    margin-top: 60px;
 }
 
 #welcome-section > div {
@@ -99,14 +97,13 @@ nav a:hover {
     font-size: 1.3rem;
     margin-bottom: 2rem;
     text-shadow: -8px 1px 1px var(--shadow-color);
-    
 }
 
 #skills {
     margin-top: 2rem;
 }
 
-h2{
+h2 {
     text-shadow: -8px 1px 1px var(--shadow-color);
 }
 
@@ -134,11 +131,15 @@ h2{
 #welcome-section img {
     width: 350px;
     height: 350px;
-    /* border-radius: 50%; */
     border-radius: 74px 92px 43px 120px;
     margin: 2rem;
     border: 3px solid var(--accent-color);
     box-shadow: -5px 1px 1px var(--shadow-color);
+    cursor: pointer;
+}
+
+#welcome-section img:hover {
+    transform: scale(1.05);
 }
 
 /* Projects Section */
@@ -180,6 +181,11 @@ h2{
     height: 150px;
     object-fit: cover;
     border-radius: 5px;
+    cursor: pointer;
+}
+
+.project-tile img:hover {
+    transform: scale(1.05);
 }
 
 .project-tile h3 {
@@ -237,11 +243,12 @@ h2{
 }
 
 .modal.show .modal-content {
-    transform: scale(1);
+    /* transform: scale(1); */
     opacity: 1;
+    min-width: -webkit-fill-available;
 }
 
-#modalImage {
+#modalImage, #profileModalImage {
     width: 100%;
     height: auto;
     max-height: 80vh;
@@ -272,14 +279,29 @@ h2{
     cursor: pointer;
 }
 
-.project-tile img {
-    cursor: pointer;
-    transition: transform 0.3s ease;
+/* Profile Modal Navigation */
+.modal-nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
 }
 
-.project-tile img:hover {
-    transform: scale(1.05);
+.modal-btn {
+    padding: 0.5rem 1rem;
+    background-color: var(--accent-color);
+    color: var(--txt-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
 }
+
+.modal-btn:hover {
+    background-color: #ff8787;
+}
+
 /* Contact Section */
 #contact {
     padding: 4rem 2rem;
@@ -308,7 +330,6 @@ h2{
 
 .contact-links a {
     display: flex;
-    /* align-items: center; */
     align-items: flex-start;
     gap: 0.5rem;
     color: var(--txt-color);
@@ -353,11 +374,14 @@ h2{
 }
 
 .certificate-tile {
+    display: flex;
     background: var(--bg-color);
     padding: 1.5rem;
     border-radius: 10px;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .certificate-tile:hover {
@@ -380,8 +404,8 @@ h2{
     display: inline-block;
     margin-top: 8px;
     padding: 8px 12px;
-    background-color: #2f3943; /* Blue color */
-    color: #fff; /* White text */
+    background-color: #2f3943;
+    color: #fff;
     text-decoration: none;
     font-weight: bold;
     border-radius: 5px;
@@ -389,10 +413,10 @@ h2{
 }
 
 .certificate-link:hover {
-    background-color: #333333; /* Darker blue on hover */
+    background-color: #333333;
 }
 
-/* Add these keyframes at the top or within :root */
+/* Animations */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -415,7 +439,6 @@ h2{
     }
 }
 
-/* Classes to apply animations */
 .fade-in {
     animation: fadeIn 1.9s ease-out forwards;
 }
@@ -424,7 +447,6 @@ h2{
     animation: fadeOut 1.9s ease-out forwards;
 }
 
-/* Ensure sections start with opacity 0 for initial load */
 #welcome-section,
 #certifications,
 #projects,
@@ -432,6 +454,7 @@ h2{
     opacity: 0;
 }
 
+/* Social Icons */
 .ic--baseline-facebook {
     --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23f2d9d9' d='M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95'/%3E%3C/svg%3E");
     -webkit-mask-image: var(--svg);
@@ -485,7 +508,7 @@ h2{
         width: 30px;
         height: 30px;
         background-color: var(--txt-color);
-        --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23f2d9d9' d='M20 17.5a1.5 1.5 0 0 1 .144 2.993L20 20.5H4a1.5 1.5 0 0 1-.144-2.993L4 17.5zm0-7a1.5 1.5 0 0 1 0 3H4a1.5 1.5 0 0 1 0-3zm0-7a1.5 1.5 0 0 1 0 3H4a1.5 1.5 0 1 1 0-3z'/%3E%3C/svg%3E");
+        --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23f2d9d9' d='M20 17.5a1.5 1.5 0 0 1 .144 2.993L20 20.5H4a1.5 1.5 0 0 1-.144-2.993L4 17.5zm0-7a1.5 1.5 0 0 1 0 3H4a1.5 1.5 0 0 1 0-3zm0-7a1.5 1.5 0 0 1 0 3H4a1.5 1.5 0 0 1 0-3z'/%3E%3C/svg%3E");
         -webkit-mask-image: var(--svg);
         mask-image: var(--svg);
         cursor: pointer;

@@ -1,58 +1,112 @@
-    function menu() {
-        const navbar = document.getElementById('navbar');
-        const body = document.body;
-        navbar.classList.toggle('show');
-        body.classList.toggle('menu-open');
-    }
+function menu() {
+    const navbar = document.getElementById('navbar');
+    const body = document.body;
+    navbar.classList.toggle('show');
+    body.classList.toggle('menu-open');
+}
 
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.remove('fade-out');
-                entry.target.classList.add('fade-in');
-            } else {
-                entry.target.classList.remove('fade-in');
-                entry.target.classList.add('fade-out');
-            }
-        });
-    }, {
-        threshold: 0.1
+const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.remove('fade-out');
+            entry.target.classList.add('fade-in');
+        } else {
+            entry.target.classList.remove('fade-in');
+            entry.target.classList.add('fade-out');
+        }
     });
+}, {
+    threshold: 0.1
+});
 
-    const sections = document.querySelectorAll('#welcome-section, #certifications, #projects, #contact');
-    sections.forEach(section => {
-        observer.observe(section);
+const sections = document.querySelectorAll('#welcome-section, #certifications, #projects, #contact');
+sections.forEach(section => {
+    observer.observe(section);
+});
+
+// Project Image Modal
+const projectModal = document.getElementById('imageModal');
+const modalImg = document.getElementById('modalImage');
+const projectCloseBtn = document.querySelector('#imageModal .close');
+
+const projectImages = document.querySelectorAll('.project-tile img');
+
+projectImages.forEach(img => {
+    img.addEventListener('click', function() {
+        projectModal.style.display = 'flex';
+        modalImg.src = this.src;
+        document.body.style.overflow = 'hidden';
+        setTimeout(() => projectModal.classList.add('show'), 10);
     });
+});
 
-    const modal = document.getElementById('imageModal');
-    const modalImg = document.getElementById('modalImage');
-    const closeBtn = document.getElementsByClassName('close')[0];
+projectCloseBtn.onclick = function() {
+    projectModal.classList.remove('show');
+    document.body.style.overflow = 'auto';
+    setTimeout(() => {
+        projectModal.style.display = 'none';
+    }, 300);
+};
 
-    const projectImages = document.querySelectorAll('.project-tile img');
-
-    projectImages.forEach(img => {
-        img.addEventListener('click', function() {
-            modal.style.display = 'flex';
-            modalImg.src = this.src;
-            document.body.style.overflow = 'hidden';
-            setTimeout(() => modal.classList.add('show'), 10);
-        });
-    });
-
-    closeBtn.onclick = function() {
-        modal.classList.remove('show');
+projectModal.onclick = function(event) {
+    if (event.target === projectModal) {
+        projectModal.classList.remove('show');
         document.body.style.overflow = 'auto';
         setTimeout(() => {
-            modal.style.display = 'none';
+            projectModal.style.display = 'none';
         }, 300);
-    };
+    }
+};
 
-    modal.onclick = function(event) {
-        if (event.target === modal) {
-            modal.classList.remove('show');
-            document.body.style.overflow = 'auto';
-            setTimeout(() => {
-                modal.style.display = 'none';
-            }, 300);
-        }
-    };
+// Profile Image Modal
+const profileModal = document.getElementById('profileModal');
+const profileModalImg = document.getElementById('profileModalImage');
+const profileCloseBtn = document.querySelector('#profileModal .close');
+const prevBtn = document.getElementById('prevImage');
+const nextBtn = document.getElementById('nextImage');
+
+// Array of image paths in the pic folder (adjust as needed)
+const profileImages = [
+    './img/pic/image.png',
+    './img/pic/image copy 2.png',
+    './img/pic/image copy.png',
+    // Add more image paths as needed
+];
+
+let currentImageIndex = 0;
+
+function openProfileModal() {
+    profileModal.style.display = 'flex';
+    currentImageIndex = 0;
+    profileModalImg.src = profileImages[currentImageIndex];
+    document.body.style.overflow = 'hidden';
+    setTimeout(() => profileModal.classList.add('show'), 10);
+}
+
+prevBtn.addEventListener('click', () => {
+    currentImageIndex = (currentImageIndex - 1 + profileImages.length) % profileImages.length;
+    profileModalImg.src = profileImages[currentImageIndex];
+});
+
+nextBtn.addEventListener('click', () => {
+    currentImageIndex = (currentImageIndex + 1) % profileImages.length;
+    profileModalImg.src = profileImages[currentImageIndex];
+});
+
+profileCloseBtn.onclick = function() {
+    profileModal.classList.remove('show');
+    document.body.style.overflow = 'auto';
+    setTimeout(() => {
+        profileModal.style.display = 'none';
+    }, 300);
+};
+
+profileModal.onclick = function(event) {
+    if (event.target === profileModal) {
+        profileModal.classList.remove('show');
+        document.body.style.overflow = 'auto';
+        setTimeout(() => {
+            profileModal.style.display = 'none';
+        }, 300);
+    }
+};
