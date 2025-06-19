@@ -1,0 +1,44 @@
+const projects = [
+    {
+        title: "SMS: Faculty Loading. HTML, CSS, JS, PHP",
+        description: "A Faculty Loading and Scheduling System. With integration",
+        image: "./img/projects/facultyloadingupdated.png",
+        link: "https://faculty.schoolmanagementsystem2.com/"
+    },
+    {
+        title: "Excel Assistant using Gemini API",
+        description: "An AI that can help you with your Excel tasks",
+        image: "./img/projects/image2.png",
+        link: "#"
+    },
+    {
+        title: "Quiz scraper. Node JS with puppeteer",
+        description: "A program that doesn't automate quiz in LMS using an AI.",
+        image: "./img/projects/Screenshot_17.png",
+        link: "https://github.com/FerrerMark/lmsautomation"
+    },
+    {
+        title: "DBMS",
+        description: "Simple Database Management System made with Laravel.",
+        image: "./img/projects/image.png",
+        link: "https://github.com/FerrerMark/DBMS"
+    },
+    {
+        title: "Weather App",
+        description: "Simple web application that combines geolocation, city search, interactive mapping, and real-time weather data using free public APIs",
+        image: "./img/projects/weather.png",
+        link: "https://github.com/FerrerMark/Map"
+    },
+    {
+        title: "Automation for quiz",
+        description: "Simple extension for automating our quiz online using Gemini API.",
+        image: "./img/projects/quizext.png",
+        link: "https://github.com/FerrerMark/lmsautomationext"
+    },
+    {
+        title: "To Do list extension",
+        description: "Simple extension for accessing the plans, tasks, and etc.",
+        image: "./img/projects/todolistext.png",
+        link: "https://github.com/FerrerMark/todolist-ext"
+    }
+];

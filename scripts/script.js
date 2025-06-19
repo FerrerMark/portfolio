@@ -1,3 +1,42 @@
+
+
+function renderCertifications() {
+    const container = document.getElementById('certificates-container');
+    container.innerHTML = certifications.map(cert => `
+        <div class="certificate-tile">
+            <div class="div">
+                <h3>${cert.title}</h3>
+                <p>${cert.year} - ${cert.description}</p>
+            </div>
+            <a href="${cert.link}" target="_blank" class="certificate-link">
+                View Certificate
+            </a>
+        </div>
+    `).join('');
+}
+
+function renderProjects() {
+    const container = document.getElementById('projects-container');
+    container.innerHTML = projects.map(project => `
+        <div class="project-tile">
+            <img src="${project.image}" alt="${project.title}">
+            <h3>${project.title}</h3>
+            <p>${project.description}</p>
+            <a href="${project.link}" target="_blank">View More</a>
+        </div>
+    `).join('');
+
+    const projectImages = document.querySelectorAll('.project-tile img');
+    projectImages.forEach(img => {
+        img.addEventListener('click', function() {
+            projectModal.style.display = 'flex';
+            modalImg.src = this.src;
+            document.body.style.overflow = 'hidden';
+            setTimeout(() => projectModal.classList.add('show'), 10);
+        });
+    });
+}
+
 function menu() {
     const navbar = document.getElementById('navbar');
     const body = document.body;
@@ -28,17 +67,6 @@ const projectModal = document.getElementById('imageModal');
 const modalImg = document.getElementById('modalImage');
 const projectCloseBtn = document.querySelector('#imageModal .close');
 
-const projectImages = document.querySelectorAll('.project-tile img');
-
-projectImages.forEach(img => {
-    img.addEventListener('click', function() {
-        projectModal.style.display = 'flex';
-        modalImg.src = this.src;
-        document.body.style.overflow = 'hidden';
-        setTimeout(() => projectModal.classList.add('show'), 10);
-    });
-});
-
 projectCloseBtn.onclick = function() {
     projectModal.classList.remove('show');
     document.body.style.overflow = 'auto';
@@ -57,7 +85,6 @@ projectModal.onclick = function(event) {
     }
 };
 
-// Profile Image Modal
 const profileModal = document.getElementById('profileModal');
 const profileModalImg = document.getElementById('profileModalImage');
 const profileCloseBtn = document.querySelector('#profileModal .close');
@@ -107,3 +134,8 @@ profileModal.onclick = function(event) {
         }, 300);
     }
 };
+
+document.addEventListener('DOMContentLoaded', () => {
+    renderCertifications();
+    renderProjects();
+});
