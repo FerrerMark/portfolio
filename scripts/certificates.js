@@ -25,7 +25,7 @@ const certifications = [
     },
     {
         title: "Artificial Intelligence: Innovation and Impact",
-        year: "2024",
+        year: "2023",
         description: "BITZ 2023 Session 2: Understanding the Innovator's Role in Digital Transformation",
         link: "./img/certificates/image_copy_2.png"
     },

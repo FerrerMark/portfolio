@@ -46,5 +46,11 @@ const projects = [
         description: "Web Portfolio. HTML, CSS, JS. This portfolio is project from freecodecamp.",
         image: "./img/projects/web-portfolio.png",
         link: "https://github.com/FerrerMark/portfolio"
+    },
+    {
+        title: "User Management CRUD (AJAX, PHP, MySQL)",
+        description: "A real-time CRUD application using AJAX, PHP, and MySQL. My first try with ajax",
+        image: "./img/projects/async data.png",
+        link: "https://github.com/FerrerMark/crud"
     }
 ];

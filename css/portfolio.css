@@ -161,7 +161,25 @@ h2 {
     gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
+    height: 717px;
+    max-height: 95vh;
+    overflow-y: auto;
 }
+
+.tiles::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* .certificates::-webkit-scrollbar-track {
+    background: #f1f1f100;
+    border-radius: 4px;
+} */
+
+.tiles::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
 
 .project-tile {
     background: var(--bg-color);
