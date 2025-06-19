@@ -40,5 +40,11 @@ const projects = [
         description: "Simple extension for accessing the plans, tasks, and etc.",
         image: "./img/projects/todolistext.png",
         link: "https://github.com/FerrerMark/todolist-ext"
+    },
+    {
+        title: "Web Portfolio",
+        description: "Web Portfolio. HTML, CSS, JS. This portfolio is project from freecodecamp.",
+        image: "./img/projects/web-portfolio.png",
+        link: "https://github.com/FerrerMark/portfolio"
     }
 ];
