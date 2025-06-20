@@ -13,7 +13,7 @@ const projects = [
     },
     {
         title: "Quiz scraper. Node JS with puppeteer",
-        description: "A program that doesn't automate quiz in LMS using an AI.",
+        description: "A program that automate quiz in LMS using Gemini API.",
         image: "./img/projects/Screenshot_17.png",
         link: "https://github.com/FerrerMark/lmsautomation"
     },
@@ -50,7 +50,7 @@ const projects = [
     {
         title: "User Management CRUD (AJAX, PHP, MySQL)",
         description: "A real-time CRUD application using AJAX, PHP, and MySQL. My first try with ajax",
-        image: "./img/projects/async data.png",
+        image: "./img/projects/ajax.png",
         link: "https://github.com/FerrerMark/crud"
     }
 ];

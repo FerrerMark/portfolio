@@ -144,49 +144,47 @@ h2 {
 
 /* Projects Section */
 #projects {
-    padding: 4rem 2rem;
+    /* padding: 4rem 2rem; */
+    padding: 3rem 2rem 0.5rem 2rem;
     background-color: var(--sec-bg-color);
 }
 
 #projects h2 {
     text-align: center;
     font-size: 2.2rem;
-    margin-bottom: 2rem;
+    margin: 2.5rem 0 .5rem 0;
     color: var(--accent-color);
 }
 
 .tiles {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
+    display: flex;
+    gap: 1rem;
     max-width: 1200px;
     margin: 0 auto;
-    height: 717px;
     max-height: 95vh;
     overflow-y: auto;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 11px 0;
 }
 
 .tiles::-webkit-scrollbar {
-    width: 8px;
+    height: 8px;
 }
-
-/* .certificates::-webkit-scrollbar-track {
-    background: #f1f1f100;
-    border-radius: 4px;
-} */
 
 .tiles::-webkit-scrollbar-thumb {
     background: #888;
     border-radius: 4px;
 }
 
-
 .project-tile {
     background: var(--bg-color);
-    padding: 1.5rem;
+    padding: 13px;
     border-radius: 10px;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 350px;
+    height: 333px;
 }
 
 .project-tile:hover {
@@ -206,16 +204,15 @@ h2 {
     transform: scale(1.05);
 }
 
-.project-tile h3 {
-    font-size: 1.5rem;
+.project-tile h3{
+    font-size: 12px;
     margin: 1rem 0;
 }
 
 .project-tile p {
-    font-size: 1rem;
+    font-size: 14px;
     color: #d1bdbd;
 }
-
 .project-tile a {
     display: inline-block;
     margin-top: 1rem;
@@ -372,18 +369,19 @@ h2 {
 }
 
 #certifications {
-    padding: 4rem 2rem;
+    /* padding: 3rem 2rem; */
+    padding: 3rem 2rem 0.5rem 2rem;
     background-color: var(--sec-bg-color);
     text-align: center;
 }
 
 #certifications h2 {
     font-size: 2.2rem;
-    margin-bottom: 2rem;
+    margin: 3.5rem 0 .5rem 0;
     color: var(--accent-color);
 }
 
-.certificates {
+/* .certificates {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
@@ -393,14 +391,29 @@ h2 {
     height: 95vh;
     /* max-height: 707px;
     overflow-y: auto; */
-    max-height: 717px;
+    /* max-height: 717px;
     overflow-y: auto;
     padding-top: 11px;
     border-radius: 11px;
+} */
+
+.certificates {
+    display: flex;
+    gap: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    height: 72vh;
+    max-height: 912px;
+    overflow-y: auto;
+    padding-top: 11px;
+    border-radius: 11px;
+    flex-wrap: wrap;
+    flex-direction: column;
 }
 
 .certificates::-webkit-scrollbar {
-    width: 8px;
+    height: 8px;
 }
 
 /* .certificates::-webkit-scrollbar-track {
@@ -410,9 +423,23 @@ h2 {
 
 .certificates::-webkit-scrollbar-thumb {
     background: #888;
-    border-radius: 4px;
+    border-radius: 5px;
 }
 
+.certificates::-webkit-scrollbar-thumb:hover {
+    background: #888888ad;
+}
+
+/* .certificate-tile {
+    display: flex;
+    background: var(--bg-color);
+    padding: 0.5rem 10px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex-direction: column;
+    justify-content: space-between;
+} */
 
 .certificate-tile {
     display: flex;
@@ -423,7 +450,10 @@ h2 {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     flex-direction: column;
     justify-content: space-between;
+    width: 210px;
+    height: 304px;
 }
+
 
 .certificate-tile:hover {
     transform: translateY(-10px);
@@ -431,13 +461,13 @@ h2 {
 }
 
 .certificate-tile h3 {
-    font-size: 1.5rem;
+    font-size: 19px;
     margin: 8px 0;
     color: var(--txt-color);
 }
 
 .certificate-tile p {
-    font-size: 1rem;
+    font-size: 13px;
     color: #d1bdbd;
 }
 

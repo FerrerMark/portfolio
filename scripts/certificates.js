@@ -3,13 +3,19 @@ const certifications = [
         title: "PHP Course Certificate",
         year: "2022",
         description: "Completed a PHP course covering syntax, forms, functions, and basic MySQL with hands-on coding exercises.",
-        link: "./img/certificates/phpCourse.png"
+        link: "./img/certificates/phpcert.png"
     },
     {
         title: "Responsive Web Design Certification (300 hours of work)",
         year: "2025",
         description: "Completed a course on responsive web design, covering HTML, CSS, Flexbox, Grid, and accessibility best practices. Built projects to demonstrate practical skills.",
         link: "https://freecodecamp.org/certification/markkkkk/responsive-web-design"
+    },
+    {
+        title: "JavaScript Course Certificate",
+        year: "2025",
+        description: "Successfully completed SoloLearn's JavaScript course, demonstrating both theoretical and practical understanding of the language.",
+        link: "./img/certificates/JsCert.png"
     },
     {
         title: "Microsoft Excel",
