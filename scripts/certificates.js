@@ -3,7 +3,7 @@ const certifications = [
         title: "PHP Course Certificate",
         year: "2022",
         description: "Completed a PHP course covering syntax, forms, functions, and basic MySQL with hands-on coding exercises.",
-        link: "./img/certificates/phpcert.png"
+        link: "./img/certificates/php.png"
     },
     {
         title: "Responsive Web Design Certification (300 hours of work)",
