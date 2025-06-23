@@ -6,10 +6,10 @@ const projects = [
         link: "https://faculty.schoolmanagementsystem2.com/"
     },
     {
-        title: "Excel Assistant using Gemini API",
-        description: "An AI that can help you with your Excel tasks",
-        image: "./img/projects/image2.png",
-        link: "#"
+        title: "DIY Resume using React JS",
+        description: "Simple resume with React",
+        image: "./img/projects/DIY resume.png",
+        link: "https://github.com/FerrerMark/my-resume"
     },
     {
         title: "Quiz scraper. Node JS with puppeteer",
@@ -54,9 +54,9 @@ const projects = [
         link: "https://github.com/FerrerMark/crud"
     },
     {
-        title: "DIY Resume using React JS",
-        description: "Simple resume with React",
-        image: "./img/projects/DIY resume.png",
-        link: "https://github.com/FerrerMark/my-resume"
+        title: "Excel Assistant using Gemini API",
+        description: "An AI that can help you with your Excel tasks",
+        image: "./img/projects/image2.png",
+        link: "#"
     },
 ];
