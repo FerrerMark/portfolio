@@ -52,5 +52,11 @@ const projects = [
         description: "A real-time CRUD application using AJAX, PHP, and MySQL. My first try with ajax",
         image: "./img/projects/ajax.png",
         link: "https://github.com/FerrerMark/crud"
-    }
+    },
+    {
+        title: "DIY Resume using React JS",
+        description: "Simple resume with React",
+        image: "./img/projects/DIY resume.png",
+        link: "https://github.com/FerrerMark/my-resume"
+    },
 ];
