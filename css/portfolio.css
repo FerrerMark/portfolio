@@ -84,6 +84,9 @@ nav a:hover {
 
 #welcome-section > div {
     text-align: center;
+}
+
+#welcome-section .data {
     max-width: 600px;
 }
 
@@ -99,6 +102,11 @@ nav a:hover {
     margin-bottom: 2rem;
     text-shadow: -8px 1px 1px var(--shadow-color);
 }
+
+#welcome-section img#profile-pic {
+    z-index: 3;
+}
+
 
 #skills {
     margin-top: 2rem;
@@ -408,7 +416,7 @@ h2 {
     max-width: 1200px;
     margin: 0 auto;
     width: 100%;
-    height: 57vh;
+    height: 71vh;
     max-height: 912px;
     overflow-y: auto;
     padding-top: 11px;
@@ -435,18 +443,8 @@ h2 {
     background: #888888ad;
 }
 
-/* .certificate-tile {
-    display: flex;
-    background: var(--bg-color);
-    padding: 0.5rem 10px;
-    border-radius: 10px;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    flex-direction: column;
-    justify-content: space-between;
-} */
-
 .certificate-tile {
+    position: relative;
     display: flex;
     background: var(--bg-color);
     padding: 0.5rem 10px;
@@ -457,6 +455,7 @@ h2 {
     justify-content: space-between;
     width: 210px;
     height: 304px;
+    overflow: hidden;
 }
 
 
@@ -491,6 +490,41 @@ h2 {
 
 .certificate-link:hover {
     background-color: #333333;
+}
+
+.certificate-tile::before {
+    content: "";
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 150px;
+    height: 150px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    opacity: 0;
+    transform: scale(0.5);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    z-index: 0;
+}
+
+.certificate-tile:hover::before,.certificate-tile:hover::after {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.certificate-tile::after {
+    content: "";
+    position: absolute;
+    top: 209px;
+    left: 111px;
+    width: 150px;
+    height: 150px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    opacity: 0;
+    transform: scale(0.5);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    z-index: 0;
 }
 
 /* Animations */
@@ -550,7 +584,6 @@ h2 {
     mask-image: var(--svg);
 }
 
-/* Media Query for Test 11 */
 @media (max-width: 768px) {
     nav#navbar {
         position: fixed;
@@ -707,7 +740,7 @@ h2 {
         max-width: 1200px;
         margin: 0 auto;
         width: 100%;
-        height: 73vh;
+        height: 80vh;
         overflow-y: auto;
         padding-top: 11px;
         border-radius: 11px;
@@ -734,4 +767,75 @@ nav ul li a.active {
 
 li.hover{
     border: 1px solid #606060;
+}
+
+.certificate-tile::before {
+    content: "";
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 150px;
+    height: 150px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    opacity: 0;
+    transform: scale(0.5);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    z-index: 0;
+}
+
+/* Show the circle on hover */
+.certificate-tile:hover::before {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.certificate-tile::after {
+    content: "";
+    position: absolute;
+    top: 209px;
+    left: 111px;
+    width: 150px;
+    height: 150px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    opacity: 0;
+    transform: scale(0.5);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    z-index: 0;
+}
+
+.certificate-tile:hover::after {
+    opacity: 1;
+    transform: scale(1);
+}
+
+section#contact{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+section#contact form input[type="email"], textarea {
+    border-radius: 5px;
+}
+
+section#contact form{
+    display: flex;
+    flex-direction: column;
+    width: 272px;
+    gap: 10px;
+    padding: 16px;
+    border: 1px solid #f5deb363;
+    border-radius: 10px;
+}
+
+section#contact form button {
+    width: 65px;
+    background: #008000;
+    border: 1px solid black;
+    border-radius: 4px;
+    color: black;
+    margin: auto;
 }
