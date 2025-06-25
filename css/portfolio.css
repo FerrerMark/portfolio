@@ -782,6 +782,7 @@ li.hover{
     transform: scale(0.5);
     transition: opacity 0.4s ease, transform 0.4s ease;
     z-index: 0;
+    filter: blur(4px);
 }
 
 /* Show the circle on hover */
@@ -803,6 +804,7 @@ li.hover{
     transform: scale(0.5);
     transition: opacity 0.4s ease, transform 0.4s ease;
     z-index: 0;
+    filter: blur(4px);
 }
 
 .certificate-tile:hover::after {
@@ -829,6 +831,8 @@ section#contact form{
     padding: 16px;
     border: 1px solid #f5deb363;
     border-radius: 10px;
+    box-shadow: 3px 3px 5px 0px black;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 section#contact form button {
