@@ -78,7 +78,7 @@
     <section id="contact">
         <h2>Let's Work Together</h2>
         <p>Feel free to reach out for collaborations or just to say hi (ferrerjohnmark26@gmail.com)!</p>
-        <form method="POST" action="https://faculty.schoolmanagementsystem2.com/messageapi.php">
+        <form id="contact-form">
             <h5>Message Me!</h5>
             <input type="email" name="gmail" placeholder="@gmail" required>
             <textarea name="message" placeholder="Message" required></textarea>
@@ -100,20 +100,3 @@
     <script src="scripts/script.js"></script>
 </body>
 </html>
-
-<script>
-fetch("https://messagesapi.lovestoblog.com/messageAPI.php", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json"
-  },
-  body: JSON.stringify({
-    gmail: "ferrerjohnmark26@gmail.com",
-    message: "Hey there! Want to collaborate?"
-  })
-})
-.then(res => res.json())
-.then(data => console.log("✅ Response:", data))
-.catch(err => console.error("❌ Error:", err));
-
-</script>

@@ -165,3 +165,35 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+document.getElementById('contact-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const gmail = e.target.gmail.value;
+    const message = e.target.message.value;
+
+    try {
+        const response = await fetch('https://faculty.schoolmanagementsystem2.com/messageapi.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ gmail, message })
+        });
+
+        const text = await response.text();
+        let result;
+        try {
+            result = JSON.parse(text);
+        } catch {
+            console.error('Server did not return valid JSON:', text);
+            alert("Server error. Please try again later.");
+            return;
+        }
+
+        alert(result.success ? "Message sent!" : result.error);
+    } catch (err) {
+        console.error("Network or server error:", err);
+        alert("Failed to send message. Try again.");
+    }
+});
