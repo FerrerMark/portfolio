@@ -167,12 +167,15 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.getElementById('contact-form').addEventListener('submit', async (e) => {
+
     e.preventDefault();
 
     const gmail = e.target.gmail.value;
     const message = e.target.message.value;
 
     try {
+        loading(true, "SENDING", "contact-form");
+
         const response = await fetch('https://faculty.schoolmanagementsystem2.com/messageapi.php', {
             method: 'POST',
             headers: {
@@ -187,13 +190,16 @@ document.getElementById('contact-form').addEventListener('submit', async (e) => 
             result = JSON.parse(text);
         } catch {
             console.error('Server did not return valid JSON:', text);
+            loading(false, "", "contact-form");
             alert("Server error. Please try again later.");
             return;
         }
-
+        loading(false, "", "contact-form");
         alert(result.success ? "Message sent!" : result.error);
+        
     } catch (err) {
         console.error("Network or server error:", err);
+        loading(false, "", "contact-form");
         alert("Failed to send message. Try again.");
     }
 });
