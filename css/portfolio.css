@@ -193,13 +193,14 @@ h2 {
 }
 
 .project-tile {
-    background: var(--bg-color);
     padding: 13px;
     border-radius: 10px;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     width: 350px;
     height: 333px;
+    box-shadow: inset 0px 0 35px #ffffff42;
+    backdrop-filter: blur(4px);
 }
 
 .project-tile:hover {

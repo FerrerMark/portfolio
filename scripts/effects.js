@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
     container.classList.add("boxes-container");
     target.appendChild(container);
 
-    for (let i = 0; i < 60; i++) {
+    for (let i = 0; i < 30; i++) {
       const box = document.createElement("div");
       box.className = 'box';
 
@@ -92,6 +92,104 @@ document.addEventListener("DOMContentLoaded", () => {
 
       animate();
       container.appendChild(box);
+    }
+  });
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const targets = document.querySelectorAll(".pyra-bg");
+
+  targets.forEach(target => {
+    const container = document.createElement("div");
+    container.classList.add("pyramids-container");
+    target.appendChild(container);
+
+    for (let i = 0; i < 20; i++) {
+      const pyramid = document.createElement("div");
+      pyramid.className = "pyramid";
+
+      const size = Math.random() * 20 + 30;
+      const halfSize = size / 2;
+      const height = size;
+
+      const startTop = Math.random() * 100;
+      const startLeft = Math.random() * 100;
+
+      pyramid.style.width = `${size}px`;
+      pyramid.style.height = `${height}px`;
+      pyramid.style.top = "0";
+      pyramid.style.left = "0";
+
+      const colors = [
+        "front", "left", "right", "back"
+      ];
+
+      colors.forEach((side, idx) => {
+        const face = document.createElement("div");
+        face.className = `pyramid-face ${side}`;
+        face.style.width = `0`;
+        face.style.height = `0`;
+        face.style.borderLeft = `${halfSize}px solid transparent`;
+        face.style.borderRight = `${halfSize}px solid transparent`;
+        face.style.borderBottom = `${height}px solid rgba(0,150,255,0.07)`;
+        face.style.position = "absolute";
+
+        switch (side) {
+          case "front":
+            face.style.transform = `rotateX(-70deg) translateZ(${halfSize}px)`;
+            break;
+          case "back":
+            face.style.transform = `rotateX(70deg) translateZ(-${halfSize}px)`;
+            break;
+          case "left":
+            face.style.transform = `rotateY(-70deg) translateX(-${halfSize}px)`;
+            break;
+          case "right":
+            face.style.transform = `rotateY(70deg) translateX(${halfSize}px)`;
+            break;
+        }
+
+        pyramid.appendChild(face);
+      });
+
+      let rotX = Math.random() * 360;
+      let rotY = Math.random() * 360;
+      let posX = startLeft;
+      let posY = startTop;
+      let tick = Math.random() * 100;
+
+      const speedX = (Math.random() - 0.5) * 0.15;
+      const speedY = (Math.random() - 0.5) * 0.15;
+      const rotSpeedX = (Math.random() - 0.5) * 1.2;
+      const rotSpeedY = (Math.random() - 0.5) * 1.2;
+
+      function animate() {
+        rotX += rotSpeedX;
+        rotY += rotSpeedY;
+        posX += speedX;
+        posY += speedY;
+        tick += 0.02;
+
+        if (posX > 105) posX = -10;
+        if (posX < -10) posX = 105;
+        if (posY > 105) posY = -10;
+        if (posY < -10) posY = 105;
+
+        const opacity = 0.2 + Math.abs(Math.sin(tick)) * 0.4;
+
+        pyramid.style.opacity = opacity.toFixed(2);
+        pyramid.style.transform = `
+          translate(${posX}vw, ${posY}vh)
+          rotateX(${rotX}deg)
+          rotateY(${rotY}deg)
+        `;
+
+        requestAnimationFrame(animate);
+      }
+
+      animate();
+      container.appendChild(pyramid);
     }
   });
 });
