@@ -37,12 +37,13 @@ function renderProjects() {
     });
 }
 
-function menu() {
-    const navbar = document.getElementById('navbar');
-    const body = document.body;
-    navbar.classList.toggle('show');
-    body.classList.toggle('menu-open');
-}
+document.getElementById("menu").onclick = function () {
+    document.getElementById("navbar").classList.toggle("active");
+};
+
+document.getElementById("icon").onclick = function () {
+    document.getElementById("navbar").classList.remove("active");
+};
 
 const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {

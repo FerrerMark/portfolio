@@ -58,5 +58,11 @@ const certifications = [
         year: "2025",
         description: "Completed Sololearn’s Introduction to SQL course, covering essential data analysis skills including querying, filtering, aggregation, and joins.",
         link: "./img/certificates/sql cert.png"
+    },
+    {
+        title: "Introduction to SQL",
+        year: "2025",
+        description: "Completed Sololearn’s Introduction to SQL course, covering essential data analysis skills including querying, filtering, aggregation, and joins.",
+        link: "./img/certificates/sql cert.png"
     }
 ];

@@ -44,15 +44,36 @@ header {
     color: var(--accent-color);
 }
 
-nav#navbar {
-    display: flex;
-    align-items: center;
+#menu{
+    display: none;
 }
 
-nav ul {
+nav#navbar{
+    position: absolute;
+    display: flex;
+    left: 0;
+    top: 11px;
+    width: 100%;
+    height: 100vh;
+    /* background-color: var(--bg-color); */
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    justify-content: space-around;
+    flex-direction: row-reverse;
+    padding: 26px 0 0 0;
+    z-index: 1000;
+    backdrop-filter: blur(16px);
+}
+
+nav#navbar.active {
+    transform: translateX(0); /* Slide into view */
+}
+
+nav ul{
     display: flex;
     gap: 2rem;
     list-style: none;
+    flex-direction: column;
 }
 
 nav a {
@@ -66,9 +87,9 @@ nav a:hover {
     color: var(--accent-color);
 }
 
-.mingcute--menu-fill, #icon {
+/* .mingcute--menu-fill, #icon {
     display: none;
-}
+} */
 
 #welcome-section {
     min-height: 68vh;
@@ -399,32 +420,15 @@ h2 {
     color: var(--accent-color);
 }
 
-/* .certificates {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    width: 100%;
-    height: 95vh;
-    /* max-height: 707px;
-    overflow-y: auto; */
-    /* max-height: 717px;
-    overflow-y: auto;
-    padding-top: 11px;
-    border-radius: 11px;
-} */
-
-.certificates {
+.certificates{
     display: flex;
     gap: 1rem;
     max-width: 1200px;
     margin: 0 auto;
     width: 100%;
-    height: 71vh;
     max-height: 912px;
     overflow-y: auto;
-    padding-top: 11px;
+    padding: 11px 0 8px 0;
     border-radius: 11px;
     flex-wrap: wrap;
     flex-direction: column;
@@ -434,11 +438,6 @@ h2 {
     height: 8px;
 }
 
-/* .certificates::-webkit-scrollbar-track {
-    background: #f1f1f100;
-    border-radius: 4px;
-} */
-
 .certificates::-webkit-scrollbar-thumb {
     background: #888;
     border-radius: 5px;
@@ -447,21 +446,6 @@ h2 {
 .certificates::-webkit-scrollbar-thumb:hover {
     background: #888888ad;
 }
-
-/* .certificate-tile {
-    position: relative;
-    display: flex;
-    background: var(--bg-color);
-    padding: 0.5rem 10px;
-    border-radius: 10px;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 210px;
-    height: 304px;
-    overflow: hidden;
-} */
 
 .certificate-tile {
     position: relative;
@@ -605,172 +589,24 @@ h2 {
     mask-image: var(--svg);
 }
 
+@media (max-width: 1024px) {
+    .certificates { height: 654px;}
+}
+
 @media (max-width: 768px) {
-    nav#navbar {
-        position: fixed;
-        top: 0;
-        left: -100%;
-        width: 250px;
-        height: 100%;
-        background: var(--bg-color);
-        flex-direction: column;
-        padding: 2rem 1rem;
-        transition: left 0.3s ease;
-        z-index: 1000;
-    }
-
-    nav#navbar.show {
-        left: 0;
-    }
-
-    nav ul {
-        flex-direction: column;
-        gap: 1.5rem;
-    }
-
-    .mingcute--menu-fill {
+    .certificates { height: 654px; }
+    #welcome-section { flex-direction: column; text-align: center; padding: 1.5rem 1rem; }
+    #welcome-section img { width: 250px; height: 250px; margin: 1rem auto; }
+    #welcome-section h1 { font-size: 2rem; }
+    #welcome-section p { font-size: 1.1rem; }
+    #menu{
         display: block;
-        width: 30px;
-        height: 30px;
-        background-color: var(--txt-color);
-        --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23f2d9d9' d='M20 17.5a1.5 1.5 0 0 1 .144 2.993L20 20.5H4a1.5 1.5 0 0 1-.144-2.993L4 17.5zm0-7a1.5 1.5 0 0 1 0 3H4a1.5 1.5 0 0 1 0-3zm0-7a1.5 1.5 0 0 1 0 3H4a1.5 1.5 0 0 1 0-3z'/%3E%3C/svg%3E");
-        -webkit-mask-image: var(--svg);
-        mask-image: var(--svg);
-        cursor: pointer;
-    }
-
-    #icon {
-        display: block;
-        color: var(--txt-color);
-        font-size: 2rem;
-        cursor: pointer;
-        position: absolute;
-        top: 1rem;
-        right: 1rem;
-    }
-
-    body.menu-open::after {
-        content: '';
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.5);
-        z-index: 999;
-    }
-
-    .certificates {
-        display: flex;
-        gap: 1rem;
-        max-width: 1200px;
-        margin: 0 auto;
-        width: 100%;
-        /* max-height: 912px; */
-        height: 57vh;
-        overflow-y: auto;
-        padding-top: 11px;
-        border-radius: 11px;
-        flex-wrap: wrap;
-        flex-direction: column;
     }
 }
 
-@media (max-width: 480px) {
-    .certificates {
-        display: flex;
-        gap: 1rem;
-        max-width: 1200px;
-        margin: 0 auto;
-        width: 100%;
-        height: 72vh;
-        overflow-y: auto;
-        padding-top: 11px;
-        border-radius: 11px;
-        flex-wrap: wrap;
-        flex-direction: column;
-    }
+@media (max-width: 375px) {
+    .certificates { height: 41rem; }
 }
-
-@media (max-width: 380px) {
-    .certificates {
-        display: flex;
-        gap: 1rem;
-        max-width: 1200px;
-        margin: 0 auto;
-        width: 100%;
-        height: 50vh;
-        overflow-y: auto;
-        padding-top: 11px;
-        border-radius: 11px;
-        flex-wrap: wrap;
-        flex-direction: column;
-    }
-}
-
-@media (max-width: 800px) {
-    .certificates {
-        display: flex;
-        gap: 1rem;
-        max-width: 1200px;
-        margin: 0 auto;
-        width: 100%;
-        height: 64vh;
-        overflow-y: auto;
-        padding-top: 11px;
-        border-radius: 11px;
-        flex-wrap: wrap;
-        flex-direction: column;
-    }
-}
-
-@media (max-width: 821px) {
-    .certificates {
-        display: flex;
-        gap: 1rem;
-        max-width: 1200px;
-        margin: 0 auto;
-        width: 100%;
-        height: 56vh;
-        overflow-y: auto;
-        padding-top: 11px;
-        border-radius: 11px;
-        flex-wrap: wrap;
-        flex-direction: column;
-    }
-}
-@media (max-width: 1050px) {
-    .certificates {
-        display: flex;
-        gap: 1rem;
-        max-width: 1200px;
-        margin: 0 auto;
-        width: 100%;
-        height: 74vh;
-        overflow-y: auto;
-        padding-top: 11px;
-        border-radius: 11px;
-        flex-wrap: wrap;
-        flex-direction: column;
-    }
-}
-@media (max-width: 1489px) {
-    .certificates {
-        display: flex;
-        gap: 1rem;
-        max-width: 1200px;
-        margin: 0 auto;
-        width: 100%;
-        height: 80vh;
-        overflow-y: auto;
-        padding-top: 11px;
-        border-radius: 11px;
-        flex-wrap: wrap;
-        flex-direction: column;
-    }
-}
-
-
 
 
 nav ul li a {
@@ -806,7 +642,6 @@ li.hover{
     filter: blur(4px);
 }
 
-/* Show the circle on hover */
 .certificate-tile:hover::before {
     opacity: 1;
     transform: scale(1);
