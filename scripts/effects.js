@@ -35,3 +35,63 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const targets = document.querySelectorAll(".box-bg-effect");
+
+  targets.forEach(target => {
+    const container = document.createElement("div");
+    container.classList.add("boxes-container");
+    target.appendChild(container);
+
+    for (let i = 0; i < 60; i++) {
+      const box = document.createElement("div");
+      box.className = 'box';
+
+      const size = Math.floor(Math.random() * 20) + 30;
+      const startTop = Math.random() * 100;
+      const startLeft = Math.random() * 100;
+
+      box.style.width = `${size}px`;
+      box.style.height = `${size}px`;
+      box.style.top = `${startTop}%`;
+      box.style.left = `${startLeft}%`;
+
+      ["front", "back", "left", "right", "top", "bottom"].forEach(faceName => {
+        const face = document.createElement("div");
+        face.className = `face ${faceName}`;
+        face.style.width = `${size}px`;
+        face.style.height = `${size}px`;
+        box.appendChild(face);
+      });
+
+      let rotX = Math.random() * 360;
+      let rotY = Math.random() * 360;
+      let posX = startLeft;
+      let posY = startTop;
+
+      const speedX = (Math.random() - 0.5) * 0.2; // slow horizontal drift
+      const speedY = (Math.random() - 0.5) * 0.2; // slow vertical drift
+      const rotateSpeedX = (Math.random() - 0.5) * 1.5;
+      const rotateSpeedY = (Math.random() - 0.5) * 1.5;
+
+      function animate() {
+        rotX += rotateSpeedX;
+        rotY += rotateSpeedY;
+        posX += speedX;
+        posY += speedY;
+
+        if (posX > 100) posX = -5;
+        if (posX < -5) posX = 100;
+        if (posY > 100) posY = -5;
+        if (posY < -5) posY = 100;
+
+        box.style.transform = `translate(${posX}vw, ${posY}vh) rotateX(${rotX}deg) rotateY(${rotY}deg)`;
+        requestAnimationFrame(animate);
+      }
+
+      animate();
+      container.appendChild(box);
+    }
+  });
+});

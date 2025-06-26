@@ -123,3 +123,42 @@
     opacity: 0;
   }
 }
+
+.box-bg-effect {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  perspective: 1000px;
+}
+
+.boxes-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -9;
+  filter: blur(2px);
+}
+
+.box {
+  position: absolute;
+  transform-style: preserve-3d;
+  /* size is set via JS */
+}
+
+.face {
+  position: absolute;
+  background: rgba(0, 150, 255, 0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: inset 0 0 10px 2px rgba(0,0,255,0.3);
+  /* size is set via JS */
+}
+
+.front  { transform: translateZ(20px); }
+.back   { transform: rotateY(180deg) translateZ(20px); }
+.left   { transform: rotateY(-90deg) translateZ(20px); }
+.right  { transform: rotateY(90deg) translateZ(20px); }
+.top    { transform: rotateX(90deg) translateZ(20px); }
+.bottom { transform: rotateX(-90deg) translateZ(20px); }

@@ -148,6 +148,8 @@ h2 {
     border: 3px solid var(--accent-color);
     box-shadow: -5px 1px 1px var(--shadow-color);
     cursor: pointer;
+    mix-blend-mode: hard-light;
+    transition: transform 0.3s ease
 }
 
 #welcome-section img:hover {
@@ -445,7 +447,7 @@ h2 {
     background: #888888ad;
 }
 
-.certificate-tile {
+/* .certificate-tile {
     position: relative;
     display: flex;
     background: var(--bg-color);
@@ -458,6 +460,22 @@ h2 {
     width: 210px;
     height: 304px;
     overflow: hidden;
+} */
+
+.certificate-tile {
+    position: relative;
+    display: flex;
+    padding: 0.5rem 10px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 210px;
+    height: 304px;
+    overflow: hidden;
+    backdrop-filter: blur(4px);
+    box-shadow: inset 0px 0px 35px #ffffff2b;
 }
 
 
