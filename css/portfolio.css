@@ -13,6 +13,7 @@
 }
 
 body {
+    position: relative;
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
     background-color: var(--sec-bg-color);
