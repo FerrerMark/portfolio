@@ -49,7 +49,7 @@
         <img src="./img/pic/image.png" class="hover" id="profile-pic" onclick="openProfileModal()">
     </section>
     <!-- <section id="certifications" class="box-bg-effect"> -->
-    <section id="certifications" class="box-bg-effect">
+    <section id="certifications">
         <h2>My Certifications</h2>
         <div class="certificates" id="certificates-container"></div>
     </section>
@@ -109,22 +109,26 @@
             <p>Ask Ai</p>
             <span class="carbon--close-filled" onclick="toggleBotModal(false)"></span>
         </div>
-        <div class="message">
+        <div class="message" id="message">
+            <div class="img">
+                <img src="https://raw.githubusercontent.com/FerrerMark/portfolio/main/img/pic/image.png" alt="Profile Picture">
+            </div>
+            <h6>About Mark</h6>
             <div class="Bot">
-                <p>You wanna try this feature?</p>
+                <p>I will describe him to you!</p>
             </div>
             <div class="Bot">
-                <p>It's not ready yet</p>
+                <p>Feel free to ask me</p>
             </div>
             <div class="Bot">
-                <p>But I'm working on it</p>
+                <p>Just ask</p>
             </div>
-            <div class="user">
-                <p>Ok, I'll wait</p>
+            <div class="Bot">
+                <p>And I will say what I Know</p>
             </div>
         </div>
         <form id="botForm">
-            <input type="text" id="userInput" placeholder="Type your message..." required>
+            <input type="text" id="userInput" placeholder="Type your message..." required autocomplete="off">
             <button type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M2.01 21L23 12L2.01 3L2 10l15 2l-15 2z"/></svg></button>
         </form>
     </div>

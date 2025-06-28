@@ -1,22 +1,20 @@
-let loading = (isLoading, message, id) => {
-    const parent = document.getElementById(id);
-    if (!parent) {
-        console.error("Error: Parent element not found");
-        return;
-    }
-
-    let existing = document.getElementById("loading-message");
+function loading(isLoading, text = '', containerId = 'message') {
+    const container = document.getElementById(containerId);
+    const loadingId = 'loading-indicator';
 
     if (isLoading) {
-        if (!existing) {
-            const loader = document.createElement("div");
-            loader.id = "loading-message";
-            loader.innerHTML = `<h1>${message}</h1>`;
-            parent.appendChild(loader);
+        let loader = document.getElementById(loadingId);
+        if (!loader) {
+            loader = document.createElement('div');
+            loader.id = loadingId;
+            loader.textContent = text;
+            container.appendChild(loader);
         }
-    } else {
-        if (existing) {
-            existing.remove();
+    } 
+    else {
+        const loader = document.getElementById(loadingId);
+        if (loader) {
+            loader.remove();
         }
     }
 }
