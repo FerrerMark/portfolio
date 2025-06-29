@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     container.classList.add("circles-container");
     section.appendChild(container);
 
-    for (let i = 0; i < 30; i++) {
+    for (let i = 0; i < 10; i++) {
       const circle = document.createElement("span");
 
       const size = Math.floor(Math.random() * 60) + 20;
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
     container.classList.add("boxes-container");
     target.appendChild(container);
 
-    for (let i = 0; i < 30; i++) {
+    for (let i = 0; i < 10; i++) {
       const box = document.createElement("div");
       box.className = 'box';
 
@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
     container.classList.add("pyramids-container");
     target.appendChild(container);
 
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < 5; i++) {
       const pyramid = document.createElement("div");
       pyramid.className = "pyramid";
 

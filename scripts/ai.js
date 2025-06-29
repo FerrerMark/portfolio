@@ -20,7 +20,7 @@ document.getElementById('botForm').addEventListener('submit', function(e) {
     input.value = '';
     input.disabled = true;
     loading(true, "Thinking", "message");
-    fetch('https://messagesapi.lovestoblog.com/messageAPI.php', {
+    fetch('https://faculty.schoolmanagementsystem2.com/personalAPI/AIapi.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: message })

@@ -177,7 +177,7 @@ document.getElementById('contact-form').addEventListener('submit', async (e) => 
     try {
         loading(true, "SENDING", "contact-form");
 
-        const response = await fetch('https://faculty.schoolmanagementsystem2.com/messageapi.php', {
+        const response = await fetch('https://faculty.schoolmanagementsystem2.com/personalAPI/emailAPI.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
