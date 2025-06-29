@@ -155,22 +155,25 @@ form#botForm svg:hover{
     margin: 3px 0;
 }
 
-.message .user{
+.message .Bot, .user{
     display: flex;
-    justify-content: flex-end;
 
 }
+
+.message .user{
+    justify-content: flex-end;
+}
+
 .message .Bot{
-    display: flex;
     justify-content: flex-start;
 }
 
 .message p {
     font-size: 13px;
-    text-shadow: -1px 3px 1px black;
+    text-shadow: -2px 0px 3px #000000, 0px -1px 3px black, 2px 0px 3px black, 0px 1px 3px black;
     padding: 0 5px;
     border-radius: 4px;
-    box-shadow: inset 0px 0px 9px #ffffff30;
+    box-shadow: inset 0px 0px 9px #ffffff30, 0px 0px 2px 0px #000000;
 }
 
 .message .img {
@@ -182,7 +185,12 @@ form#botForm svg:hover{
     border-radius: 50%;
     box-shadow: inset 0px 0px 20px #ffffff2b;
     overflow: hidden;
-    filter: blur(4px);
+}
+
+.img svg {
+    width: 77px;
+    height: 77px;
+    margin: 11px;
 }
 
 .message h6 {

@@ -3,7 +3,8 @@
     --sec-bg-color: #1a2528;
     --txt-color: #f2d9d9;
     --accent-color: #ff6b6b;
-    --shadow-color: blue;
+    --shadow-color: #000000;
+    --text-shadow: -5px 4px 6px var(--shadow-color);
 }
 
 * {
@@ -102,14 +103,14 @@ nav a:hover {
 #welcome-section h1 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    color: var(--accent-color);
-    text-shadow: -8px 1px 1px var(--shadow-color);
+    color: var(--txt-color);
+    text-shadow: var(--text-shadow);
 }
 
 #welcome-section p {
     font-size: 1.3rem;
     margin-bottom: 2rem;
-    text-shadow: -8px 1px 1px var(--shadow-color);
+    text-shadow: var(--text-shadow);
 }
 
 #welcome-section img#profile-pic {
@@ -122,13 +123,13 @@ nav a:hover {
 }
 
 h2 {
-    text-shadow: -8px 1px 1px var(--shadow-color);
+    text-shadow: var(--text-shadow);
 }
 
 #skills h2 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    color: var(--accent-color);
+    color: var(--txt-color);
 }
 
 #skills ul {
@@ -155,7 +156,7 @@ h2 {
     border-radius: 74px 92px 43px 120px;
     margin: 2rem;
     border: 3px solid var(--accent-color);
-    box-shadow: -5px 1px 1px var(--shadow-color);
+    box-shadow: var(--text-shadow);
     cursor: pointer;
     mix-blend-mode: hard-light;
     transition: transform 0.3s ease
@@ -176,7 +177,7 @@ h2 {
     text-align: center;
     font-size: 2.2rem;
     margin: 2.5rem 0 .5rem 0;
-    color: var(--accent-color);
+    color: var(--txt-color);
 }
 
 .tiles {
@@ -241,7 +242,7 @@ h2 {
 .project-tile a {
     display: inline-block;
     margin-top: 1rem;
-    color: var(--accent-color);
+    color: var(--txt-color);
     text-decoration: none;
     font-weight: 700;
     transition: color 0.3s ease;
@@ -352,12 +353,12 @@ h2 {
 #contact h2 {
     font-size: 2.2rem;
     margin-bottom: 1rem;
-    color: var(--accent-color);
+    color: var(--txt-color);
 }
 
 #contact p{
     display: flex;
-    color: #d1bdbd;
+    color: var(--txt-color);
     align-content: center;
     justify-content: center;
     flex-direction: column;
@@ -405,7 +406,7 @@ h2 {
 #certifications h2 {
     font-size: 2.2rem;
     margin: 3.5rem 0 .5rem 0;
-    color: var(--accent-color);
+    color: var(--txt-color);
 }
 
 .certificates{
@@ -630,9 +631,9 @@ nav ul li a {
 }
 
 nav ul li a.active {
-    color: rgb(0, 128, 255); /* Highlight color */
+    color: rgb(255 255 255);
     font-weight: bold;
-    border-bottom: 2px solid rgb(0, 128, 255);
+    border-bottom: 2px solid rgb(255 255 255);
 }
 
 li.hover{
