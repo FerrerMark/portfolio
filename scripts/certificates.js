@@ -24,6 +24,12 @@ const certifications = [
         link: "./img/certificates/excelCert.png"
     },
     {
+        title: "Introduction to SQL",
+        year: "2025",
+        description: "Completed Sololearn’s Introduction to SQL course, covering essential data analysis skills including querying, filtering, aggregation, and joins.",
+        link: "./img/certificates/sql cert.png"
+    },
+    {
         title: "Information Management in the Digital Age",
         year: "2024",
         description: "Cultivating a Multidisciplinary Research Culture with Artificial Intelligence",
@@ -52,11 +58,5 @@ const certifications = [
         year: "2025",
         description: "Completion of 250 hours OJT in Bachelor of Science in Information Technology (March 24 – May 21, 2025)",
         link: "./img/certificates/ojt cert.jpg"
-    },
-    {
-        title: "Introduction to SQL",
-        year: "2025",
-        description: "Completed Sololearn’s Introduction to SQL course, covering essential data analysis skills including querying, filtering, aggregation, and joins.",
-        link: "./img/certificates/sql cert.png"
     }
 ];
