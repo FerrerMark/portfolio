@@ -77,9 +77,6 @@ nav a:hover {
     color: var(--accent-color);
 }
 
-/* .mingcute--menu-fill, #icon {
-    display: none;
-} */
 
 #welcome-section {
     min-height: 68vh;
@@ -90,11 +87,10 @@ nav a:hover {
     padding: 2rem;
     background: linear-gradient(135deg, var(--sec-bg-color), var(--bg-color));
     margin-top: 60px;
-    /* opacity: 1.5 !important; */
 }
 
 #welcome-section {
-    opacity: 1; /* Ensure it's fully visible initially */
+    opacity: 1; 
     transition: opacity 0.3s ease;
 }
 
@@ -195,19 +191,17 @@ h2 {
     gap: 1rem;
     max-width: 1200px;
     margin: 0 auto;
-    /* max-height: 95vh; */
     max-height: 81vh;
     overflow-y: auto;
     flex-direction: column;
     flex-wrap: wrap;
     padding: 11px 0;
     cursor: grab;
-    user-select: none;
 }
 
 .tiles.dragging {
-    cursor: grabbing; /* Cursor when dragging */
-    scroll-behavior: auto; /* Disable smooth scrolling during drag for better control */
+    cursor: grabbing;
+    scroll-behavior: auto; 
 }
 
 .tiles::-webkit-scrollbar {
@@ -228,7 +222,7 @@ h2 {
     height: 333px;
     box-shadow: inset 0px 0 35px #ffffff42;
     backdrop-filter: blur(4px);
-    pointer-events: none;
+    /* pointer-events: none; */
 }
 
 .project-tile:hover {
@@ -242,7 +236,6 @@ h2 {
     object-fit: cover;
     border-radius: 5px;
     -webkit-user-drag: none;
-    pointer-events: auto;
 }
 
 .project-tile img:hover {

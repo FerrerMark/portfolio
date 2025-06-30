@@ -35,7 +35,8 @@
     bottom: 23px;
     right: 6px;
     width: 300px;
-    height: 367px;
+    /* height: 367px; */
+    height: 396px;
     border-radius: 10px;
     box-shadow: inset 0px 0px 44px #ffffff57;
     backdrop-filter: blur(10px);
