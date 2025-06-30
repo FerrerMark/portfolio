@@ -32,14 +32,35 @@
 
 .botModal {
     position: fixed;
-    right: 6px;
     bottom: 23px;
-    width: 283px;
+    right: 6px;
+    width: 300px;
     height: 367px;
+    border-radius: 10px;
     box-shadow: inset 0px 0px 44px #ffffff57;
     backdrop-filter: blur(10px);
     border-radius: 7px;
-    display: none;
+    transform: translateX(100%);
+    opacity: 0; 
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+.hidChat {
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+.ShowChat {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.ask {
+    display: block;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
 }
 
 .botModal .header{
@@ -68,8 +89,8 @@
 
 .carbon--close-filled {
   display: inline-block;
-  width: 32px;
-  height: 32px;
+  width: 23px;
+  height: 23px;
   --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%23000' d='M16 2C8.2 2 2 8.2 2 16s6.2 14 14 14s14-6.2 14-14S23.8 2 16 2m5.4 21L16 17.6L10.6 23L9 21.4l5.4-5.4L9 10.6L10.6 9l5.4 5.4L21.4 9l1.6 1.6l-5.4 5.4l5.4 5.4z'/%3E%3C/svg%3E");
   background-color: currentColor;
   -webkit-mask-image: var(--svg);
@@ -183,8 +204,13 @@ form#botForm svg:hover{
     min-height: 100px;
     margin: 9px auto;
     border-radius: 50%;
-    box-shadow: inset 0px 0px 20px #ffffff2b;
+    box-shadow: inset 0px 0px 20px #ffffff2b, 0px 0px 20px #0000006e;
     overflow: hidden;
+}
+
+.message .img img {
+    width: 100%;
+    height: 100%;
 }
 
 .img svg {
@@ -205,9 +231,4 @@ form#botForm svg:hover{
 .message::-webkit-scrollbar-thumb {
     background: #888;
     border-radius: 4px;
-}
-
-.message .img img {
-    width: 100%;
-    height: 100%;
 }

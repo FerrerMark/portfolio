@@ -22,7 +22,7 @@ body {
 }
 
 header {
-    background-color: var(--bg-color);
+    background-color: #00496714;
     padding: 1rem 2rem;
     display: flex;
     align-items: center;
@@ -31,7 +31,8 @@ header {
     top: 0;
     width: 100%;
     z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: inset -1px -9px 20px rgb(255 255 255 / 14%);
+    backdrop-filter: blur(13px);
 }
 
 #logo a {
@@ -89,7 +90,12 @@ nav a:hover {
     padding: 2rem;
     background: linear-gradient(135deg, var(--sec-bg-color), var(--bg-color));
     margin-top: 60px;
-    border-radius: 56px 47px 331px 159px;
+    /* opacity: 1.5 !important; */
+}
+
+#welcome-section {
+    opacity: 1; /* Ensure it's fully visible initially */
+    transition: opacity 0.3s ease;
 }
 
 #welcome-section > div {
@@ -109,7 +115,7 @@ nav a:hover {
 
 #welcome-section p {
     font-size: 1.3rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     text-shadow: var(--text-shadow);
 }
 
@@ -168,9 +174,13 @@ h2 {
 
 /* Projects Section */
 #projects {
-    /* padding: 4rem 2rem; */
     padding: 3rem 2rem 0.5rem 2rem;
     background-color: var(--sec-bg-color);
+}
+
+#projects-container.active {
+  cursor: grabbing;
+  user-select: none;
 }
 
 #projects h2 {
@@ -191,6 +201,13 @@ h2 {
     flex-direction: column;
     flex-wrap: wrap;
     padding: 11px 0;
+    cursor: grab;
+    user-select: none;
+}
+
+.tiles.dragging {
+    cursor: grabbing; /* Cursor when dragging */
+    scroll-behavior: auto; /* Disable smooth scrolling during drag for better control */
 }
 
 .tiles::-webkit-scrollbar {
@@ -211,6 +228,7 @@ h2 {
     height: 333px;
     box-shadow: inset 0px 0 35px #ffffff42;
     backdrop-filter: blur(4px);
+    pointer-events: none;
 }
 
 .project-tile:hover {
@@ -223,7 +241,8 @@ h2 {
     height: 150px;
     object-fit: cover;
     border-radius: 5px;
-    cursor: pointer;
+    -webkit-user-drag: none;
+    pointer-events: auto;
 }
 
 .project-tile img:hover {
@@ -345,6 +364,7 @@ h2 {
 
 /* Contact Section */
 #contact {
+    height: 92vh;
     padding: 4rem 2rem;
     background: var(--bg-color);
     text-align: center;
@@ -544,7 +564,7 @@ h2 {
     }
 }
 
-.fade-in {
+/* .fade-in {
     animation: fadeIn 1.9s ease-out forwards;
 }
 
@@ -557,7 +577,7 @@ h2 {
 #projects,
 #contact {
     opacity: 0;
-}
+} */
 
 .ic--baseline-facebook {
     --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23f2d9d9' d='M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95'/%3E%3C/svg%3E");
@@ -613,8 +633,8 @@ h2 {
         flex-direction: row-reverse;
         padding: 26px 0 0 0;
         z-index: 1000;
-        backdrop-filter: blur(16px);
         gap: 120px;
+        background: #232f34f7;
     }
 }
 
@@ -703,6 +723,7 @@ section#contact form{
     border-radius: 10px;
     box-shadow: 3px 3px 5px 0px black;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    min-height: 182px;
 }
 
 section#contact form h5 {

@@ -193,3 +193,111 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+
+gsap.from(".box", {
+            rotation: 360,
+            duration: 2.5,
+            y: -500,
+            ease: "bounce.out",
+        });
+
+       const sections = ["#welcome-section", "#certifications", "#projects", "#contact"];
+
+        sections.forEach(selector => {
+            if (selector === "#welcome-section") {
+                gsap.fromTo(selector,
+                    { opacity: 1 },
+                    {
+                        opacity: 0,
+                        scrollTrigger: {
+                            trigger: selector,
+                            start: "top top", 
+                            end: "bottom top",
+                            scrub: 1,
+                            markers: false
+                        }
+                    }
+                );
+            } else {
+                gsap.fromTo(selector,
+                    { opacity: 1 },
+                    {
+                        opacity: 0,
+                        scrollTrigger: {
+                            trigger: selector,
+                            start: "bottom bottom",
+                            end: "bottom top",
+                            scrub: 1,
+                            markers: false
+                        }
+                    }
+                );
+            }
+        });
+
+        const projectsContainer = document.getElementById('projects-container');
+
+let isDragging = false;
+let startX, scrollLeft;
+
+projectsContainer.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    projectsContainer.classList.add('dragging');
+    startX = e.pageX - projectsContainer.offsetLeft;
+    scrollLeft = projectsContainer.scrollLeft;
+    e.preventDefault();
+});
+
+projectsContainer.addEventListener('mouseleave', () => {
+    isDragging = false;
+    projectsContainer.classList.remove('dragging');
+});
+
+projectsContainer.addEventListener('mouseup', () => {
+    isDragging = false;
+    projectsContainer.classList.remove('dragging');
+});
+
+projectsContainer.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    e.preventDefault(); 
+    const x = e.pageX - projectsContainer.offsetLeft;
+    const walk = (x - startX) * 2; 
+    projectsContainer.scrollLeft = scrollLeft - walk;
+});
+
+projectsContainer.addEventListener('touchstart', (e) => {
+    isDragging = true;
+    projectsContainer.classList.add('dragging');
+    startX = e.touches[0].pageX - projectsContainer.offsetLeft;
+    scrollLeft = projectsContainer.scrollLeft;
+    e.preventDefault(); 
+});
+
+projectsContainer.addEventListener('touchend', () => {
+    isDragging = false;
+    projectsContainer.classList.remove('dragging');
+});
+
+projectsContainer.addEventListener('touchmove', (e) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const x = e.touches[0].pageX - projectsContainer.offsetLeft;
+    const walk = (x - startX) * 2; 
+    projectsContainer.scrollLeft = scrollLeft - walk;
+});
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    console.log(entry)
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    } else {
+      entry.target.classList.remove('show');
+    }
+  });
+});
+
+const hiddenElements = document.querySelectorAll('.hidden');
+hiddenElements.forEach((el) => observer.observe(el));

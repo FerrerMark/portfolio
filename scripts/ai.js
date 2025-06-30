@@ -1,14 +1,4 @@
-
-
-function toggleBotModal(show) {
-    const botModal = document.getElementById("botModal");
-    const askIcon = document.querySelector(".ask");
-    botModal.style.display = show ? 'block' : 'none';
-    askIcon.style.display = show ? 'none' : 'block';
-}
-
 document.getElementById('botForm').addEventListener('submit', function(e) {
-
     
     e.preventDefault();
 
@@ -51,8 +41,10 @@ function appendMessage(sender, text) {
     messageContainer.appendChild(msgDiv);
     messageContainer.scrollTop = messageContainer.scrollHeight;
 }
-
 function toggleBotModal(show) {
-    const modal = document.getElementById('botModal');
-    modal.style.display = show ? 'block' : 'none';
+    const botModal = document.getElementById("botModal");
+    const askIcon = document.querySelector(".ask");
+    botModal.classList.toggle("hidChat", !show);
+    botModal.classList.toggle("ShowChat", show);
+    askIcon.style.display = show ? 'none' : 'block';
 }

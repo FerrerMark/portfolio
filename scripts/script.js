@@ -45,24 +45,24 @@ document.getElementById("icon").onclick = function () {
     document.getElementById("navbar").classList.remove("active");
 };
 
-const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.remove('fade-out');
-            entry.target.classList.add('fade-in');
-        } else {
-            entry.target.classList.remove('fade-in');
-            entry.target.classList.add('fade-out');
-        }
-    });
-}, {
-    threshold: 0.1
-});
+// const observer = new IntersectionObserver((entries, observer) => {
+//     entries.forEach(entry => {
+//         if (entry.isIntersecting) {
+//             entry.target.classList.remove('fade-out');
+//             entry.target.classList.add('fade-in');
+//         } else {
+//             entry.target.classList.remove('fade-in');
+//             entry.target.classList.add('fade-out');
+//         }
+//     });
+// }, {
+//     threshold: 0.1
+// });
 
-const sections = document.querySelectorAll('#welcome-section, #certifications, #projects, #contact');
-sections.forEach(section => {
-    observer.observe(section);
-});
+// const sections = document.querySelectorAll('#welcome-section, #certifications, #projects, #contact');
+// sections.forEach(section => {
+//     observer.observe(section);
+// });
 
 const projectModal = document.getElementById('imageModal');
 const modalImg = document.getElementById('modalImage');
@@ -155,6 +155,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
                 current = section.getAttribute("id");
+                
             }
         });
 
