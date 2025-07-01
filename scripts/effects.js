@@ -194,14 +194,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-
-gsap.from(".box", {
-            rotation: 360,
-            duration: 2.5,
-            y: -500,
-            ease: "bounce.out",
-        });
-
        const sections = ["#welcome-section", "#certifications", "#projects", "#contact"];
 
         sections.forEach(selector => {
@@ -288,16 +280,44 @@ projectsContainer.addEventListener('touchmove', (e) => {
     projectsContainer.scrollLeft = scrollLeft - walk;
 });
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    console.log(entry)
-    if (entry.isIntersecting) {
-      entry.target.classList.add('show');
-    } else {
-      entry.target.classList.remove('show');
-    }
-  });
-});
+// const observer = new IntersectionObserver((entries) => {
+//   entries.forEach((entry) => {
+//     console.log(entry)
+//     if (entry.isIntersecting) {
+//       entry.target.classList.add('show');
+//     } else {
+//       entry.target.classList.remove('show');
+//     }
+//   });
+// });
 
-const hiddenElements = document.querySelectorAll('.hidden');
-hiddenElements.forEach((el) => observer.observe(el));
+// const hiddenElements = document.querySelectorAll('.hidden');
+// hiddenElements.forEach((el) => observer.observe(el));
+
+
+function onScrollAnimate() {
+  const elements = document.querySelectorAll('.scroll-animate');
+
+  elements.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+
+    const visibleRatio = 1 - Math.abs((rect.top + rect.height / 2 - windowHeight / 2) / windowHeight);
+
+    const clampedRatio = Math.max(0, Math.min(1, visibleRatio));
+
+    el.style.transform = `translateX(${(1 - clampedRatio) * -100}px)`;
+    el.style.opacity = clampedRatio;
+  });
+
+  requestAnimationFrame(onScrollAnimate); 
+}
+
+onScrollAnimate();
+
+  gsap.from(".box", {
+    rotation: 360,
+    duration: 2.5,
+    y: -500,
+    ease: "bounce.out",
+  });
