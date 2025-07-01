@@ -596,11 +596,34 @@ h2 {
 }
 
 @media (max-width: 768px) {
-    .certificates { height: 654px; }
-    #welcome-section {display: flex; flex-direction: column; text-align: center; padding: 1.5rem 1rem; }
-    #welcome-section img { width: 200px; height: 200px; margin: 1rem auto; }
-    #welcome-section h1 { font-size: 2rem; }
-    #welcome-section p { font-size: 1.1rem; }
+    .certificates {
+        height: 654px; 
+    }
+    #welcome-section {
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+        padding: 1.5rem 1rem;
+        align-content: center;
+        align-items: center;
+    }
+    #welcome-section img { 
+        width: 200px; 
+        height: 200px; 
+        margin: 1rem auto; 
+    }
+    #welcome-section h1 { 
+        font-size: 1.5rem; 
+    }
+    #welcome-section p { 
+        font-size: 12px;
+    }
+    #welcome-section h2 { 
+        font-size: 20px;
+    }
+    #welcome-section li { 
+        font-size: 15px;
+    }
     #menu{
         display: block;
     }
@@ -633,7 +656,12 @@ h2 {
 }
 
 @media (max-width: 375px) {
-    .certificates { height: 41rem; }
+    .certificates { 
+        height: 41rem; 
+    }
+    #welcome-section{
+        padding: 60px 0 0 0;
+    }
 }
 
 
