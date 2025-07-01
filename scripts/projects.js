@@ -8,7 +8,7 @@ const projects = [
     {
         title: "DIY Resume using React JS",
         description: "Simple resume with React",
-        image: "./img/projects/DIYresume.png",
+        image: "./img/projects/DIY resume.png",
         link: "https://github.com/FerrerMark/my-resume"
     },
     {

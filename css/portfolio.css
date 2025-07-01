@@ -756,6 +756,6 @@ section#contact form button:hover {
 }
 
 .download-btn:active {
-  background-color: #3730a3; /* Even darker */
+  background-color: #3730a3;
   transform: translateY(0);
 }
