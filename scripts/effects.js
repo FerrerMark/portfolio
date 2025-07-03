@@ -232,6 +232,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 let isDragging = false;
 let startX, scrollLeft;
+let moved = false;
 
 projectsContainer.addEventListener('mousedown', (e) => {
     isDragging = true;
@@ -259,25 +260,34 @@ projectsContainer.addEventListener('mousemove', (e) => {
     projectsContainer.scrollLeft = scrollLeft - walk;
 });
 
+
 projectsContainer.addEventListener('touchstart', (e) => {
     isDragging = true;
-    projectsContainer.classList.add('dragging');
+    moved = false;
     startX = e.touches[0].pageX - projectsContainer.offsetLeft;
     scrollLeft = projectsContainer.scrollLeft;
-    e.preventDefault(); 
 });
-
-projectsContainer.addEventListener('touchend', () => {
+projectsContainer.addEventListener('touchend', (e) => {
     isDragging = false;
-    projectsContainer.classList.remove('dragging');
-});
 
+    if (!moved) {
+        const touch = e.changedTouches[0];
+        const element = document.elementFromPoint(touch.clientX, touch.clientY);
+        if (element && element.tagName === 'A') {
+            element.click(); 
+        }
+    }
+});
 projectsContainer.addEventListener('touchmove', (e) => {
     if (!isDragging) return;
-    e.preventDefault();
+
     const x = e.touches[0].pageX - projectsContainer.offsetLeft;
-    const walk = (x - startX) * 2; 
+    const walk = (x - startX) * 2;
+
+    if (Math.abs(walk) > 5) moved = true;
+
     projectsContainer.scrollLeft = scrollLeft - walk;
+    e.preventDefault();
 });
 
 // const observer = new IntersectionObserver((entries) => {

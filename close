@@ -1,0 +1,279 @@
+[33mcommit fa44482e97e99fb404b0a9a22866a9125bb56196[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: FerrerMark <ferrerjohnmark26@gmail.com>
+Date:   Tue Jul 1 23:59:29 2025 +0800
+
+    fix responsive
+
+[33mcommit 168c4f50d73af7973eddbbfbfbaeb4650bc5d05b[m
+Author: FerrerMark <ferrerjohnmark26@gmail.com>
+Date:   Tue Jul 1 23:25:32 2025 +0800
+
+    scroll animation changed
+
+[33mcommit f3dda61015aa23c6d8b50a690663240b498ee955[m
+Author: FerrerMark <ferrerjohnmark26@gmail.com>
+Date:   Tue Jul 1 23:24:15 2025 +0800
+
+    scroll animation changed
+
+[33mcommit f01e7dd809121ae6cfc8a9a768d13a95256492c9[m
+Author: FerrerMark <ferrerjohnmark26@gmail.com>
+Date:   Tue Jul 1 13:21:51 2025 +0800
+
+    change resume img in project
+
+[33mcommit e654137bdbd514aa6fbdaa10e68948252eed75a7[m
+Author: FerrerMark <ferrerjohnmark26@gmail.com>
+Date:   Tue Jul 1 13:17:18 2025 +0800
+
+    add download resume
+
+[33mcommit 52e481ed5ef67b908ce51d7001637d47563e7f54[m
+Author: FerrerMark <ferrerjohnmark26@gmail.com>
+Date:   Mon Jun 30 22:21:46 2025 +0800
+
+    animation updated
+
+[33mcommit 94bdf8c14a23f195badc266c71edd6d21131d4c2[m
+Author: FerrerMark <ferrerjohnmark26@gmail.com>
+Date:   Mon Jun 30 22:13:36 2025 +0800
+
+    animation updated
+
+[33mcommit e98d031fc3ef11092528cf406408535531cd64fc[m
+Author: FerrerMark <ferrerjohnmark26@gmail.com>
+Date:   Mon Jun 30 21:51:05 2025 +0800
+
+    animation updated
+
+[33mcommit f9a804633583c05dcf3ce8bcb0a8461121c1c273[m
+Author: FerrerMark <ferrerjohnmark26@gmail.com>
+Date:   Mon Jun 30 00:16:10 2025 +0800
+
+    change font color, Ai profile.
+
+[33mcommit 72dfd85e73822612ff474ac302f88f925404d24e[m
+Author: FerrerMark <ferrerjohnmark26@gmail.com>
+Date:   Sun Jun 29 21:29:41 2025 +0800
+
+    change chats
+
+[33mcommit eaea752dd226cdb58d8a20d994ceee388768928b[m
+Author: FerrerMark <ferrerjohnmark26@gmail.com>
+Date:   Sun Jun 29 21:16:24 2025 +0800
+
+    m
+
+[33mcommit dde5a4dd021674150e1639d7a34afeb5ca2a5b6d[m
+Author: FerrerMark <ferrerjohnmark26@gmail.com>
+Date:   Sun Jun 29 21:06:37 2025 +0800
+
+    change api url
+
+[33mcommit 031610ca88acbe78a21efc183456db334a766df6[m
+Author: FerrerMark <ferrerjohnmark26@gmail.com>
+Date:   Sun Jun 29 18:47:09 2025 +0800
+
+    change API url
+
+[33mcommit c83a4317a55a27b6ebde7bf578677b78e3ba6444[m
+Author: FerrerMark <ferrerjohnmark26@gmail.com>
+Date:   Sat Jun 28 14:32:48 2025 +0800
+
+    add ai
+
+[33mcommit 9a680a9c83566ec92bc76812d7efaf440846f193[m
+Author: FerrerMark <ferrerjohnmark26@gmail.com>
+Date:   Sat Jun 28 00:29:03 2025 +0800
+
+    add chatbot UI
+
+[33mcommit 5986af1e5386b150d78acf62e20330a67a701188[m
+Author: FerrerMark <ferrerjohnmark26@gmail.com>
+Date:   Fri Jun 27 21:28:12 2025 +0800
+
+    remove 1 certificate
+
+[33mcommit 6d858fe425d834aa8df51d729c34bf57b0854416[m
+Author: FerrerMark <ferrerjohnmark26@gmail.com>
+Date:   Fri Jun 27 00:32:19 2025 +0800
+
+    use class
+
+[33mcommit 8d148ea473b7b6fa77038bb0e6292bb75988182b[m
+Author: FerrerMark <ferrerjohnmark26@gmail.com>
+Date:   Fri Jun 27 00:29:20 2025 +0800
+
+    fixed responsive
+
+[33mcommit 36a0e76ce22bf73c2845432f460430b2f84d3403[m
+Author: FerrerMark <ferrerjohnmark26@gmail.com>
+Date:   Thu Jun 26 21:44:19 2025 +0800
+
+    add new effects
+
+[33mcommit b678d3c0a4c0c2eaa85394023c0bb8268dc558ff[m
+Author: FerrerMark <ferrerjohnmark26@gmail.com>
+Date:   Thu Jun 26 21:19:49 2025 +0800
+
+    add new effects
+
+[33mcommit 1e4636ff82b98b3937a8f6bbfdea580cabb16803[m
+Author: FerrerMark <ferrerjohnmark26@gmail.com>
+Date:   Thu Jun 26 12:45:46 2025 +0800
+
+    add loading
+
+[33mcommit 4fb18807543bb0b9370563a7afddc219d4c2c99c[m
+Author: FerrerMark <ferrerjohnmark26@gmail.com>
+Date:   Wed Jun 25 20:33:29 2025 +0800
+
+    change LI items style into glass
+
+[33mcommit 443dd11c0acf7e87ece3634474004fd2747f1ba8[m
+Author: FerrerMark <ferrerjohnmark26@gmail.com>
+Date:   Wed Jun 25 19:13:52 2025 +0800
+
+    add contact form style
+
+[33mcommit 2e5d7e97395d308a65a8d9dbfa066459446cf9ed[m
+Author: FerrerMark <ferrerjohnmark26@gmail.com>
+Date:   Wed Jun 25 18:33:41 2025 +0800
+
+    fix contact logic
+
+[33mcommit 879e797da9318378f9884f645a070ad5b33e2888[m
+Author: FerrerMark <ferrerjohnmark26@gmail.com>
+Date:   Wed Jun 25 18:12:00 2025 +0800
+
+    add style and message
+
+[33mcommit 05fc54403691b97ae17b83f2d608ad5ff5a0937b[m
+Author: FerrerMark <ferrerjohnmark26@gmail.com>
+Date:   Mon Jun 23 22:59:49 2025 +0800
+
+    adjust responsive
+
+[33mcommit c765dbb2042b2316367ae66332beff83940eab2e[m
+Author: FerrerMark <ferrerjohnmark26@gmail.com>
+Date:   Mon Jun 23 21:54:25 2025 +0800
+
+    change jpg to png
+
+[33mcommit 9172cff94d60b743cdba05e27287833ad3787ac2[m
+Author: FerrerMark <ferrerjohnmark26@gmail.com>
+Date:   Mon Jun 23 21:53:08 2025 +0800
+
+    change img
+
+[33mcommit ece55e06b3746c70c7fa8f008c7a85dee3bb9f2c[m
+Author: FerrerMark <ferrerjohnmark26@gmail.com>
+Date:   Mon Jun 23 21:44:51 2025 +0800
+
+    add new project and certificates
+
+[33mcommit 5ee44d28e12bc7eb59bc828a3d2e5d517dc7fdfe[m
+Author: FerrerMark <ferrerjohnmark26@gmail.com>
+Date:   Sun Jun 22 21:31:39 2025 +0800
+
+    create icon style
+
+[33mcommit de4d6ecfd51ab495098963bb7a3539917a11bb1e[m
+Author: FerrerMark <ferrerjohnmark26@gmail.com>
+Date:   Fri Jun 20 22:23:41 2025 +0800
+
+    fix UI
+
+[33mcommit 3bfd3c323c1afba463a49e3d3a77cbd5935d759c[m
+Author: FerrerMark <ferrerjohnmark26@gmail.com>
+Date:   Thu Jun 19 22:37:59 2025 +0800
+
+    add new project
+
+[33mcommit b3bd098db196ddb194003d72dfff3e17b0870408[m
+Author: FerrerMark <ferrerjohnmark26@gmail.com>
+Date:   Thu Jun 19 21:30:14 2025 +0800
+
+    add project
+
+[33mcommit 67291df855367d90f8abab2db88b13dec6db4c61[m
+Author: FerrerMark <ferrerjohnmark26@gmail.com>
+Date:   Thu Jun 19 21:21:01 2025 +0800
+
+    code update
+
+[33mcommit 56040d7ae2286bca60fc69797dd42a00768d77f0[m
+Author: FerrerMark <105842347+FerrerMark@users.noreply.github.com>
+Date:   Mon Jun 16 12:18:17 2025 +0800
+
+    edit certificate description/freecodecamp
+
+[33mcommit d9061e4045c4e218b774ef5a8239bc327e7dc76a[m
+Author: FerrerMark <105842347+FerrerMark@users.noreply.github.com>
+Date:   Mon Jun 16 12:16:29 2025 +0800
+
+    edit description
+
+[33mcommit 0dff87d07695f52aa305a6271c629fb97e09ece0[m
+Author: FerrerMark <105842347+FerrerMark@users.noreply.github.com>
+Date:   Mon Jun 16 12:15:10 2025 +0800
+
+    edit certificate desc
+
+[33mcommit 52b25095a876d0eec4ae782fe7d2e4f7e2e53818[m
+Author: FerrerMark <105842347+FerrerMark@users.noreply.github.com>
+Date:   Mon Jun 16 12:12:27 2025 +0800
+
+    add certicate/research forum
+
+[33mcommit 28cc274ae011e1244b53f9c38bb09c67256d0b8e[m
+Author: FerrerMark <105842347+FerrerMark@users.noreply.github.com>
+Date:   Mon Jun 16 12:09:56 2025 +0800
+
+    add certicate/research forum
+
+[33mcommit 6175c0f332e994286844ca8ecffa4a7761026b5e[m
+Author: FerrerMark <105842347+FerrerMark@users.noreply.github.com>
+Date:   Sat Jun 14 20:45:25 2025 +0800
+
+    project added
+
+[33mcommit 724efea7ec12481ba5df518bf1a5a1030e58d68f[m
+Author: FerrerMark <105842347+FerrerMark@users.noreply.github.com>
+Date:   Sat Jun 14 18:23:01 2025 +0800
+
+    updated contacts
+
+[33mcommit d8946ddbda0583423a99b2f488faf4847e936563[m
+Author: FerrerMark <105842347+FerrerMark@users.noreply.github.com>
+Date:   Sat Jun 14 18:01:56 2025 +0800
+
+    update project facultyloading
+
+[33mcommit 422c0288a98a05aee0d10f1442f50a85993d6da6[m
+Author: FerrerMark <105842347+FerrerMark@users.noreply.github.com>
+Date:   Sat Jun 14 17:53:44 2025 +0800
+
+    update project desc
+
+[33mcommit 184ca5717304be397054463031db520579b2dd8d[m
+Author: FerrerMark <105842347+FerrerMark@users.noreply.github.com>
+Date:   Sat Jun 14 17:51:12 2025 +0800
+
+    add project/quiz automation ext
+
+[33mcommit 2a1cb57d50567938eea77f75ea281c40d699fed5[m
+Author: FerrerMark <105842347+FerrerMark@users.noreply.github.com>
+Date:   Sat Jun 14 17:46:41 2025 +0800
+
+    delete simple weather app
+
+[33mcommit 48a856b6792c2bb9e367a8543a5530b4b5923217[m
+Author: FerrerMark <105842347+FerrerMark@users.noreply.github.com>
+Date:   Sat Jun 14 17:44:46 2025 +0800
+
+    add weather app/project
+
+[33mcommit 2e3ec1c8e9ed426bdbe2ed9b748119f2688fc830[m
+Author: FerrerMark <ferrerjohnmark26@gmail.com>
+Date:   Sat May 3 20

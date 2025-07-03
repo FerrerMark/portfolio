@@ -788,3 +788,10 @@ section#contact form button:hover {
   background-color: #3730a3;
   transform: translateY(0);
 }
+
+section#other {
+    height: 97vh;
+    background: var(--bg-color);
+    padding: 3rem 2rem 0.5rem 2rem;
+    text-align: center;
+}

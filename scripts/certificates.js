@@ -18,16 +18,28 @@ const certifications = [
         link: "./img/certificates/JsCert.png"
     },
     {
-        title: "Microsoft Excel",
+        title: "Getting Started with Microsoft Excel",
         year: "2025",
-        description: "Get Certified as an Excel Pro! - Microsoft Essentials (Microsoft Skills for Job) - Jobstreet",
-        link: "./img/certificates/excelCert.png"
+        description: "Learned the basics of Microsoft Excel, including formulas, formatting, and data organization.",
+        link: "./img/certificates/CourseraExcel.jpg"
     },
     {
         title: "Introduction to SQL",
         year: "2025",
         description: "Completed Sololearn’s Introduction to SQL course, covering essential data analysis skills including querying, filtering, aggregation, and joins.",
         link: "./img/certificates/sql cert.png"
+    },
+    {
+        title: "Search Engine Optimization (SEO) with Squarespace",
+        year: "2025",
+        description: "Learned SEO basics with Squarespace, including keyword research, site optimization, mobile SEO, and content structure.",
+        link: "./img/certificates/CourseraSEO.jpg"
+    },
+    {
+        title: "Microsoft Excel",
+        year: "2025",
+        description: "Get Certified as an Excel Pro! - Microsoft Essentials (Microsoft Skills for Job) - Jobstreet",
+        link: "./img/certificates/excelCert.png"
     },
     {
         title: "Information Management in the Digital Age",
