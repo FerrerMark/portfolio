@@ -331,3 +331,81 @@ onScrollAnimate();
     y: -500,
     ease: "bounce.out",
   });
+
+  //anime js
+
+// import { animate } from '../effects/animejs/scripts/anime.esm.js';
+import { createScope, createAnimatable, createDraggable, animate, utils } from '../effects/animejs/scripts/anime.js';
+
+// animate('span', {
+//   y: [
+//     { to: '-2.75rem', ease: 'outExpo', duration: 600 },
+//     { to: 0, ease: 'outBounce', duration: 800, delay: 100 }
+//   ],
+//   rotate: {
+//     from: '-1turn',
+//     delay: 0
+//   },
+//   delay: (_, i) => i * 50,
+//   ease: 'inOutCirc',
+//   loopDelay: 1000,
+//   loop: true
+// });
+
+
+
+const scope = createScope({
+  mediaQueries: {
+    isSmall: '(max-width: 200px)',
+  }
+})
+.add(self => {
+
+  const [ $circle ] = utils.$('.circle');
+    
+  if (self.matches.isSmall) {
+    $circle.classList.add('draggable');
+    self.circle = createDraggable($circle, {
+      container: document.body,
+    });
+  } else {
+    $circle.classList.remove('draggable');
+    self.circle = createAnimatable($circle, {
+      x: 500,
+      y: 500,
+      ease: 'out(3)'
+    });
+  }
+  
+  let win = { w: window.innerWidth, h: window.innerHeight };
+  
+  self.add('refreshBounds', () => {
+    win.w = window.innerWidth;
+    win.h = window.innerHeight;
+  });
+      
+  self.add('onMouseMove', e => {
+    if (self.matches.isSmall) return;
+
+    if (self.circle.x) {
+      self.circle.x(e.clientX);
+      self.circle.y(e.clientY);
+    }
+  });
+  
+  self.add('onPointerDown', e => {
+    const { isSmall } = self.matches;
+    animate($circle, {
+      scale: [
+        { to: isSmall ? 1.25 : .25, duration: isSmall ? 50 : 150 },
+        { to: 1, duration: isSmall ? 250 : 500 },
+      ]
+    });
+  });
+  
+});
+
+window.addEventListener('resize', scope.methods.refreshBounds);
+window.addEventListener('mousemove', scope.methods.onMouseMove);
+document.addEventListener('pointerdown', scope.methods.onPointerDown);
+

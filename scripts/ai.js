@@ -1,30 +1,36 @@
 document.getElementById('botForm').addEventListener('submit', function(e) {
-    
     e.preventDefault();
 
     const input = document.getElementById('userInput');
     const message = input.value.trim();
+
     if (!message) return;
+    if (message.length > 300) {
+        appendMessage('Bot', 'Message must be 300 characters or less.');
+        return;
+    }
 
     appendMessage('user', message);
     input.value = '';
     input.disabled = true;
-    loading(true, "Thinking", "message");
-    fetch('https://faculty.schoolmanagementsystem2.com/personalAPI/AIapi.php', {
+    loading(true, 'Thinking', 'message');
+
+    fetch('https://apis-femq.onrender.com/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: message })
     })
-    .then(res => res.json())
+    .then(res => {
+        if (!res.ok) throw new Error(`HTTP error! Status: ${res.status}`);
+        return res.json();
+    })
     .then(data => {
         const reply = data.response || 'No response from AI.';
         appendMessage('Bot', reply);
-        loading(false);
     })
     .catch(err => {
-        appendMessage('Bot', 'Error contacting AI.');
-        console.error(err);
-        loading(false);
+        appendMessage('Bot', 'Sorry, something went wrong. Please try again later.');
+        console.error('Fetch error:', err);
     })
     .finally(() => {
         input.disabled = false;

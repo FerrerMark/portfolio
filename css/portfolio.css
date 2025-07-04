@@ -596,6 +596,9 @@ h2 {
 }
 
 @media (max-width: 768px) {
+    .circle{
+        display: none;
+    }
     .certificates {
         height: 654px; 
     }
@@ -661,6 +664,9 @@ h2 {
     }
     #welcome-section{
         padding: 60px 0 0 0;
+    }
+    .circle{
+        display: none;
     }
 }
 

@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/icons.css">
     <link rel="stylesheet" href="effects/effects.css">
     <link rel="stylesheet" href="css/ask.css">
+
 </head>
 <body id="wrapper">
     <header>
@@ -29,7 +30,7 @@
 
     <section id="welcome-section" class="floating-circles scroll-animate">
         <div class="data">
-            <h1 class="text">Hi, I'm John Mark S. Ferrer</h1>
+            <h1 class="text"><span>Hi, I'm John Mark S. Ferrer</span></h1>
             <p class="text">A passionate Web Developer crafting modern solutions.</p>
             <p class="text"><i>"To secure a challenging role in web development where I can contribute to meaningful projects and grow my technical and professional skills."</i></p>
             <div id="skills">
@@ -136,11 +137,31 @@
             <button type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M2.01 21L23 12L2.01 3L2 10l15 2l-15 2z"/></svg></button>
         </form>
     </div>
+    <style>
+
+.circle {
+    width: 45px;
+    height: 45px;
+    background: #ffffff26;
+    border-radius: 50%;
+    top: -22px;
+    left: -19px;
+    pointer-events: none;
+    position: fixed;
+    backdrop-filter: blur(4px);
+    box-shadow: inset 0 0 0px 3px #696969;
+}
 
 
+
+    </style>
+
+    <div class="circle"></div>
+
+
+    <!-- <script src="scripts/anime.min.js"></script> -->
 
     <script src="scripts/gsap.min.js"></script>
-    <script src="scripts/SplitText.min.js"></script>
     <script src="scripts/ScrollTrigger.min.js"></script>
     <script src="scripts/ScrollSmoother.min.js"></script>
     <script src="scripts/effects.js"></script>
@@ -149,8 +170,8 @@
     <script src="component/loading.js"></script>
     <script src="scripts/ai.js"></script>
     <script src="scripts/script.js"></script>
-    <script>
 
-    </script>
+    <script type="module" src="scripts/effects.js"></script>
+
 </body>
 </html>
