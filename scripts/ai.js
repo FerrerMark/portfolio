@@ -1,3 +1,26 @@
+    const waker = () => {
+       const wake = "hey"; //the domain needs to wake because it's only free in render. It's sleeps when not in use
+        fetch('https://apis-femq.onrender.com/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ message: wake })
+        })
+        .then(res => {
+            if (!res.ok) throw new Error(`HTTP error! Status: ${res.status}`);
+            return res.json();
+        })
+        .then(data => {
+            const reply = data.response || 'No response from AI.';
+            appendMessage('Bot', reply);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            appendMessage('Bot', 'Error: ' + error.message);
+        })        
+    };
+
+    waker();
+
 document.getElementById('botForm').addEventListener('submit', function(e) {
     e.preventDefault();
 

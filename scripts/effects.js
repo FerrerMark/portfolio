@@ -398,7 +398,7 @@ const scope = createScope({
     animate($circle, {
       scale: [
         { to: isSmall ? 1.25 : .25, duration: isSmall ? 50 : 150 },
-        { to: 1, duration: isSmall ? 250 : 500 },
+        { to: 1, duration: isSmall ? 100 : 200 },
       ]
     });
   });
