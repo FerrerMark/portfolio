@@ -83,7 +83,7 @@ nav a:hover {
 
 section {
   height: 100svh;
-  view-timeline-name: --fade;
+  /* view-timeline-name: --fade;
   view-timeline-axis: block;
 
   animation-name: fade-in-out;
@@ -91,7 +91,7 @@ section {
   animation-duration: 1s;
   animation-timing-function: linear;
   animation-fill-mode: both;
-  animation-range: entry 0% exit 100%;
+  animation-range: entry 0% exit 100%; */
 }
 
 @keyframes fade-in-out {
