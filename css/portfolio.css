@@ -82,31 +82,23 @@ nav a:hover {
 }
 
 section {
+  opacity: 1;
+  transform: none;
+  transition: none;
   height: 100svh;
-  /* view-timeline-name: --fade;
-  view-timeline-axis: block;
 
-  animation-name: fade-in-out;
-  animation-timeline: --fade;
-  animation-duration: 1s;
-  animation-timing-function: linear;
-  animation-fill-mode: both;
-  animation-range: entry 0% exit 100%; */
+  animation: fade-in 1s linear forwards;
+  animation-timeline: view();
+  animation-range: exit;
 }
 
-@keyframes fade-in-out {
-  0% {
-    opacity: 0;
-    scale: 0.9;
-  }
-  50% {
-    opacity: 1;
-    scale: 1;
-  }
-  100% {
-    opacity: 0;
-    scale: 0.9;
-  }
+@keyframes fade-in {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
 }
 
 #welcome-section {
@@ -742,7 +734,7 @@ h2 {
     }
     .project-tile {
         width: 200px;
-        height: 322px;
+        height: 318px;
     }
     .tiles {
         display: flex;
@@ -770,6 +762,28 @@ h2 {
     }
     .circle{
         display: none;
+    }
+}
+
+@media (max-width: 360px) {
+    p{
+        font-size: 10px !important;
+    }
+    .project-tile{
+        width: 263px;
+        height: 352px;
+    }
+    .tiles {
+        display: flex;
+        gap: 6px;
+        max-width: 1200px;
+        margin: 0 auto;
+        overflow-y: auto;
+        flex-wrap: wrap;
+        padding: 11px 0;
+        cursor: grab;
+        height: 384px;
+        flex-direction: column;
     }
 }
 
