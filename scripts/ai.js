@@ -1,5 +1,21 @@
+    const WAKE_INTERVAL = 5 * 60 * 1000;
     const waker = () => {
-       const wake = "hey"; //the domain needs to wake because it's only free in render. It's sleeps when not in use
+    const lastWake = localStorage.getItem('lastWakeTime');
+    const now = Date.now();
+
+    if (lastWake && now - Number(lastWake) < WAKE_INTERVAL) {
+        console.log('Waker skipped: last call was less than 5 minutes ago.');
+        return;
+    }
+
+    localStorage.setItem('lastWakeTime', now.toString());
+        
+
+    const input = document.getElementById('userInput');
+    loading(true, 'AI is Waking', 'message'); 
+    input.disabled = true;
+    input.focus();
+       const wake = "wake"; //the domain needs to wake because it's only free in render. It's sleeps when not in use
         fetch('https://apis-femq.onrender.com/', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -10,8 +26,8 @@
             return res.json();
         })
         .then(data => {
-            const reply = data.response || 'No response from AI.';
-            appendMessage('Bot', reply);
+            loading(false);
+            input.disabled = false;
         })
         .catch(error => {
             console.error('Error:', error);
@@ -19,7 +35,7 @@
         })        
     };
 
-    waker();
+waker();
 
 document.getElementById('botForm').addEventListener('submit', function(e) {
     e.preventDefault();
@@ -29,7 +45,7 @@ document.getElementById('botForm').addEventListener('submit', function(e) {
 
     if (!message) return;
     if (message.length > 300) {
-        appendMessage('Bot', 'Message must be 300 characters or less.');
+        appendMessage('Bot', 'Message must be 80 words or less.');
         return;
     }
 
@@ -71,6 +87,9 @@ function appendMessage(sender, text) {
     messageContainer.scrollTop = messageContainer.scrollHeight;
 }
 function toggleBotModal(show) {
+    if (show) {
+        waker();
+    }
     const botModal = document.getElementById("botModal");
     const askIcon = document.querySelector(".ask");
     botModal.classList.toggle("hidChat", !show);
