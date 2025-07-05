@@ -31,7 +31,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    position: sticky;
+    position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
@@ -723,6 +723,9 @@ h2 {
         width: 18px;
         height: 18px;
     }
+    #welcome-section p {
+        margin-bottom: 5px;
+    }
     #skills ul {
         display: flex;
         flex-wrap: wrap;
@@ -733,6 +736,12 @@ h2 {
 }
 
 @media (max-width: 390px) {
+    #welcome-section {
+        padding: 100px 0 0 0;
+    }
+    #welcome-section p {
+        margin-bottom: 5px;
+    }
     p{
         font-size: 10px !important;
     }
@@ -762,7 +771,7 @@ h2 {
         height: 335px;
     }
     #welcome-section{
-        padding: 60px 0 0 0;
+        padding: 100px 0 0 0;
     }
     .circle{
         display: none;
