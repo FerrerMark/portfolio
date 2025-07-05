@@ -82,6 +82,10 @@ nav a:hover {
 }
 
 section {
+  height: 100svh;
+}
+
+/* section {
   opacity: 1;
   transform: none;
   transition: none;
@@ -99,7 +103,7 @@ section {
     100% {
         opacity: 0;
     }
-}
+} */
 
 #welcome-section {
     position: relative;
