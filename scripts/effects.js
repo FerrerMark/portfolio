@@ -194,41 +194,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-       const sections = ["#welcome-section", "#certifications", "#projects", "#contact"];
-
-        sections.forEach(selector => {
-            if (selector === "#welcome-section") {
-                gsap.fromTo(selector,
-                    { opacity: 1 },
-                    {
-                        opacity: 0,
-                        scrollTrigger: {
-                            trigger: selector,
-                            start: "top top", 
-                            end: "bottom top",
-                            scrub: 1,
-                            markers: false
-                        }
-                    }
-                );
-            } else {
-                gsap.fromTo(selector,
-                    { opacity: 1 },
-                    {
-                        opacity: 0,
-                        scrollTrigger: {
-                            trigger: selector,
-                            start: "bottom bottom",
-                            end: "bottom top",
-                            scrub: 1,
-                            markers: false
-                        }
-                    }
-                );
-            }
-        });
-
-        const projectsContainer = document.getElementById('projects-container');
+const projectsContainer = document.getElementById('projects-container');
 
 let isDragging = false;
 let startX, scrollLeft;

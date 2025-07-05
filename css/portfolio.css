@@ -81,29 +81,99 @@ nav a:hover {
     color: var(--accent-color);
 }
 
+section {
+  height: 100vh;
+  view-timeline-name: --fade;
+  view-timeline-axis: block;
 
-#welcome-section {
-    min-height: 68vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 2rem;
-    background: linear-gradient(135deg, var(--sec-bg-color), var(--bg-color));
-    margin-top: 60px;
-    height: 100vh;
+  animation-name: fade-in-out;
+  animation-timeline: --fade;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+  animation-range: entry 0% exit 100%;
+}
+
+@keyframes fade-in-out {
+  0% {
+    opacity: 0;
+    scale: 0.9;
+  }
+  50% {
+    opacity: 1;
+    scale: 1;
+  }
+  100% {
+    opacity: 0;
+    scale: 0.9;
+  }
 }
 
 #welcome-section {
-    opacity: 1; 
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    overflow-x: clip;
+    gap: 20px;
+
+    #profile-pic {
+        width: 260px;
+        height: 260px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+}
+
+.bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -10;
+
+    animation: welcome-sec-bg linear;
+    animation-timeline: view();
+    animation-range: exit;
+    filter: blur(5px);
+}
+
+img#backg {
+    height: 105%;
+    width: 100%;
+    filter: brightness(0.5);
+}
+
+@keyframes fade-out {
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes welcome-sec-bg{
+    25%{
+        opacity: 1;
+    }
+    85%, 100%{
+        opacity: 0;
+        scale: 3;
+    }
+}
+
+
+#welcome-section .data {
+    max-width: 600px;
+    animation: fade-out linear;
+    animation-timeline: view();
+    animation-range: exit -200px;
 }
 
 #welcome-section > div {
     text-align: center;
-}
-
-#welcome-section .data {
-    max-width: 600px;
 }
 
 #welcome-section h1 {
@@ -118,11 +188,6 @@ nav a:hover {
     margin-bottom: 1.5rem;
     text-shadow: var(--text-shadow);
 }
-
-#welcome-section img#profile-pic {
-    z-index: 3;
-}
-
 
 #skills {
     margin-top: 2rem;
@@ -153,23 +218,8 @@ h2 {
     border-radius: 20px;
     font-size: 1rem;
     backdrop-filter: blur(9px);
-    box-shadow: inset 0 0 9px 0px #ffffff26;
-}
-
-#welcome-section img {
-    width: 350px;
-    height: 350px;
-    border-radius: 74px 92px 43px 120px;
-    margin: 2rem;
-    border: 3px solid var(--accent-color);
-    box-shadow: var(--text-shadow);
-    cursor: pointer;
-    mix-blend-mode: hard-light;
-    transition: transform 0.3s ease
-}
-
-#welcome-section img:hover {
-    transform: scale(1.05);
+    box-shadow: inset 0 0 20px 0px #ffffffd1;
+    filter: drop-shadow(2px 4px 6px black);
 }
 
 /* Projects Section */
@@ -416,7 +466,7 @@ h2 {
 #certifications {
     /* padding: 3rem 2rem; */
     padding: 3rem 2rem 0.5rem 2rem;
-    background-color: var(--sec-bg-color);
+    /* background-color: var(--sec-bg-color); */
     text-align: center;
 }
 
@@ -613,10 +663,10 @@ h2 {
         align-content: center;
         align-items: center;
     }
-    #welcome-section img { 
-        width: 200px; 
-        height: 200px; 
-        margin: 1rem auto; 
+    #welcome-section img {
+        width: 100%;
+        height: 100%;
+        margin: 1rem auto;
     }
     #welcome-section h1 { 
         font-size: 1.5rem; 
@@ -659,11 +709,61 @@ h2 {
         gap: 120px;
         background: #232f34f7;
     }
+
+    #profile-pic {
+        width: 186px !important;
+        height: 186px !important;
+        border-radius: 50%;
+        object-fit: cover;
+        filter: grayscale(1);
+    }
+
+    #welcome-section li {
+        font-size: 10px;
+        text-shadow: var(--text-shadow);
+    }
+
+    #welcome-section span {
+        width: 18px;
+        height: 18px;
+    }
+    #skills ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        justify-content: center;
+        list-style: none;
+    }
+}
+
+@media (max-width: 390px) {
+    p{
+        font-size: 10px !important;
+    }
+    .project-tile {
+        width: 200px;
+        height: 322px;
+    }
+    .tiles {
+        display: flex;
+        gap: 6px;
+        max-width: 1200px;
+        margin: 0 auto;
+        overflow-y: auto;
+        flex-wrap: wrap;
+        padding: 11px 0;
+        cursor: grab;
+        height: 1146px;
+        flex-direction: column;
+    }
+    .project-tile a {
+        margin-top: .5rem;
+    }
 }
 
 @media (max-width: 375px) {
-    .certificates { 
-        height: 41rem; 
+    .certificates {
+        height: 335px;
     }
     #welcome-section{
         padding: 60px 0 0 0;

@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/icons.css">
     <link rel="stylesheet" href="effects/effects.css">
     <link rel="stylesheet" href="css/ask.css">
+    <link rel="shortcut icon" href="./img/pic/image.png" type="image/x-icon">
 
 </head>
 <body id="wrapper">
@@ -29,7 +30,8 @@
         </nav>
     </header>
 
-    <section id="welcome-section" class="scroll-animate floating-circles">
+    <section id="welcome-section" class="">
+        <div class="bg"><img id="backg" src="./img/background/image.png" class="hover" id="profile-pic" onclick="openProfileModal()"></div>
         <div class="data">
             <h1 class="text"><span>Hi, I'm John Mark S. Ferrer</span></h1>
             <p class="text">A passionate Web Developer crafting modern solutions.</p>
@@ -50,16 +52,16 @@
                 </ul>
             </div>
         </div>
-        <img src="./img/pic/image.png" class="hover" id="profile-pic" onclick="openProfileModal()">
+        <img src="./img/pic/profile.png" class="hover" id="profile-pic" onclick="openProfileModal()">
     </section>
     <!-- <section id="certifications" class="box-bg-effect"> -->
-    <section id="certifications" class="scroll-animate box-bg-effect">
+    <section id="certifications" class="box-bg-effect">
         <h2 class="text">My Certifications</h2>
         <div class="certificates" id="certificates-container"></div>
     </section>
 
     <!-- <section id="projects" class="pyra-bg"> -->
-    <section id="projects" class="scroll-animate">
+    <section id="projects" class="">
         <h2 class="text">My Projects</h2>
         <div class="tiles" id="projects-container"></div>
     </section>
@@ -82,10 +84,10 @@
         </div>
     </div>
 
-    <section id="contact" class="scroll-animate">
+    <section id="contact" class="">
         <h2 class="text">Let's Work Together</h2>
         <p>Feel free to reach out for collaborations or just to say hi (ferrerjohnmark26@gmail.com)!</p>
-        <form id="contact-form" class="floating-circles" title="It's working, try it.">
+        <form id="contact-form" class="floating-circles" title="It's not working yet due to API issues.">
             <h5>Message Me!</h5>
             <input type="email" name="gmail" placeholder="@gmail" required>
             <textarea name="message" placeholder="Message" required></textarea>
@@ -128,9 +130,6 @@
             </div>
             <div class="Bot">
                 <p>I'm just a chatbot designed to describe him.</p>
-            </div>
-            <div class="Bot">
-                <p>I'll share everything I know.</p>
             </div>
         </div>
         <form id="botForm">

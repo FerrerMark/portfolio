@@ -4,7 +4,6 @@
     const now = Date.now();
 
     if (lastWake && now - Number(lastWake) < WAKE_INTERVAL) {
-        console.log('Waker skipped: last call was less than 5 minutes ago.');
         return;
     }
 
@@ -12,10 +11,10 @@
         
 
     const input = document.getElementById('userInput');
-    loading(true, 'AI is Waking', 'message'); 
+    loading(true, 'AI is Waking... please wait', 'message'); 
     input.disabled = true;
     input.focus();
-       const wake = "wake"; //the domain needs to wake because it's only free in render. It's sleeps when not in use
+       const wake = "hey"; //the domain needs to wake because it's only free in render. It's sleeps when not in use
         fetch('https://apis-femq.onrender.com/', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -26,6 +25,8 @@
             return res.json();
         })
         .then(data => {
+            const reply = data.response || 'No response from AI.';
+            appendMessage('Bot', reply);
             loading(false);
             input.disabled = false;
         })
