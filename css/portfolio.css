@@ -144,6 +144,12 @@ img#backg {
     filter: brightness(0.5);
 }
 
+#welcome-section .bg,
+#welcome-section .data {
+  transition: opacity 0.1s ease, transform 0.1s ease;
+  will-change: opacity, transform;
+}
+
 @keyframes fade-out {
     to {
         opacity: 0;
@@ -164,8 +170,8 @@ img#backg {
 #welcome-section .data {
     max-width: 600px;
     animation: fade-out linear;
-    animation-timeline: view();
-    animation-range: exit -200px;
+    /* animation-timeline: view();
+    animation-range: exit -200px; */
 }
 
 #welcome-section > div {

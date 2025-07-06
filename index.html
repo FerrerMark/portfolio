@@ -171,7 +171,21 @@
             const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
             const scrollRatio = window.scrollY / maxScroll;
             watcher.style.transform = `scaleX(${scrollRatio})`;
+            
+            const section = document.querySelector('#welcome-section .bg');
+            const data = document.querySelector('#welcome-section .data');
+            const scrollY = window.scrollY;
+
+            // const fadePoint = 300; 
+            const fadePoint = window.innerHeight; 
+            const opacity = Math.max(1 - scrollY / fadePoint, 0);
+            const scale = 1 + (scrollY / 1000); 
+
+            section.style.opacity = opacity;
+            section.style.transform = `scale(${scale})`;
+            data.style.opacity = opacity;
         });
+
     </script>
 
 </body>
