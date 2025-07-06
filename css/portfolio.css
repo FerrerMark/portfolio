@@ -951,7 +951,7 @@ section#contact form button:hover {
     }
 }
 
-.scroll-watcher {
+/* .scroll-watcher {
     height: 6px;
     position: fixed;
     top: 0;
@@ -970,4 +970,4 @@ section#contact form button:hover {
     to{
         scale: 1 1;
     }
-}
+} */

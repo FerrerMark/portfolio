@@ -151,6 +151,20 @@
     <script src="scripts/script.js"></script>
 
     <script type="module" src="scripts/effects.js"></script>
+    <style>
+        .scroll-watcher {
+            transform-origin: left;
+            transform: scaleX(0);
+        }
+    </style>
+    <script>
+        window.addEventListener('scroll', () => {
+            const watcher = document.querySelector('.scroll-watcher');
+            const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollRatio = window.scrollY / maxScroll;
+            watcher.style.transform = `scaleX(${scrollRatio})`;
+        });
+    </script>
 
 </body>
 </html>
