@@ -194,6 +194,68 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+////////////////////////
+
+// Certificates Container Scroll
+{
+  const certificatesContainer = document.getElementById('certificates-container');
+  let isDraggingCert = false;
+  let startXCert, scrollLeftCert, movedCert = false;
+
+  certificatesContainer.addEventListener('mousedown', (e) => {
+    isDraggingCert = true;
+    certificatesContainer.classList.add('dragging');
+    startXCert = e.pageX - certificatesContainer.offsetLeft;
+    scrollLeftCert = certificatesContainer.scrollLeft;
+    e.preventDefault();
+  });
+
+  certificatesContainer.addEventListener('mouseleave', () => {
+    isDraggingCert = false;
+    certificatesContainer.classList.remove('dragging');
+  });
+
+  certificatesContainer.addEventListener('mouseup', () => {
+    isDraggingCert = false;
+    certificatesContainer.classList.remove('dragging');
+  });
+
+  certificatesContainer.addEventListener('mousemove', (e) => {
+    if (!isDraggingCert) return;
+    e.preventDefault();
+    const x = e.pageX - certificatesContainer.offsetLeft;
+    const walk = (x - startXCert) * 2;
+    certificatesContainer.scrollLeft = scrollLeftCert - walk;
+  });
+
+  certificatesContainer.addEventListener('touchstart', (e) => {
+    isDraggingCert = true;
+    movedCert = false;
+    startXCert = e.touches[0].pageX - certificatesContainer.offsetLeft;
+    scrollLeftCert = certificatesContainer.scrollLeft;
+  });
+
+  certificatesContainer.addEventListener('touchend', (e) => {
+    isDraggingCert = false;
+    if (!movedCert) {
+      const touch = e.changedTouches[0];
+      const element = document.elementFromPoint(touch.clientX, touch.clientY);
+      if (element && element.tagName === 'A') element.click();
+    }
+  });
+
+  certificatesContainer.addEventListener('touchmove', (e) => {
+    if (!isDraggingCert) return;
+    const x = e.touches[0].pageX - certificatesContainer.offsetLeft;
+    const walk = (x - startXCert) * 2;
+    if (Math.abs(walk) > 5) movedCert = true;
+    certificatesContainer.scrollLeft = scrollLeftCert - walk;
+    e.preventDefault();
+  });
+}
+
+////////////////////////
+
 const projectsContainer = document.getElementById('projects-container');
 
 let isDragging = false;
@@ -256,25 +318,7 @@ projectsContainer.addEventListener('touchmove', (e) => {
     e.preventDefault();
 });
 
-function onScrollAnimate() {
-  const elements = document.querySelectorAll('.scroll-animate');
 
-  elements.forEach(el => {
-    const rect = el.getBoundingClientRect();
-    const windowHeight = window.innerHeight;
-
-    const visibleRatio = 1 - Math.abs((rect.top + rect.height / 2 - windowHeight / 2) / windowHeight);
-
-    const clampedRatio = Math.max(0, Math.min(1, visibleRatio));
-
-    el.style.transform = `translateX(${(1 - clampedRatio) * -100}px)`;
-    el.style.opacity = clampedRatio;
-  });
-
-  requestAnimationFrame(onScrollAnimate); 
-}
-
-onScrollAnimate();
 
   gsap.from(".box", {
     rotation: 360,
@@ -360,3 +404,20 @@ window.addEventListener('resize', scope.methods.refreshBounds);
 window.addEventListener('mousemove', scope.methods.onMouseMove);
 document.addEventListener('pointerdown', scope.methods.onPointerDown);
 
+window.addEventListener('scroll', () => {
+    const watcher = document.querySelector('.scroll-watcher');
+    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollRatio = window.scrollY / maxScroll;
+    watcher.style.transform = `scaleX(${scrollRatio})`;
+    
+    const section = document.querySelector('#welcome-section .bg');
+    const data = document.querySelector('#welcome-section .data');
+    const scrollY = window.scrollY;
+    // const fadePoint = 300; 
+    const fadePoint = window.innerHeight; 
+    const opacity = Math.max(1 - scrollY / fadePoint, 0);
+    const scale = 1 + (scrollY / 1000); 
+    section.style.opacity = opacity;
+    section.style.transform = `scale(${scale})`;
+    data.style.opacity = opacity;
+});

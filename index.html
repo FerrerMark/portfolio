@@ -152,39 +152,9 @@
 
     <script type="module" src="scripts/effects.js"></script>
     <style>
-        .scroll-watcher {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 6px;
-            background: #ffffff3b;
-            box-shadow: inset 0px 0px 6px 0px #ffffff78;
-            transform-origin: left;
-            transform: scaleX(0);
-            z-index: 9999;
-        }
+     
     </style>
     <script>
-        window.addEventListener('scroll', () => {
-            const watcher = document.querySelector('.scroll-watcher');
-            const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-            const scrollRatio = window.scrollY / maxScroll;
-            watcher.style.transform = `scaleX(${scrollRatio})`;
-            
-            const section = document.querySelector('#welcome-section .bg');
-            const data = document.querySelector('#welcome-section .data');
-            const scrollY = window.scrollY;
-
-            // const fadePoint = 300; 
-            const fadePoint = window.innerHeight; 
-            const opacity = Math.max(1 - scrollY / fadePoint, 0);
-            const scale = 1 + (scrollY / 1000); 
-
-            section.style.opacity = opacity;
-            section.style.transform = `scale(${scale})`;
-            data.style.opacity = opacity;
-        });
 
     </script>
 
