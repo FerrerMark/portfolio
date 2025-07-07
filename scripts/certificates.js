@@ -42,6 +42,12 @@ const certifications = [
         link: "./img/certificates/excelCert.png"
     },
     {
+        title: "Microsoft Word for Work",
+        year: "2025",
+        description: "Completed Microsoft Word for Work course by Microsoft and JobStreet, focused on professional Word skills. - Jobstreet",
+        link: "./img/certificates/msword.png"
+    },
+    {
         title: "Information Management in the Digital Age",
         year: "2024",
         description: "Cultivating a Multidisciplinary Research Culture with Artificial Intelligence",
