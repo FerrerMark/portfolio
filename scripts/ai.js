@@ -11,7 +11,7 @@
         
 
     const input = document.getElementById('userInput');
-    loading(true, 'AI is Waking... please wait', 'message'); 
+    loading(true, 'AI is Waking, please wait 1-30s', 'message'); 
     input.disabled = true;
     input.focus();
        const wake = "hey"; //the domain needs to wake because it's only free in render. It's sleeps when not in use
