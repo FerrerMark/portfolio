@@ -43,7 +43,7 @@ const projects = [
     },
     {
         title: "Web Portfolio",
-        description: "Web Portfolio. HTML, CSS, JS. This portfolio is project from freecodecamp.",
+        description: "Web Portfolio. HTML, CSS, JS. This portfolio is project from freecodecamp. With Fetch API and Node JS backend for AI.",
         image: "./img/projects/web-portfolio.png",
         link: "https://github.com/FerrerMark/portfolio"
     },
