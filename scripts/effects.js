@@ -70,8 +70,8 @@ document.addEventListener("DOMContentLoaded", () => {
       let posX = startLeft;
       let posY = startTop;
 
-      const speedX = (Math.random() - 0.5) * 0.2; // slow horizontal drift
-      const speedY = (Math.random() - 0.5) * 0.2; // slow vertical drift
+      const speedX = (Math.random() - 0.5) * 0.2; 
+      const speedY = (Math.random() - 0.5) * 0.2; 
       const rotateSpeedX = (Math.random() - 0.5) * 1.5;
       const rotateSpeedY = (Math.random() - 0.5) * 1.5;
 
@@ -194,131 +194,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-////////////////////////
-
-// Certificates Container Scroll
-{
-  const certificatesContainer = document.getElementById('certificates-container');
-  let isDraggingCert = false;
-  let startXCert, scrollLeftCert, movedCert = false;
-
-  certificatesContainer.addEventListener('mousedown', (e) => {
-    isDraggingCert = true;
-    certificatesContainer.classList.add('dragging');
-    startXCert = e.pageX - certificatesContainer.offsetLeft;
-    scrollLeftCert = certificatesContainer.scrollLeft;
-    e.preventDefault();
-  });
-
-  certificatesContainer.addEventListener('mouseleave', () => {
-    isDraggingCert = false;
-    certificatesContainer.classList.remove('dragging');
-  });
-
-  certificatesContainer.addEventListener('mouseup', () => {
-    isDraggingCert = false;
-    certificatesContainer.classList.remove('dragging');
-  });
-
-  certificatesContainer.addEventListener('mousemove', (e) => {
-    if (!isDraggingCert) return;
-    e.preventDefault();
-    const x = e.pageX - certificatesContainer.offsetLeft;
-    const walk = (x - startXCert) * 2;
-    certificatesContainer.scrollLeft = scrollLeftCert - walk;
-  });
-
-  certificatesContainer.addEventListener('touchstart', (e) => {
-    isDraggingCert = true;
-    movedCert = false;
-    startXCert = e.touches[0].pageX - certificatesContainer.offsetLeft;
-    scrollLeftCert = certificatesContainer.scrollLeft;
-  });
-
-  certificatesContainer.addEventListener('touchend', (e) => {
-    isDraggingCert = false;
-    if (!movedCert) {
-      const touch = e.changedTouches[0];
-      const element = document.elementFromPoint(touch.clientX, touch.clientY);
-      if (element && element.tagName === 'A') element.click();
-    }
-  });
-
-  certificatesContainer.addEventListener('touchmove', (e) => {
-    if (!isDraggingCert) return;
-    const x = e.touches[0].pageX - certificatesContainer.offsetLeft;
-    const walk = (x - startXCert) * 2;
-    if (Math.abs(walk) > 5) movedCert = true;
-    certificatesContainer.scrollLeft = scrollLeftCert - walk;
-    e.preventDefault();
-  });
-}
-
-////////////////////////
-
-const projectsContainer = document.getElementById('projects-container');
-
-let isDragging = false;
-let startX, scrollLeft;
-let moved = false;
-
-projectsContainer.addEventListener('mousedown', (e) => {
-    isDragging = true;
-    projectsContainer.classList.add('dragging');
-    startX = e.pageX - projectsContainer.offsetLeft;
-    scrollLeft = projectsContainer.scrollLeft;
-    e.preventDefault();
-});
-
-projectsContainer.addEventListener('mouseleave', () => {
-    isDragging = false;
-    projectsContainer.classList.remove('dragging');
-});
-
-projectsContainer.addEventListener('mouseup', () => {
-    isDragging = false;
-    projectsContainer.classList.remove('dragging');
-});
-
-projectsContainer.addEventListener('mousemove', (e) => {
-    if (!isDragging) return;
-    e.preventDefault(); 
-    const x = e.pageX - projectsContainer.offsetLeft;
-    const walk = (x - startX) * 2; 
-    projectsContainer.scrollLeft = scrollLeft - walk;
-});
-
-
-projectsContainer.addEventListener('touchstart', (e) => {
-    isDragging = true;
-    moved = false;
-    startX = e.touches[0].pageX - projectsContainer.offsetLeft;
-    scrollLeft = projectsContainer.scrollLeft;
-});
-projectsContainer.addEventListener('touchend', (e) => {
-    isDragging = false;
-
-    if (!moved) {
-        const touch = e.changedTouches[0];
-        const element = document.elementFromPoint(touch.clientX, touch.clientY);
-        if (element && element.tagName === 'A') {
-            element.click(); 
-        }
-    }
-});
-projectsContainer.addEventListener('touchmove', (e) => {
-    if (!isDragging) return;
-
-    const x = e.touches[0].pageX - projectsContainer.offsetLeft;
-    const walk = (x - startX) * 2;
-
-    if (Math.abs(walk) > 5) moved = true;
-
-    projectsContainer.scrollLeft = scrollLeft - walk;
-    e.preventDefault();
-});
-
-
 
   gsap.from(".box", {
     rotation: 360,
@@ -327,25 +202,7 @@ projectsContainer.addEventListener('touchmove', (e) => {
     ease: "bounce.out",
   });
 
-  //anime js
-
-// import { animate } from '../effects/animejs/scripts/anime.esm.js';
 import { createScope, createAnimatable, createDraggable, animate, utils } from '../effects/animejs/scripts/anime.js';
-
-// animate('span', {
-//   y: [
-//     { to: '-2.75rem', ease: 'outExpo', duration: 600 },
-//     { to: 0, ease: 'outBounce', duration: 800, delay: 100 }
-//   ],
-//   rotate: {
-//     from: '-1turn',
-//     delay: 0
-//   },
-//   delay: (_, i) => i * 50,
-//   ease: 'inOutCirc',
-//   loopDelay: 1000,
-//   loop: true
-// });
 
 
 
@@ -420,4 +277,86 @@ window.addEventListener('scroll', () => {
     section.style.opacity = opacity;
     section.style.transform = `scale(${scale})`;
     data.style.opacity = opacity;
+});
+
+
+function enableDragScroll(container, isProjectContainer = false) {
+    let isDragging = false;
+    let startX, startY, scrollLeft, moved = false;
+
+    container.addEventListener('touchstart', (e) => {
+        isDragging = true;
+        moved = false;
+        startX = e.touches[0].pageX - container.offsetLeft;
+        startY = e.touches[0].pageY; 
+        scrollLeft = container.scrollLeft;
+    });
+
+    container.addEventListener('touchend', (e) => {
+        isDragging = false;
+        container.classList.remove('dragging');
+        if (!moved) {
+            const touch = e.changedTouches[0];
+            const element = document.elementFromPoint(touch.clientX, touch.clientY);
+            if (element && element.tagName === 'A') {
+                element.click(); 
+            } else if (isProjectContainer && element && element.tagName === 'IMG') {
+                
+                const modal = document.getElementById('imageModal');
+                const modalImg = document.getElementById('modalImage');
+                modal.style.display = 'flex';
+                modalImg.src = element.src;
+                document.body.style.overflow = 'hidden';
+                setTimeout(() => modal.classList.add('show'), 10);
+            }
+        }
+    });
+
+    container.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+        const x = e.touches[0].pageX - container.offsetLeft;
+        const y = e.touches[0].pageY;
+        const walkX = (x - startX) * 2;
+        const walkY = Math.abs(y - startY);
+
+        if (Math.abs(walkX) > 10 && walkY < 15) {
+            moved = true;
+            container.classList.add('dragging');
+            container.scrollLeft = scrollLeft - walkX;
+            e.preventDefault();
+        }
+    });
+
+    container.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        container.classList.add('dragging');
+        startX = e.pageX - container.offsetLeft;
+        scrollLeft = container.scrollLeft;
+        e.preventDefault();
+    });
+
+    container.addEventListener('mouseleave', () => {
+        isDragging = false;
+        container.classList.remove('dragging');
+    });
+
+    container.addEventListener('mouseup', () => {
+        isDragging = false;
+        container.classList.remove('dragging');
+    });
+
+    container.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        e.preventDefault();
+        const x = e.pageX - container.offsetLeft;
+        const walk = (x - startX) * 2;
+        container.scrollLeft = scrollLeft - walk;
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const projectsContainer = document.getElementById('projects-container');
+    const certificatesContainer = document.getElementById('certificates-container');
+    if (projectsContainer) enableDragScroll(projectsContainer, true);
+    if (certificatesContainer) enableDragScroll(certificatesContainer, false);
 });

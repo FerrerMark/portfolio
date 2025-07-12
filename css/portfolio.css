@@ -251,11 +251,14 @@ h2 {
     flex-wrap: wrap;
     padding: 11px 0;
     cursor: grab;
+    -webkit-overflow-scrolling: touch; /* Smooth iOS scrolling */
+    touch-action: pan-y;
 }
 
 .tiles.dragging {
     cursor: grabbing;
-    scroll-behavior: auto; 
+    scroll-behavior: auto;
+    user-select: none;
 }
 
 .tiles::-webkit-scrollbar {
@@ -488,6 +491,8 @@ h2 {
     border-radius: 11px;
     flex-wrap: wrap;
     flex-direction: column;
+    -webkit-overflow-scrolling: touch;
+    touch-action: auto;
 }
 
 .certificates::-webkit-scrollbar {
@@ -586,6 +591,11 @@ h2 {
     transform: scale(0.5);
     transition: opacity 0.4s ease, transform 0.4s ease;
     z-index: 0;
+}
+.certificates.dragging {
+    cursor: grabbing;
+    scroll-behavior: auto;
+    user-select: none;
 }
 
 /* Animations */
@@ -721,6 +731,12 @@ h2 {
         gap: 6px;
         justify-content: center;
         list-style: none;
+    }
+    .tiles, .certificates {
+        max-height: 80vh;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        touch-action: pan-y;
     }
 }
 
@@ -964,11 +980,3 @@ section#contact form button:hover {
     transform: scaleX(0);
     z-index: 9999;
 }
-
-/*
-
-@keyframes scrollWatcher{
-    to{
-        scale: 1 1;
-    }
-} */
