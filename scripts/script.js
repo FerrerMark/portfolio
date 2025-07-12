@@ -169,7 +169,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.getElementById('contact-form').addEventListener('submit', async (e) => {
-
     e.preventDefault();
 
     const gmail = e.target.gmail.value;
@@ -178,7 +177,7 @@ document.getElementById('contact-form').addEventListener('submit', async (e) => 
     try {
         loading(true, "SENDING", "contact-form");
 
-        const response = await fetch('https://faculty.schoolmanagementsystem2.com/personalAPI/emailAPI.php', {
+        const response = await fetch('https://apis-femq.onrender.com/message', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -196,9 +195,10 @@ document.getElementById('contact-form').addEventListener('submit', async (e) => 
             alert("Server error. Please try again later.");
             return;
         }
+
         loading(false, "", "contact-form");
         alert(result.success ? "Message sent!" : result.error);
-        
+
     } catch (err) {
         console.error("Network or server error:", err);
         loading(false, "", "contact-form");
