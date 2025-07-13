@@ -15,7 +15,7 @@
     input.disabled = true;
     input.focus();
        const wake = "hey"; //the domain needs to wake because it's only free in render. It's sleeps when not in use
-        fetch('https://apis-femq.onrender.com/', {
+        fetch('https://apis-femq.onrender.com/ai', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ message: wake })
@@ -55,7 +55,7 @@ document.getElementById('botForm').addEventListener('submit', function(e) {
     input.disabled = true;
     loading(true, 'Thinking', 'message');
 
-    fetch('https://apis-femq.onrender.com/', {
+    fetch('https://apis-femq.onrender.com/ai', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: message })
