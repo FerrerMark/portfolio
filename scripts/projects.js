@@ -1,11 +1,5 @@
 const projects = [
     {
-        title: "SMS: Faculty Loading. HTML, CSS, JS, PHP",
-        description: "A Faculty Loading and Scheduling System. With integration",
-        image: "./img/projects/facultyloadingupdated.png",
-        link: "https://faculty.schoolmanagementsystem2.com/"
-    },
-    {
         title: "DIY Resume using React JS",
         description: "Simple resume with React",
         image: "./img/projects/DIY resume.png",
@@ -22,6 +16,12 @@ const projects = [
         description: "Simple Database Management System made with Laravel.",
         image: "./img/projects/image.png",
         link: "https://github.com/FerrerMark/DBMS"
+    },
+    {
+        title: "SMS: Faculty Loading. HTML, CSS, JS, PHP",
+        description: "A Faculty Loading and Scheduling System. With integration",
+        image: "./img/projects/facultyloadingupdated.png",
+        link: "https://github.com/FerrerMark/faculty"
     },
     {
         title: "Weather App",
