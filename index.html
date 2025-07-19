@@ -104,11 +104,11 @@
     </section>
 
     <section id="projects" class="">
-        <h2 class="text">My MERN Project<a href="https://mini-library-manager.onrender.com/">visit now</a></h2>
+        <h2 class="text">My MERN Project</h2>
         <div class="container">
             <div class="Info">
                 <h3>Mini Library Management System</h3>
-                <p>Using MERN Stack</p>
+                <p>Using MERN Stack. This is the link-><a href="https://mini-library-manager.onrender.com/">visit now</a></p>
                 <div class="tool">
                     <span class="skill-icons--mongodb"></span>
                     <span class="skill-icons--expressjs-light"></span>
@@ -218,29 +218,7 @@
      
     </style>
     <script>
-        const images = document.querySelectorAll('.images img');
-        const prevButton = document.querySelector('.prev');
-        const nextButton = document.querySelector('.next');
-        let currentIndex = 0;
 
-        function showImage(index) {
-            images.forEach((img, i) => {
-                img.classList.toggle('active', i === index);
-            });
-        }
-
-        prevButton.addEventListener('click', () => {
-            currentIndex = (currentIndex - 1 + images.length) % images.length;
-            showImage(currentIndex);
-        });
-
-        nextButton.addEventListener('click', () => {
-            currentIndex = (currentIndex + 1) % images.length;
-            showImage(currentIndex);
-        });
-
-        // Initialize the first image
-        showImage(currentIndex);
     </script>
 </body>
 </html>
