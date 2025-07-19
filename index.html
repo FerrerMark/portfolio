@@ -5,12 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>John Mark S. Ferrer - Web Developer Portfolio</title>
     <link rel="icon" type="image/x-icon" href="img/image.png">
+   
     <link rel="stylesheet" href="css/portfolio.css">
     <link rel="stylesheet" href="css/icons.css">
     <link rel="stylesheet" href="effects/effects.css">
     <link rel="stylesheet" href="css/ask.css">
+    <link rel="stylesheet" href="css/MernSection.css">
     <link rel="shortcut icon" href="./img/pic/profile.png" type="image/x-icon">
 
+        <style>
+        .images {
+            display: flex;
+            position: relative;
+            width: 604px;
+            min-width: 420px;
+            overflow: hidden;
+            height: 455px;
+            align-items: center;
+            justify-content: center;
+        }
+        .images img.active {
+            display: block;
+            opacity: 1;
+        }
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+        .prev {
+            left: 10px;
+        }
+        .next {
+            right: 10px;
+        }
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+    </style>
 </head>
 <body id="wrapper">
     <div class="scroll-watcher"></div>
@@ -59,10 +98,36 @@
         <div class="certificates" id="certificates-container"></div>
     </section>
 
-    <!-- <section id="projects" class="pyra-bg"> -->
     <section id="projects" class="">
         <h2 class="text">My Projects</h2>
         <div class="tiles" id="projects-container"></div>
+    </section>
+
+    <section id="projects" class="">
+        <h2 class="text">My MERN Project</h2>
+        <div class="container">
+            <div class="Info">
+                <h3>Mini Library Management System</h3>
+                <p>Using MERN Stack</p>
+                <div class="tool">
+                    <span class="skill-icons--mongodb"></span>
+                    <span class="skill-icons--expressjs-light"></span>
+                    <span class="proicons--reactjs"></span>
+                    <span class="devicon--nodejs"></span>
+                </div>
+                <p>The backend is hosted on Render.com using the free tier, which may limit features like image uploads due to resource constraints. The database is hosted on MongoDB Atlas for cloud-based storage. The frontend is built with React and providing a responsive user interface.
+                This project was developed by FerrerMark as a self-practice project to learn full-stack web development.</p>
+                <p>Mini Library Manager is a full-stack web application that helps users manage their personal book collections. You can add, update, delete, as well as search by title, or author. This app is built using the MERN Stack (MongoDB, Express.js, React, Node.js) and follows the MVC architecture for a clean and scalable codebase. Authentication is implemented to ensure users can securely manage their collections.</p>
+            </div>
+            <div class="images">
+                <img src="./img/Mernproject/gadgets@3.png" alt="Image 1" class="active">
+                <img src="./img/Mernproject/Group 2@3x.png" alt="Image 2">
+                <img src="./img/Mernproject/Group 3@3x.png" alt="Image 2">
+           
+                <button class="prev">&#10094;</button>
+                <button class="next">&#10095;</button>
+            </div>
+        </div>
     </section>
 
     <div id="imageModal" class="modal">
@@ -153,8 +218,29 @@
      
     </style>
     <script>
+        const images = document.querySelectorAll('.images img');
+        const prevButton = document.querySelector('.prev');
+        const nextButton = document.querySelector('.next');
+        let currentIndex = 0;
 
+        function showImage(index) {
+            images.forEach((img, i) => {
+                img.classList.toggle('active', i === index);
+            });
+        }
+
+        prevButton.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            showImage(currentIndex);
+        });
+
+        nextButton.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % images.length;
+            showImage(currentIndex);
+        });
+
+        // Initialize the first image
+        showImage(currentIndex);
     </script>
-
 </body>
 </html>
