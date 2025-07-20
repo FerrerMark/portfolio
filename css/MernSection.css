@@ -64,7 +64,7 @@
 @media screen and (max-width: 480px) {
     .images {
         width: 604px !important;
-        height: 292px !important;
+        height: 200px !important;
     }
     .Info {
         font-size: 12px;
@@ -74,9 +74,6 @@
 
 @media screen and (max-width: 390px) {
     .images {
-        display: flex !important;
-        position: relative;
-        align-items: center;
-        justify-content: center;
+        height: 194px !important;
     }
 }

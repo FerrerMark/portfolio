@@ -639,8 +639,28 @@ h2 {
     mask-image: var(--svg);
 }
 
-@media (max-width: 1024px) {
-    .certificates { height: 654px;}
+@media (max-width: 1094px) {
+    .container {
+        gap: 25px;
+    }
+    .Info {
+        width: 303px !important;
+        font-size: 13px !important;
+    }
+    .images {
+        width: 413px !important;
+        height: 241px !important;
+    }
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        height: 78vh;
+        gap: 0px;
+        flex-direction: row;
+    }
 }
 
 @media (max-width: 768px) {
@@ -738,6 +758,20 @@ h2 {
         -webkit-overflow-scrolling: touch;
         touch-action: pan-y;
     }
+    .Info {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 13px;
+        font-size: 14px;
+        width: 72% !important;
+        text-align: justify;
+    }
+    .images {
+        height: 344px !important;
+    }
 }
 
 @media (max-width: 390px) {
@@ -780,6 +814,7 @@ h2 {
         font-size: 12px;
         margin: 3px 0;
     }
+
 }
 
 @media (max-width: 375px) {
