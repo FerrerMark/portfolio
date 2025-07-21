@@ -1015,3 +1015,38 @@ section#contact form button:hover {
     transform: scaleX(0);
     z-index: 9999;
 }
+
+        .images {
+            display: flex;
+            position: relative;
+            width: 604px;
+            overflow: hidden;
+            height: 455px;
+            align-items: center;
+            justify-content: center;
+        }
+        .images img.active {
+            display: block;
+            opacity: 1;
+        }
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+        .prev {
+            left: 10px;
+        }
+        .next {
+            right: 10px;
+        }
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
