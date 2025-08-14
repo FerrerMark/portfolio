@@ -168,43 +168,45 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-document.getElementById('contact-form').addEventListener('submit', async (e) => {
-    e.preventDefault();
+// document.getElementById('contact-form').addEventListener('submit', async (e) => {
+//     e.preventDefault();
 
-    const gmail = e.target.gmail.value;
-    const message = e.target.message.value;
+//     const gmail = e.target.gmail.value;
+//     const message = e.target.message.value;
 
-    try {
-        loading(true, "SENDING", "contact-form");
+//     try {
+//         loading(true, "SENDING", "contact-form");
 
-        const response = await fetch('https://apis-femq.onrender.com/message', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ gmail, message })
-        });
+//         const response = await fetch('https://apis-femq.onrender.com/message', {
+//             method: 'POST',
+//             headers: {
+//                 'Content-Type': 'application/json'
+//             },
+//             body: JSON.stringify({ gmail, message })
+//         });
 
-        const text = await response.text();
-        let result;
-        try {
-            result = JSON.parse(text);
-        } catch {
-            console.error('Server did not return valid JSON:', text);
-            loading(false, "", "contact-form");
-            alert("Server error. Please try again later.");
-            return;
-        }
+//         const text = await response.text();
+//         let result;
+//         try {
+//             result = JSON.parse(text);
+//         } catch {
+//             console.error('Server did not return valid JSON:', text);
+//             loading(false, "", "contact-form");
+//             alert("Server error. Please try again later.");
+//             return;
+//         }
 
-        loading(false, "", "contact-form");
-        alert(result.success ? "Message sent!" : result.error);
+//         loading(false, "", "contact-form");
+//         alert(result.success ? "Message sent!" : result.error);
 
-    } catch (err) {
-        console.error("Network or server error:", err);
-        loading(false, "", "contact-form");
-        alert("Failed to send message. Try again.");
-    }
-});
+//     } catch (err) {
+//         console.error("Network or server error:", err);
+//         loading(false, "", "contact-form");
+//         alert("Failed to send message. Try again.");
+//     }
+// });
+
+
 
 
         const images = document.querySelectorAll('.images img');
