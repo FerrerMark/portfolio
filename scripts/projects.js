@@ -18,6 +18,12 @@ const projects = [
         link: "https://github.com/FerrerMark/DBMS"
     },
     {
+        title: "API",
+        description: "API for ai",
+        image: "./img/projects/api.png",
+        link: "https://github.com/FerrerMark/personal_api/"
+    },
+    {
         title: "SMS: Faculty Loading. HTML, CSS, JS, PHP",
         description: "A Faculty Loading and Scheduling System. With integration",
         image: "./img/projects/facultyloadingupdated.png",
