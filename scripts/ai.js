@@ -1,5 +1,6 @@
-    const WAKE_INTERVAL = 5 * 60 * 1000;
-    const waker = () => {
+const WAKE_INTERVAL = 5 * 60 * 1000;
+
+const waker = () => {
     const lastWake = localStorage.getItem('lastWakeTime');
     const now = Date.now();
 
@@ -8,33 +9,35 @@
     }
 
     localStorage.setItem('lastWakeTime', now.toString());
-        
 
     const input = document.getElementById('userInput');
-    loading(true, 'AI is Waking, please wait 1-30s', 'message'); 
+    loading(true, 'AI is waking, please wait 1-30s', 'message'); 
     input.disabled = true;
     input.focus();
-       const wake = "hey"; //the domain needs to wake because it's only free in render. It's sleeps when not in use
-        fetch('https://apis-femq.onrender.com/ai', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ message: wake })
-        })
-        .then(res => {
-            if (!res.ok) throw new Error(`HTTP error! Status: ${res.status}`);
-            return res.json();
-        })
-        .then(data => {
-            const reply = data.response || 'No response from AI.';
-            appendMessage('Bot', reply);
-            loading(false);
-            input.disabled = false;
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            appendMessage('Bot', 'Error: ' + error.message);
-        })        
-    };
+
+    const wake = "hey"; 
+    fetch('https://personal-api-ftdn.onrender.com/api/ai/ask', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ question: wake })
+    })
+    .then(res => {
+        if (!res.ok) throw new Error(`HTTP error! Status: ${res.status}`);
+        return res.json();
+    })
+    .then(data => {
+        const reply = data.answer || 'No response from AI.'; 
+        appendMessage('Bot', reply);
+        loading(false);
+        input.disabled = false;
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        appendMessage('Bot', 'Error: ' + error.message);
+        loading(false);
+        input.disabled = false;
+    });
+};
 
 waker();
 
@@ -55,17 +58,17 @@ document.getElementById('botForm').addEventListener('submit', function(e) {
     input.disabled = true;
     loading(true, 'Thinking', 'message');
 
-    fetch('https://apis-femq.onrender.com/ai', {
+    fetch('https://personal-api-ftdn.onrender.com/api/ai/ask', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: message })
+        body: JSON.stringify({ question: message }) 
     })
     .then(res => {
         if (!res.ok) throw new Error(`HTTP error! Status: ${res.status}`);
         return res.json();
     })
     .then(data => {
-        const reply = data.response || 'No response from AI.';
+        const reply = data.answer || 'No response from AI.'; 
         appendMessage('Bot', reply);
     })
     .catch(err => {
@@ -87,6 +90,7 @@ function appendMessage(sender, text) {
     messageContainer.appendChild(msgDiv);
     messageContainer.scrollTop = messageContainer.scrollHeight;
 }
+
 function toggleBotModal(show) {
     if (show) {
         waker();
