@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>John Mark S. Ferrer - Web Developer Portfolio</title>
+    <link rel="icon" type="image/x-icon" href="img/1x1.png" />
+
+    <link rel="stylesheet" href="css/portfolio.css" />
+    <link rel="stylesheet" href="css/icons.css" />
+    <link rel="stylesheet" href="effects/effects.css" />
+    <link rel="stylesheet" href="css/ask.css" />
+    <link rel="stylesheet" href="css/MernSection.css" />
+    <link
+      rel="shortcut icon"
+      href="./img/pic/profile.png"
+      type="image/x-icon"
+    />
+  </head>
+  <body id="wrapper">
+    <div class="scroll-watcher"></div>
+    <header>
+      <svg
+        id="menu"
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+      >
+        <path
+          fill="none"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M3 6.001h18m-18 6h18m-18 6h18"
+        />
+      </svg>
+
+      <h3 id="logo"><a href="#welcome-section">JMF</a></h3>
+      <nav id="navbar">
+        <p id="icon">X</p>
+        <ul>
+          <li><a href="#welcome-section">About</a></li>
+          <li><a href="#certifications">Certificates</a></li>
+          <li><a href="#projects" class="projects">Projects</a></li>
+
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="welcome-section" class="">
+      <div class="bg">
+        <img
+          id="backg"
+          src="./img/background/image.png"
+          class="hover"
+          id="profile-pic"
+          onclick="openProfileModal()"
+        />
+      </div>
+      <div class="data">
+        <h1 class="text"><span>Hi, I'm John Mark S. Ferrer</span></h1>
+        <p class="text">
+          A passionate Web Developer crafting modern solutions.
+        </p>
+        <p class="text">
+          <i
+            >"To secure a challenging role in web development where I can
+            contribute to meaningful projects and grow my technical and
+            professional skills."</i
+          >
+        </p>
+        <div id="skills">
+          <h2>Skills</h2>
+          <ul>
+            <li class="hover">
+              <span class="flowbite--html-solid"></span>HTML
+            </li>
+            <li class="hover"><span class="flowbite--css-solid"></span>CSS</li>
+            <li class="hover">
+              <span class="tabler--brand-javascript"></span>JavaScript
+            </li>
+            <li class="hover">
+              <span class="mingcute--react-line"></span>React
+            </li>
+            <li class="hover"><span class="ri--nodejs-line"></span>Node.js</li>
+            <li class="hover"><span class="mdi--sql-query"></span>SQL</li>
+            <li class="hover"><span class="akar-icons--php-fill"></span>PHP</li>
+            <li class="hover">
+              <span class="fa6-brands--laravel"></span>Laravel
+            </li>
+            <li class="hover"><span class="solar--figma-bold"></span>Figma</li>
+            <li class="hover">
+              <span class="lineicons--mongodb"></span>MongoDB
+            </li>
+          </ul>
+        </div>
+      </div>
+      <img
+        src="./img/pic/try.png"
+        class="hover"
+        id="profile-pic"
+        onclick="openProfileModal()"
+      />
+    </section>
+    <!-- <section id="certifications" class="box-bg-effect"> -->
+    <section id="certifications" class="box-bg-effect">
+      <h2 class="text">My Certifications</h2>
+      <div class="certificates" id="certificates-container"></div>
+    </section>
+
+    <section id="projects" class="">
+      <h2 class="text">My Projects</h2>
+      <div class="tiles" id="projects-container"></div>
+    </section>
+
+    <section id="projects" class="">
+      <h2 class="text">My MERN Project</h2>
+      <div class="container">
+        <div class="Info">
+          <h3>Mini Social Media Web App</h3>
+          <p style="display: flex">
+            MERN Stack. Click here-><a href="https://artbind.onrender.com/"
+              ><button class="deployed">
+                visit<span
+                  class="streamline-sharp--link-share-2-solid"
+                ></span></button
+            ></a>
+          </p>
+          <div class="tool">
+            <span class="skill-icons--mongodb"></span>
+            <span class="skill-icons--expressjs-light"></span>
+            <span class="proicons--reactjs"></span>
+            <span class="devicon--nodejs"></span>
+          </div>
+          <p>
+            The Mini Social Media web app was created by
+            <a href="https://github.com/FerrerMark/">John Mark S. Ferrer</a>
+          </p>
+          <p>
+            It is a social media web app that allows users to create profiles,
+            upload images, post content , messages, like, reply and comment on
+            posts, and follow other users.
+          </p>
+          <p>
+            The app is built using the MERN stack, which includes MongoDB for
+            the database, Express.js for the server, React for the frontend, and
+            Node.js for the backend to handle server-side logic and API
+            requests. User authentication is implemented using JSON Web Tokens
+            (JWT) and web sockets for real-time messaging.
+          </p>
+          <p>Hosted on Render.com. All free tier.</p>
+        </div>
+        <div class="images">
+
+          <img src="./img/Mernproject/feed.png" alt="Image 1" class="active" />
+          <img src="./img/Mernproject/profile.png" alt="Image 2" />
+          <img src="./img/Mernproject/notification.png" alt="Image 2" />
+          <img src="./img/Mernproject/comment.png" alt="Image 2" />
+          <img src="./img/Mernproject/register.png" alt="Image 2" />
+          <img src="./img/Mernproject/login.png" alt="Image 2" />
+          <img src="./img/Mernproject/gallery.png" alt="Image 2" />
+          <img src="./img/Mernproject/search.png" alt="Image 2" />
+          <img src="./img/Mernproject/message.png" alt="Image 2" />
+          <img src="./img/Mernproject/postmodal.png" alt="Image 2" />
+          <img src="./img/Mernproject/story.png" alt="Image 2" />
+          <img src="./img/Mernproject/story2.png" alt="Image 2" />
+
+          <button class="prev">&#10094;</button>
+          <button class="next">&#10095;</button>
+        </div>
+      </div>
+    </section>
+
+    <div id="imageModal" class="modal">
+      <div class="modal-content">
+        <span class="close">×</span>
+        <img id="modalImage" src="" alt="Project Image" />
+      </div>
+    </div>
+
+    <div id="profileModal" class="modal">
+      <div class="modal-content">
+        <span class="close">×</span>
+        <img id="profileModalImage" src="" alt="Profile Image" />
+        <div class="modal-nav">
+          <button id="prevImage" class="modal-btn">Previous</button>
+          <button id="nextImage" class="modal-btn">Next</button>
+        </div>
+      </div>
+    </div>
+
+    <section id="contact" class="">
+      <h2 class="text">Let's Work Together</h2>
+      <p>
+        Feel free to reach out for collaborations or just to say hi
+        (ferrerjohnmark26@gmail.com)!
+      </p>
+      <form
+        id="contact-form"
+        class="floating-circles"
+        title="It's working try now."
+      >
+        <h5>Message Me!</h5>
+        <!-- <input type="email" name="gmail" placeholder="@gmail" required> -->
+        <!-- <textarea name="message" placeholder="Message" required></textarea> -->
+        <!-- <button type="submit">Send</button>  -->
+        <input type="text" name="user_name" placeholder="Name" required />
+        <input type="email" name="user_email" placeholder="Email" required />
+        <textarea name="message" placeholder="Message" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+
+      <div class="contact-links">
+        <a
+          href="https://github.com/FerrerMark/"
+          id="profile-link"
+          target="_blank"
+          aria-label="GitHub Profile"
+        >
+          <span class="mdi--github"></span>
+          <p>GitHub</p>
+        </a>
+        <a
+          href="https://www.facebook.com/ferrer.johnmark.5"
+          target="_blank"
+          aria-label="Facebook"
+          ><span class="ic--baseline-facebook"></span>
+          <p>Facebook</p></a
+        >
+        <a
+          href="https://www.figma.com/design/ubraoL1wL6qZ1NPYv21A34/PORTFOLIO?node-id=0-1&p=f"
+          target="_blank"
+          aria-label="TikTok"
+          ><span class="solar--figma-bold"></span>
+          <p>Figma</p></a
+        >
+      </div>
+      <a href="files/Ferrer_resume.pdf" download class="download-btn"
+        >Download My Resume (PDF)</a
+      >
+      <a href="files/Ferrer_resume.pdf" target="_blank" class="download-btn"
+        >View Resume</a
+      >
+    </section>
+
+    <div class="ask box" onclick="toggleBotModal(true)">
+      <svg
+        class="roboticon"
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+      >
+        <g
+          fill="none"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="1.5"
+          color="currentColor"
+        >
+          <path
+            d="M11 8h2c2.828 0 4.243 0 5.121.879C19 9.757 19 11.172 19 14s0 4.243-.879 5.121C17.243 20 15.828 20 13 20h-1s-.5 2-4 2c0 0 1-1.009 1-2.017c-1.553-.047-2.48-.22-3.121-.862C5 18.243 5 16.828 5 14s0-4.243.879-5.121C6.757 8 8.172 8 11 8m8 3.5h.5c.935 0 1.402 0 1.75.201a1.5 1.5 0 0 1 .549.549c.201.348.201.815.201 1.75s0 1.402-.201 1.75a1.5 1.5 0 0 1-.549.549c-.348.201-.815.201-1.75.201H19m-14-5h-.5c-.935 0-1.402 0-1.75.201a1.5 1.5 0 0 0-.549.549C2 12.598 2 13.065 2 14s0 1.402.201 1.75a1.5 1.5 0 0 0 .549.549c.348.201.815.201 1.75.201H5m8.5-13a1.5 1.5 0 1 1-3 0a1.5 1.5 0 0 1 3 0M12 5v3m-3 4v1m6-1v1"
+          />
+          <path d="M10 16.5s.667.5 2 .5s2-.5 2-.5" />
+        </g>
+      </svg>
+    </div>
+
+    <div class="botModal" id="botModal">
+      <div class="header">
+        <div class="profile">
+          <span class="icon-park-solid--robot-one"></span>
+        </div>
+        <p>Ask Ai</p>
+        <span
+          class="carbon--close-filled"
+          onclick="toggleBotModal(false)"
+        ></span>
+      </div>
+      <div class="message" id="message">
+        <div class="img">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill="currentColor"
+              d="M21 11V9h-2V7a2.006 2.006 0 0 0-2-2h-2V3h-2v2h-2V3H9v2H7a2.006 2.006 0 0 0-2 2v2H3v2h2v2H3v2h2v2a2.006 2.006 0 0 0 2 2h2v2h2v-2h2v2h2v-2h2a2.006 2.006 0 0 0 2-2v-2h2v-2h-2v-2Zm-4 6H7V7h10Z"
+            />
+            <path
+              fill="currentColor"
+              d="M11.361 8h-1.345l-2.01 8h1.027l.464-1.875h2.316L12.265 16h1.062Zm-1.729 5.324L10.65 8.95h.046l.983 4.374ZM14.244 8h1v8h-1z"
+            />
+          </svg>
+        </div>
+        <h6>AI ASSISTANT(Nodejs)</h6>
+        <div class="Bot">
+          <p>I can describe him to you!</p>
+        </div>
+        <div class="Bot">
+          <p>Feel free to ask me anything.</p>
+        </div>
+        <div class="Bot">
+          <p>I'm just a chatbot designed to describe him.</p>
+        </div>
+      </div>
+      <form id="botForm">
+        <input
+          type="text"
+          id="userInput"
+          placeholder="Type your message..."
+          required
+          autocomplete="off"
+        />
+        <button type="submit">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill="currentColor"
+              d="M2.01 21L23 12L2.01 3L2 10l15 2l-15 2z"
+            />
+          </svg>
+        </button>
+      </form>
+    </div>
+
+    <div class="circle"></div>
+
+    <script src="scripts/gsap.min.js"></script>
+    <script src="scripts/ScrollTrigger.min.js"></script>
+    <script src="scripts/ScrollSmoother.min.js"></script>
+    <script src="scripts/effects.js"></script>
+    <script src="scripts/certificates.js"></script>
+    <script src="scripts/projects.js"></script>
+    <script src="component/loading.js"></script>
+    <script src="scripts/ai.js"></script>
+    <script src="scripts/script.js"></script>
+
+    <script type="module" src="scripts/effects.js"></script>
+    <style></style>
+    <script></script>
+  </body>
+</html>
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  (function () {
+    emailjs.init("XKoTbmTIjQIbImxMb");
+  })();
+
+  document
+    .getElementById("contact-form")
+    .addEventListener("submit", function (e) {
+      e.preventDefault();
+      emailjs
+        .sendForm("service_efvjkg4", "template_s3nw7k4", this)
+        .then(() => alert("Message sent!"))
+        .catch((err) => alert("Failed: " + JSON.stringify(err)));
+    });
+</script>

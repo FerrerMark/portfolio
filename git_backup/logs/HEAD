@@ -1,0 +1,102 @@
+0000000000000000000000000000000000000000 0e634c979d97e9fab3c69d1e50cd260c3639cad9 FerrerMark <ferrerjohnmark26@gmail.com> 1741959609 +0800	commit (initial): first commit
+0e634c979d97e9fab3c69d1e50cd260c3639cad9 0000000000000000000000000000000000000000 FerrerMark <ferrerjohnmark26@gmail.com> 1741959631 +0800	Branch: renamed refs/heads/master to refs/heads/main
+0000000000000000000000000000000000000000 0e634c979d97e9fab3c69d1e50cd260c3639cad9 FerrerMark <ferrerjohnmark26@gmail.com> 1741959631 +0800	Branch: renamed refs/heads/master to refs/heads/main
+0e634c979d97e9fab3c69d1e50cd260c3639cad9 0000000000000000000000000000000000000000 FerrerMark <ferrerjohnmark26@gmail.com> 1741959809 +0800	Branch: renamed refs/heads/main to refs/heads/main
+0e634c979d97e9fab3c69d1e50cd260c3639cad9 0e634c979d97e9fab3c69d1e50cd260c3639cad9 FerrerMark <ferrerjohnmark26@gmail.com> 1741959809 +0800	Branch: renamed refs/heads/main to refs/heads/main
+0e634c979d97e9fab3c69d1e50cd260c3639cad9 9a17937741626fb1add7b47fdfbf8d76c79a6386 FerrerMark <ferrerjohnmark26@gmail.com> 1742049633 +0800	commit: update
+9a17937741626fb1add7b47fdfbf8d76c79a6386 2857b782209165e028b90ac7d1dbf0f094ea158f FerrerMark <ferrerjohnmark26@gmail.com> 1742220620 +0800	commit: updated
+2857b782209165e028b90ac7d1dbf0f094ea158f cc7ee7b87e1bb99284560a3e8246785f3bd0fb59 FerrerMark <ferrerjohnmark26@gmail.com> 1742224799 +0800	commit: updated
+cc7ee7b87e1bb99284560a3e8246785f3bd0fb59 8b300e695e476c9f6d7b665e1919bb2919bca5ee FerrerMark <ferrerjohnmark26@gmail.com> 1742267647 +0800	commit: updated
+8b300e695e476c9f6d7b665e1919bb2919bca5ee a4bdfd291c62eed8396a45a7a376be0018befe33 FerrerMark <ferrerjohnmark26@gmail.com> 1742269211 +0800	commit: updated
+a4bdfd291c62eed8396a45a7a376be0018befe33 4e98818b9c1914a9059c2cd40d6ff8a935edc2df FerrerMark <ferrerjohnmark26@gmail.com> 1742649848 +0800	commit: v
+4e98818b9c1914a9059c2cd40d6ff8a935edc2df 12c851514f3e67837e2d10f70dea6e5995ff3ad2 FerrerMark <ferrerjohnmark26@gmail.com> 1744287796 +0800	commit: change copy to auto
+12c851514f3e67837e2d10f70dea6e5995ff3ad2 1860fc1558b9362ba4df740043eaa2c3842973d3 FerrerMark <ferrerjohnmark26@gmail.com> 1744288389 +0800	commit: change directory for facultyloading project
+1860fc1558b9362ba4df740043eaa2c3842973d3 84dbc7b61f41b5afbbfa321b6352820accd35369 FerrerMark <ferrerjohnmark26@gmail.com> 1744288602 +0800	commit: change target
+84dbc7b61f41b5afbbfa321b6352820accd35369 8296220a45aba6f893e3b34c2da8a8cfd24e8cd6 FerrerMark <ferrerjohnmark26@gmail.com> 1744872242 +0800	commit: updated
+8296220a45aba6f893e3b34c2da8a8cfd24e8cd6 929c984f2a1b1e4c751e46968f53f93052e4494c FerrerMark <ferrerjohnmark26@gmail.com> 1744872330 +0800	commit: removed comments
+929c984f2a1b1e4c751e46968f53f93052e4494c 257fa85ea9f781936ff012a4598d7100fbd5c5bc FerrerMark <ferrerjohnmark26@gmail.com> 1744896278 +0800	commit: add certificate and pic
+257fa85ea9f781936ff012a4598d7100fbd5c5bc 2e3ec1c8e9ed426bdbe2ed9b748119f2688fc830 FerrerMark <ferrerjohnmark26@gmail.com> 1746274889 +0800	commit: add laravel
+2e3ec1c8e9ed426bdbe2ed9b748119f2688fc830 56040d7ae2286bca60fc69797dd42a00768d77f0 FerrerMark <ferrerjohnmark26@gmail.com> 1750302335 +0800	pull origin main: Fast-forward
+56040d7ae2286bca60fc69797dd42a00768d77f0 67291df855367d90f8abab2db88b13dec6db4c61 FerrerMark <ferrerjohnmark26@gmail.com> 1750339261 +0800	commit: code update
+67291df855367d90f8abab2db88b13dec6db4c61 b3bd098db196ddb194003d72dfff3e17b0870408 FerrerMark <ferrerjohnmark26@gmail.com> 1750339814 +0800	commit: add project
+b3bd098db196ddb194003d72dfff3e17b0870408 3bfd3c323c1afba463a49e3d3a77cbd5935d759c FerrerMark <ferrerjohnmark26@gmail.com> 1750343879 +0800	commit: add new project
+3bfd3c323c1afba463a49e3d3a77cbd5935d759c de4d6ecfd51ab495098963bb7a3539917a11bb1e FerrerMark <ferrerjohnmark26@gmail.com> 1750429421 +0800	commit: fix UI
+de4d6ecfd51ab495098963bb7a3539917a11bb1e 5ee44d28e12bc7eb59bc828a3d2e5d517dc7fdfe FerrerMark <ferrerjohnmark26@gmail.com> 1750599099 +0800	commit: create icon style
+5ee44d28e12bc7eb59bc828a3d2e5d517dc7fdfe ece55e06b3746c70c7fa8f008c7a85dee3bb9f2c FerrerMark <ferrerjohnmark26@gmail.com> 1750686291 +0800	commit: add new project and certificates
+ece55e06b3746c70c7fa8f008c7a85dee3bb9f2c 9172cff94d60b743cdba05e27287833ad3787ac2 FerrerMark <ferrerjohnmark26@gmail.com> 1750686788 +0800	commit: change img
+9172cff94d60b743cdba05e27287833ad3787ac2 c765dbb2042b2316367ae66332beff83940eab2e FerrerMark <ferrerjohnmark26@gmail.com> 1750686865 +0800	commit: change jpg to png
+c765dbb2042b2316367ae66332beff83940eab2e 05fc54403691b97ae17b83f2d608ad5ff5a0937b FerrerMark <ferrerjohnmark26@gmail.com> 1750690789 +0800	commit: adjust responsive
+05fc54403691b97ae17b83f2d608ad5ff5a0937b 879e797da9318378f9884f645a070ad5b33e2888 FerrerMark <ferrerjohnmark26@gmail.com> 1750846320 +0800	commit: add style and message
+879e797da9318378f9884f645a070ad5b33e2888 2e5d7e97395d308a65a8d9dbfa066459446cf9ed FerrerMark <ferrerjohnmark26@gmail.com> 1750847621 +0800	commit: fix contact logic
+2e5d7e97395d308a65a8d9dbfa066459446cf9ed 443dd11c0acf7e87ece3634474004fd2747f1ba8 FerrerMark <ferrerjohnmark26@gmail.com> 1750850032 +0800	commit: add contact form style
+443dd11c0acf7e87ece3634474004fd2747f1ba8 4fb18807543bb0b9370563a7afddc219d4c2c99c FerrerMark <ferrerjohnmark26@gmail.com> 1750854809 +0800	commit: change LI items style into glass
+4fb18807543bb0b9370563a7afddc219d4c2c99c 1e4636ff82b98b3937a8f6bbfdea580cabb16803 FerrerMark <ferrerjohnmark26@gmail.com> 1750913146 +0800	commit: add loading
+1e4636ff82b98b3937a8f6bbfdea580cabb16803 b678d3c0a4c0c2eaa85394023c0bb8268dc558ff FerrerMark <ferrerjohnmark26@gmail.com> 1750943989 +0800	commit: add new effects
+b678d3c0a4c0c2eaa85394023c0bb8268dc558ff 36a0e76ce22bf73c2845432f460430b2f84d3403 FerrerMark <ferrerjohnmark26@gmail.com> 1750945459 +0800	commit: add new effects
+36a0e76ce22bf73c2845432f460430b2f84d3403 8d148ea473b7b6fa77038bb0e6292bb75988182b FerrerMark <ferrerjohnmark26@gmail.com> 1750955360 +0800	commit: fixed responsive
+8d148ea473b7b6fa77038bb0e6292bb75988182b 6d858fe425d834aa8df51d729c34bf57b0854416 FerrerMark <ferrerjohnmark26@gmail.com> 1750955539 +0800	commit: use class
+6d858fe425d834aa8df51d729c34bf57b0854416 5986af1e5386b150d78acf62e20330a67a701188 FerrerMark <ferrerjohnmark26@gmail.com> 1751030892 +0800	commit: remove 1 certificate
+5986af1e5386b150d78acf62e20330a67a701188 9a680a9c83566ec92bc76812d7efaf440846f193 FerrerMark <ferrerjohnmark26@gmail.com> 1751041743 +0800	commit: add chatbot UI
+9a680a9c83566ec92bc76812d7efaf440846f193 c83a4317a55a27b6ebde7bf578677b78e3ba6444 FerrerMark <ferrerjohnmark26@gmail.com> 1751092368 +0800	commit: add ai
+c83a4317a55a27b6ebde7bf578677b78e3ba6444 031610ca88acbe78a21efc183456db334a766df6 FerrerMark <ferrerjohnmark26@gmail.com> 1751194029 +0800	commit: change API url
+031610ca88acbe78a21efc183456db334a766df6 dde5a4dd021674150e1639d7a34afeb5ca2a5b6d FerrerMark <ferrerjohnmark26@gmail.com> 1751202397 +0800	commit: change api url
+dde5a4dd021674150e1639d7a34afeb5ca2a5b6d eaea752dd226cdb58d8a20d994ceee388768928b FerrerMark <ferrerjohnmark26@gmail.com> 1751202984 +0800	commit: m
+eaea752dd226cdb58d8a20d994ceee388768928b 72dfd85e73822612ff474ac302f88f925404d24e FerrerMark <ferrerjohnmark26@gmail.com> 1751203781 +0800	commit: change chats
+72dfd85e73822612ff474ac302f88f925404d24e f9a804633583c05dcf3ce8bcb0a8461121c1c273 FerrerMark <ferrerjohnmark26@gmail.com> 1751213770 +0800	commit: change font color, Ai profile.
+f9a804633583c05dcf3ce8bcb0a8461121c1c273 e98d031fc3ef11092528cf406408535531cd64fc FerrerMark <ferrerjohnmark26@gmail.com> 1751291465 +0800	commit: animation updated
+e98d031fc3ef11092528cf406408535531cd64fc 94bdf8c14a23f195badc266c71edd6d21131d4c2 FerrerMark <ferrerjohnmark26@gmail.com> 1751292816 +0800	commit: animation updated
+94bdf8c14a23f195badc266c71edd6d21131d4c2 52e481ed5ef67b908ce51d7001637d47563e7f54 FerrerMark <ferrerjohnmark26@gmail.com> 1751293306 +0800	commit: animation updated
+52e481ed5ef67b908ce51d7001637d47563e7f54 e654137bdbd514aa6fbdaa10e68948252eed75a7 FerrerMark <ferrerjohnmark26@gmail.com> 1751347038 +0800	commit: add download resume
+e654137bdbd514aa6fbdaa10e68948252eed75a7 f01e7dd809121ae6cfc8a9a768d13a95256492c9 FerrerMark <ferrerjohnmark26@gmail.com> 1751347311 +0800	commit: change resume img in project
+f01e7dd809121ae6cfc8a9a768d13a95256492c9 f3dda61015aa23c6d8b50a690663240b498ee955 FerrerMark <ferrerjohnmark26@gmail.com> 1751383455 +0800	commit: scroll animation changed
+f3dda61015aa23c6d8b50a690663240b498ee955 168c4f50d73af7973eddbbfbfbaeb4650bc5d05b FerrerMark <ferrerjohnmark26@gmail.com> 1751383532 +0800	commit: scroll animation changed
+168c4f50d73af7973eddbbfbfbaeb4650bc5d05b fa44482e97e99fb404b0a9a22866a9125bb56196 FerrerMark <ferrerjohnmark26@gmail.com> 1751385569 +0800	commit: fix responsive
+fa44482e97e99fb404b0a9a22866a9125bb56196 e654137bdbd514aa6fbdaa10e68948252eed75a7 FerrerMark <ferrerjohnmark26@gmail.com> 1751433378 +0800	reset: moving to e654137bdbd514aa6fbdaa10e68948252eed75a7
+e654137bdbd514aa6fbdaa10e68948252eed75a7 f9a804633583c05dcf3ce8bcb0a8461121c1c273 FerrerMark <ferrerjohnmark26@gmail.com> 1751433535 +0800	reset: moving to f9a804633583c05dcf3ce8bcb0a8461121c1c273
+f9a804633583c05dcf3ce8bcb0a8461121c1c273 f9a804633583c05dcf3ce8bcb0a8461121c1c273 FerrerMark <ferrerjohnmark26@gmail.com> 1751433749 +0800	reset: moving to f9a804633583c05dcf3ce8bcb0a8461121c1c273
+f9a804633583c05dcf3ce8bcb0a8461121c1c273 52e481ed5ef67b908ce51d7001637d47563e7f54 FerrerMark <ferrerjohnmark26@gmail.com> 1751433837 +0800	reset: moving to 52e481ed5ef67b908ce51d7001637d47563e7f54
+52e481ed5ef67b908ce51d7001637d47563e7f54 f9a804633583c05dcf3ce8bcb0a8461121c1c273 FerrerMark <ferrerjohnmark26@gmail.com> 1751433871 +0800	reset: moving to f9a804633583c05dcf3ce8bcb0a8461121c1c273
+f9a804633583c05dcf3ce8bcb0a8461121c1c273 e98d031fc3ef11092528cf406408535531cd64fc FerrerMark <ferrerjohnmark26@gmail.com> 1751433947 +0800	reset: moving to e98d031fc3ef11092528cf406408535531cd64fc
+e98d031fc3ef11092528cf406408535531cd64fc f9a804633583c05dcf3ce8bcb0a8461121c1c273 FerrerMark <ferrerjohnmark26@gmail.com> 1751433984 +0800	reset: moving to f9a804633583c05dcf3ce8bcb0a8461121c1c273
+f9a804633583c05dcf3ce8bcb0a8461121c1c273 e98d031fc3ef11092528cf406408535531cd64fc FerrerMark <ferrerjohnmark26@gmail.com> 1751434059 +0800	reset: moving to e98d031fc3ef11092528cf406408535531cd64fc
+e98d031fc3ef11092528cf406408535531cd64fc fa44482e97e99fb404b0a9a22866a9125bb56196 FerrerMark <ferrerjohnmark26@gmail.com> 1751434270 +0800	reset: moving to fa44482e97e99fb404b0a9a22866a9125bb56196
+fa44482e97e99fb404b0a9a22866a9125bb56196 5e138ea5c7cad8bb21d549c8032a88b89254ecce FerrerMark <ferrerjohnmark26@gmail.com> 1751547351 +0800	commit: added new certificate
+5e138ea5c7cad8bb21d549c8032a88b89254ecce 2d65770ea9ab6ebc22d54b93f338c8c3de3ce33a FerrerMark <ferrerjohnmark26@gmail.com> 1751560186 +0800	commit: update resume
+2d65770ea9ab6ebc22d54b93f338c8c3de3ce33a a695f8b25cc8c664d60854b4201277c992348422 FerrerMark <ferrerjohnmark26@gmail.com> 1751627487 +0800	commit: used animejs and change API domain
+a695f8b25cc8c664d60854b4201277c992348422 ecd587ee00c778bd75145684f0d326a3bb6ac2c7 FerrerMark <ferrerjohnmark26@gmail.com> 1751640574 +0800	commit: add auto AI auto wake
+ecd587ee00c778bd75145684f0d326a3bb6ac2c7 1588e7db66ff7586975637be2cf5ca5a013208f5 FerrerMark <ferrerjohnmark26@gmail.com> 1751693619 +0800	commit: add waker function to AI
+1588e7db66ff7586975637be2cf5ca5a013208f5 db45ba622e5dd5d371a2c60111e0d77c23abaefd FerrerMark <ferrerjohnmark26@gmail.com> 1751723099 +0800	commit: change profile, animation,
+db45ba622e5dd5d371a2c60111e0d77c23abaefd 5ce28783446e1fb6c97678cd86ecb6b0ca5a93fb FerrerMark <ferrerjohnmark26@gmail.com> 1751723174 +0800	commit: change profile, animation,
+5ce28783446e1fb6c97678cd86ecb6b0ca5a93fb 5f153a8852d6ce49f788a42fa3310965ad939c08 FerrerMark <ferrerjohnmark26@gmail.com> 1751723451 +0800	commit: change profile, animation,
+5f153a8852d6ce49f788a42fa3310965ad939c08 e4361b29826b7f092140863b0e2aaecd028628c3 FerrerMark <ferrerjohnmark26@gmail.com> 1751726730 +0800	commit: change ch to svh
+e4361b29826b7f092140863b0e2aaecd028628c3 6eaefe6e95731a738e79b48d393aeb86583c48d3 FerrerMark <ferrerjohnmark26@gmail.com> 1751727203 +0800	commit: change ch to svh
+6eaefe6e95731a738e79b48d393aeb86583c48d3 db55e61484d62c47a9fe353ce4ddeb76414ba661 FerrerMark <ferrerjohnmark26@gmail.com> 1751729505 +0800	commit: change ch to svh
+db55e61484d62c47a9fe353ce4ddeb76414ba661 6121d54992ffce0a1a7401e6154fb7cdba80361b FerrerMark <ferrerjohnmark26@gmail.com> 1751729737 +0800	commit: change ch to svh
+6121d54992ffce0a1a7401e6154fb7cdba80361b c36788453ff9f187a6c44152c1dbbd019a98cdf0 FerrerMark <ferrerjohnmark26@gmail.com> 1751730407 +0800	commit: change ch to svh
+c36788453ff9f187a6c44152c1dbbd019a98cdf0 c36788453ff9f187a6c44152c1dbbd019a98cdf0 FerrerMark <ferrerjohnmark26@gmail.com> 1751730834 +0800	reset: moving to c36788453ff9f187a6c44152c1dbbd019a98cdf0
+c36788453ff9f187a6c44152c1dbbd019a98cdf0 a0424036b66f061c83e538265f1571103a32873e FerrerMark <ferrerjohnmark26@gmail.com> 1751731131 +0800	commit: change ch to svh
+a0424036b66f061c83e538265f1571103a32873e aa4e220b83d04424263e9091708cfb583a354e1f FerrerMark <ferrerjohnmark26@gmail.com> 1751771560 +0800	commit: style to js
+aa4e220b83d04424263e9091708cfb583a354e1f 194c378c6c19ca1a51f9323d3bd79aa702ac6fe7 FerrerMark <ferrerjohnmark26@gmail.com> 1751772619 +0800	commit: fixed scroll watcher
+194c378c6c19ca1a51f9323d3bd79aa702ac6fe7 b7767d8a946a5af5b6e0b1e0bf24d9c2d32a316e FerrerMark <ferrerjohnmark26@gmail.com> 1751773719 +0800	commit: fixed scroll bg scaling
+b7767d8a946a5af5b6e0b1e0bf24d9c2d32a316e b84868ee05ba363dd3e83b55a57a5f4673434afe FerrerMark <ferrerjohnmark26@gmail.com> 1751782646 +0800	commit: test
+b84868ee05ba363dd3e83b55a57a5f4673434afe 4bca93948bb2fcaf1b262cbdb8d5542afa1b9331 FerrerMark <ferrerjohnmark26@gmail.com> 1751783818 +0800	commit: adjust responsiveness
+4bca93948bb2fcaf1b262cbdb8d5542afa1b9331 def5a3f8472719f38d364f5b7ee02b61d80abf6f FerrerMark <ferrerjohnmark26@gmail.com> 1751890983 +0800	commit: add 1 certificate
+def5a3f8472719f38d364f5b7ee02b61d80abf6f 816943c1f49c1fad1b5c4b5eade709d625614208 FerrerMark <ferrerjohnmark26@gmail.com> 1751902977 +0800	commit: Change loading message
+816943c1f49c1fad1b5c4b5eade709d625614208 c421801e09f231af710950fa167cdb84a26e67c5 FerrerMark <ferrerjohnmark26@gmail.com> 1752044958 +0800	commit: add project info
+c421801e09f231af710950fa167cdb84a26e67c5 ac185a24d7fc56d96f067831c5ed13248c079762 FerrerMark <ferrerjohnmark26@gmail.com> 1752319348 +0800	commit: fix scroll
+ac185a24d7fc56d96f067831c5ed13248c079762 8adc17d748629ed59aa6d745c8a6157342db11f4 FerrerMark <ferrerjohnmark26@gmail.com> 1752330769 +0800	commit: fixed contact
+8adc17d748629ed59aa6d745c8a6157342db11f4 7f14fbfe24ba4d75cefdfd3475cb5bc58eb12f1d FerrerMark <ferrerjohnmark26@gmail.com> 1752398064 +0800	commit: update ai
+7f14fbfe24ba4d75cefdfd3475cb5bc58eb12f1d 38d5fbcd7b69b7bce59e201b87bc34ca8f66c1ce FerrerMark <ferrerjohnmark26@gmail.com> 1752408649 +0800	commit: update project link
+38d5fbcd7b69b7bce59e201b87bc34ca8f66c1ce a8f8815b107a2db7721aec2c4bebba08c3f1457a FerrerMark <ferrerjohnmark26@gmail.com> 1752923421 +0800	commit: added new project
+a8f8815b107a2db7721aec2c4bebba08c3f1457a 8b7821c92f8305e564b9ad956ef3b6d5692438d1 FerrerMark <ferrerjohnmark26@gmail.com> 1752923556 +0800	commit: visit site
+8b7821c92f8305e564b9ad956ef3b6d5692438d1 5c43c6511da0372c772568e0c81c7d970486bf84 FerrerMark <ferrerjohnmark26@gmail.com> 1752923976 +0800	commit: add link button
+5c43c6511da0372c772568e0c81c7d970486bf84 3c4267069fadc4f16e9519c2f5e8ae3249cd279a FerrerMark <ferrerjohnmark26@gmail.com> 1752924755 +0800	commit: add links
+3c4267069fadc4f16e9519c2f5e8ae3249cd279a 4330c6b78884e6c97cf3b77a5081902e44ba0952 FerrerMark <ferrerjohnmark26@gmail.com> 1753016878 +0800	commit: responsive fixed
+4330c6b78884e6c97cf3b77a5081902e44ba0952 efccdf15d707d556ddf9272e9aa40f83fc0a980d FerrerMark <ferrerjohnmark26@gmail.com> 1753072130 +0800	commit: responsive fix
+efccdf15d707d556ddf9272e9aa40f83fc0a980d 86ffae1286ba9134fd55df5179919479b4125e40 FerrerMark <ferrerjohnmark26@gmail.com> 1755180373 +0800	commit: postgreSQL expired. So, i used emailJS now
+86ffae1286ba9134fd55df5179919479b4125e40 c73ba9161e83f39c5a874e821f7c693582b55ff0 FerrerMark <ferrerjohnmark26@gmail.com> 1756728556 +0800	commit: change profile
+c73ba9161e83f39c5a874e821f7c693582b55ff0 02ff0bb7dc8398eb47b8b3a23c644a100910476c FerrerMark <ferrerjohnmark26@gmail.com> 1764312192 +0800	commit: change API endpoint to match backend
+02ff0bb7dc8398eb47b8b3a23c644a100910476c 351a3978319c32ba76477b5915aa369c86289fa3 FerrerMark <ferrerjohnmark26@gmail.com> 1764313861 +0800	commit: add new project
+351a3978319c32ba76477b5915aa369c86289fa3 b4488b6d97cb2984f8b9e3d4317ee9cfeb0a5ffa FerrerMark <ferrerjohnmark26@gmail.com> 1767803357 +0800	commit: addnew project
+b4488b6d97cb2984f8b9e3d4317ee9cfeb0a5ffa 8e457a410b516952fc9afa263e82f457adf855de FerrerMark <ferrerjohnmark26@gmail.com> 1767838086 +0800	commit: fix project name
+8e457a410b516952fc9afa263e82f457adf855de ff90e9564543c3055b0bc36b8d57a57b70687be4 FerrerMark <ferrerjohnmark26@gmail.com> 1767851061 +0800	commit: add new skill

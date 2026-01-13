@@ -1,0 +1,216 @@
+body{
+  cursor: none;
+}
+
+.hover:hover {
+    animation: underline 0.3s ease-in-out forwards;
+}
+
+.hover:not(:hover) {
+    animation: underline-reverse 0.3s ease-in-out forwards;
+}
+
+@keyframes underline {
+    from {
+        background: linear-gradient(to right, currentColor 5%, transparent 50%);
+        background-size: 0% 100%; 
+    }
+    to {
+        background: linear-gradient(to right, currentColor 5%, transparent 50%);
+        background-size: 100% 100%;
+    }
+}
+
+@keyframes underline-reverse {
+    from {
+        background: linear-gradient(to right, currentColor 5%, transparent 50%);
+        background-size: 100% 100%;
+    }
+    to {
+        background: linear-gradient(to right, currentColor 5%, transparent 50%);
+        background-size: 0% 100%;
+    }
+}
+
+.circles-container{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: -1;
+    filter: blur(4px);
+}
+
+.animated-circle {
+  position: absolute;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  animation-name: floatFade;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  opacity: 0;
+}
+
+.animated-circle.left {
+  animation-name: floatLeft;
+}
+.animated-circle.right {
+  animation-name: floatRight;
+}
+.animated-circle.diagonal {
+  animation-name: floatDiagonal;
+}
+
+/* Fade + vertical float */
+@keyframes floatFade {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(-40px);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+}
+
+/* Horizontal left */
+@keyframes floatLeft {
+  0% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(-40px);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+}
+
+/* Horizontal right */
+@keyframes floatRight {
+  0% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(40px);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+}
+
+/* Diagonal float */
+@keyframes floatDiagonal {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+  50% {
+    transform: translate(-30px, -30px);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+}
+
+.box-bg-effect {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  perspective: 1000px;
+}
+
+.boxes-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -9;
+  filter: blur(2px);
+}
+
+.box {
+  position: absolute;
+  transform-style: preserve-3d;
+}
+
+.face {
+  position: absolute;
+  background: rgba(0, 150, 255, 0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: inset 0 0 10px 2px rgba(0,0,255,0.3);
+}
+
+.front  { transform: translateZ(20px); }
+.back   { transform: rotateY(180deg) translateZ(20px); }
+.left   { transform: rotateY(-90deg) translateZ(20px); }
+.right  { transform: rotateY(90deg) translateZ(20px); }
+.top    { transform: rotateX(90deg) translateZ(20px); }
+.bottom { transform: rotateX(-90deg) translateZ(20px); }
+
+
+.pyra-bg {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  perspective: 1000px;
+}
+
+.pyramids-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -9;
+  filter: blur(2px);
+  pointer-events: none;
+}
+
+.pyramid {
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: opacity 1s linear;
+}
+
+.pyramid-face {
+  position: absolute;
+  background: rgba(0, 150, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 0 8px 1px rgba(0, 0, 255, 0.25);
+  transform-origin: bottom center;
+}
+
+.hidden {
+  opacity: 0;
+  transition: all 0.3s linear;
+  transform: translateX(-100%);
+}
+
+.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.scroll-animate {
+  transition: transform 0.1s linear;
+  will-change: transform;
+}
