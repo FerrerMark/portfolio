@@ -2,6 +2,19 @@ const WAKE_INTERVAL = 5 * 60 * 1000;
 const GEMINI_MODEL = 'gemini-2.5-flash';
 const GEMINI_API_KEY = window.GEMINI_API_KEY || '';
 
+
+const createPrompt = (question) => {
+    const profileData = window.resumeData || {};
+    return [
+        'You are an assistant for John Mark Ferrer.',
+        'Answer ONLY about him based on the provided data.',
+        'If the question is outside the provided data, reply: "I can only answer based on John Mark Ferrer\'s profile data."',
+        'you should base the answers in these datas.',
+        `Profile data: ${JSON.stringify(profileData)}`,
+        `Question: ${question}`
+    ].join('\n\n');
+};
+
 const getGeminiResponse = async (question) => {
     if (!GEMINI_API_KEY) {
         throw new Error('Gemini API key is missing. Set window.GEMINI_API_KEY in index.html.');
@@ -15,7 +28,7 @@ const getGeminiResponse = async (question) => {
             contents: [
                 {
                     role: 'user',
-                    parts: [{ text: question }]
+                    parts: [{ text: createPrompt(question) }]
                 }
             ]
         })
