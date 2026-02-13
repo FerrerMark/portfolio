@@ -1,4 +1,34 @@
 const WAKE_INTERVAL = 5 * 60 * 1000;
+const GEMINI_MODEL = 'gemini-2.5-flash';
+const GEMINI_API_KEY = window.GEMINI_API_KEY || '';
+
+const getGeminiResponse = async (question) => {
+    if (!GEMINI_API_KEY) {
+        throw new Error('Gemini API key is missing. Set window.GEMINI_API_KEY in index.html.');
+    }
+
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${encodeURIComponent(GEMINI_API_KEY)}`;
+    const response = await fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            contents: [
+                {
+                    role: 'user',
+                    parts: [{ text: question }]
+                }
+            ]
+        })
+    });
+
+    if (!response.ok) {
+        const details = await response.text();
+        throw new Error(`Gemini request failed (${response.status}): ${details}`);
+    }
+
+    const data = await response.json();
+    return data?.candidates?.[0]?.content?.parts?.map(part => part.text).join('') || 'No response from Gemini.';
+};
 
 const waker = () => {
     const lastWake = localStorage.getItem('lastWakeTime');
@@ -16,17 +46,8 @@ const waker = () => {
     input.focus();
 
     const wake = "hey"; 
-    fetch('https://personal-api-ftdn.onrender.com/api/ai/ask', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ question: wake })
-    })
-    .then(res => {
-        if (!res.ok) throw new Error(`HTTP error! Status: ${res.status}`);
-        return res.json();
-    })
-    .then(data => {
-        const reply = data.answer || 'No response from AI.'; 
+    getGeminiResponse(wake)
+    .then(reply => {
         appendMessage('Bot', reply);
         loading(false);
         input.disabled = false;
@@ -58,17 +79,8 @@ document.getElementById('botForm').addEventListener('submit', function(e) {
     input.disabled = true;
     loading(true, 'Thinking', 'message');
 
-    fetch('https://personal-api-ftdn.onrender.com/api/ai/ask', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ question: message }) 
-    })
-    .then(res => {
-        if (!res.ok) throw new Error(`HTTP error! Status: ${res.status}`);
-        return res.json();
-    })
-    .then(data => {
-        const reply = data.answer || 'No response from AI.'; 
+    getGeminiResponse(message)
+    .then(reply => {
         appendMessage('Bot', reply);
     })
     .catch(err => {
