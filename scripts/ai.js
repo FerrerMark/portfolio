@@ -1,4 +1,3 @@
-const WAKE_INTERVAL = 5 * 60 * 1000;
 const GEMINI_MODEL = 'gemini-2.5-flash';
 const GEMINI_API_KEY = window.GEMINI_API_KEY || '';
 
@@ -43,38 +42,6 @@ const getGeminiResponse = async (question) => {
     return data?.candidates?.[0]?.content?.parts?.map(part => part.text).join('') || 'No response from Gemini.';
 };
 
-const waker = () => {
-    const lastWake = localStorage.getItem('lastWakeTime');
-    const now = Date.now();
-
-    if (lastWake && now - Number(lastWake) < WAKE_INTERVAL) {
-        return;
-    }
-
-    localStorage.setItem('lastWakeTime', now.toString());
-
-    const input = document.getElementById('userInput');
-    loading(true, 'AI is waking, please wait 1-30s', 'message'); 
-    input.disabled = true;
-    input.focus();
-
-    const wake = "hey"; 
-    getGeminiResponse(wake)
-    .then(reply => {
-        appendMessage('Bot', reply);
-        loading(false);
-        input.disabled = false;
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        appendMessage('Bot', 'Error: ' + error.message);
-        loading(false);
-        input.disabled = false;
-    });
-};
-
-waker();
-
 document.getElementById('botForm').addEventListener('submit', function(e) {
     e.preventDefault();
 
@@ -117,9 +84,6 @@ function appendMessage(sender, text) {
 }
 
 function toggleBotModal(show) {
-    if (show) {
-        waker();
-    }
     const botModal = document.getElementById("botModal");
     const askIcon = document.querySelector(".ask");
     botModal.classList.toggle("hidChat", !show);
