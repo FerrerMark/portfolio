@@ -1,92 +1,141 @@
 const GEMINI_MODEL = 'gemini-2.5-flash';
-const GEMINI_API_KEY = window.GEMINI_API_KEY || '';
+const GEMINI_API_KEY = 'AIzaSyBwa2EUdXeJ9qMAIZAFY1mmHKYA5Y2vT08';
 
+let resumeTextCache = null;
 
-const createPrompt = (question) => {
-    const profileData = window.resumeData || {};
-    return [
-        'You are an assistant for John Mark Ferrer.',
-        'Answer ONLY about him based on the provided data.',
-        'If the question is outside the provided data, reply: "I can only answer based on John Mark Ferrer\'s profile data."',
-        'you should base the answers in these datas.',
-        `Profile data: ${JSON.stringify(profileData)}`,
-        `Question: ${question}`
-    ].join('\n\n');
+async function getResumeText() {
+  if (resumeTextCache) return resumeTextCache;
+
+  const res = await fetch('https://personal-api-ftdn.onrender.com/api/data');
+  if (!res.ok) throw new Error('Failed to fetch resume data');
+
+  const data = await res.json();
+  let text = '';
+  for (const key in data) {
+    if (Array.isArray(data[key])) {
+      text += `${key}:\n`;
+      data[key].forEach((item, idx) => {
+        if (typeof item === 'object') {
+          text += `  - ${idx + 1}:\n`;
+          for (const k in item) text += `      ${k}: ${item[k]}\n`;
+        } else {
+          text += `  - ${item}\n`;
+        }
+      });
+    } else {
+      text += `${key}: ${data[key]}\n`;
+    }
+  }
+
+  resumeTextCache = text;
+  return text;
+}
+
+function getChatMemory() {
+  const messages = document.querySelectorAll('#botModal .message > div');
+  let memory = '';
+  messages.forEach(msg => {
+    const role = msg.className === 'user' ? 'User' : 'Bot';
+    const text = msg.innerText.trim();
+    if (text) memory += `${role}: ${text}\n`;
+  });
+  return memory;
+}
+
+const createPrompt = (question, resumeText, memory) => {
+  return `
+You are an AI assistant describing John Mark Ferrer.
+Use the following resume data to answer all questions:
+${resumeText}
+
+Here is the chat history so far:
+${memory}
+
+Visitor question: ${question}
+
+If the question is unrelated to him, politely reply: "I can only answer questions about John Mark Ferrer and his profile."
+`;
 };
 
-const getGeminiResponse = async (question) => {
-    if (!GEMINI_API_KEY) {
-        throw new Error('Gemini API key is missing. Set window.GEMINI_API_KEY in index.html.');
-    }
+async function getGeminiResponse(question) {
+  const resumeText = await getResumeText();
+  const memory = getChatMemory();
+  const prompt = createPrompt(question, resumeText, memory);
 
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${encodeURIComponent(GEMINI_API_KEY)}`;
-    const response = await fetch(url, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-            contents: [
-                {
-                    role: 'user',
-                    parts: [{ text: createPrompt(question) }]
-                }
-            ]
-        })
-    });
+  const url = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${encodeURIComponent(GEMINI_API_KEY)}`;
+  const response = await fetch(url, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      contents: [{ role: 'user', parts: [{ text: prompt }] }]
+    })
+  });
 
-    if (!response.ok) {
-        const details = await response.text();
-        throw new Error(`Gemini request failed (${response.status}): ${details}`);
-    }
+  if (!response.ok) {
+    const details = await response.text();
+    throw new Error(`Gemini request failed (${response.status}): ${details}`);
+  }
 
-    const data = await response.json();
-    return data?.candidates?.[0]?.content?.parts?.map(part => part.text).join('') || 'No response from Gemini.';
-};
+  const data = await response.json();
+  let fullText = data?.candidates?.[0]?.content?.parts?.map(p => p.text).join('') || 'No response from Gemini.';
+  return fullText.split(/\s+/).slice(0, 80).join(' ');
+}
 
-document.getElementById('botForm').addEventListener('submit', function(e) {
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('botForm');
+  const input = document.getElementById('userInput');
+
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
-
-    const input = document.getElementById('userInput');
     const message = input.value.trim();
-
     if (!message) return;
-    if (message.length > 300) {
-        appendMessage('Bot', 'Message must be 80 words or less.');
-        return;
-    }
 
     appendMessage('user', message);
     input.value = '';
     input.disabled = true;
-    loading(true, 'Thinking', 'message');
+    loading(true);
 
-    getGeminiResponse(message)
-    .then(reply => {
-        appendMessage('Bot', reply);
-    })
-    .catch(err => {
-        appendMessage('Bot', 'Sorry, something went wrong. Please try again later.');
-        console.error('Fetch error:', err);
-    })
-    .finally(() => {
-        input.disabled = false;
-        input.focus();
-        loading(false);
-    });
+    try {
+      const reply = await getGeminiResponse(message);
+      appendMessage('Bot', reply);
+    } catch (err) {
+      appendMessage('Bot', 'Sorry, something went wrong. Please try again later.');
+    } finally {
+      input.disabled = false;
+      input.focus();
+      loading(false);
+    }
+  });
 });
 
 function appendMessage(sender, text) {
-    const messageContainer = document.querySelector('#botModal .message');
-    const msgDiv = document.createElement('div');
-    msgDiv.className = sender;
-    msgDiv.innerHTML = `<p>${text}</p>`;
-    messageContainer.appendChild(msgDiv);
-    messageContainer.scrollTop = messageContainer.scrollHeight;
+  const container = document.querySelector('#botModal .message');
+  const div = document.createElement('div');
+  div.className = sender;
+  div.innerHTML = `<p>${text}</p>`;
+  container.appendChild(div);
+  container.scrollTop = container.scrollHeight;
 }
 
 function toggleBotModal(show) {
-    const botModal = document.getElementById("botModal");
-    const askIcon = document.querySelector(".ask");
-    botModal.classList.toggle("hidChat", !show);
-    botModal.classList.toggle("ShowChat", show);
-    askIcon.style.display = show ? 'none' : 'block';
+  const botModal = document.getElementById('botModal');
+  const askIcon = document.querySelector('.ask');
+  botModal.classList.toggle('hidChat', !show);
+  botModal.classList.toggle('ShowChat', show);
+  askIcon.style.display = show ? 'none' : 'block';
+}
+
+function loading(isLoading, msg = 'Thinking...') {
+  const container = document.querySelector('#botModal .message');
+  if (isLoading) {
+    const div = document.createElement('div');
+    div.id = 'loadingIndicator';
+    div.className = 'loading';
+    div.innerHTML = `<p>${msg}</p>`;
+    container.appendChild(div);
+    container.scrollTop = container.scrollHeight;
+  } else {
+    const el = document.getElementById('loadingIndicator');
+    if (el) el.remove();
+  }
 }
