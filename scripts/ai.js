@@ -1,5 +1,5 @@
 const GEMINI_MODEL = 'gemini-2.5-flash';
-const GEMINI_API_KEY = 'AIzaSyBwa2EUdXeJ9qMAIZAFY1mmHKYA5Y2vT08';
+const GEMINI_API_KEY = 'AIzaSyAwIuxjeh9rDEAn8b8DZx18s1IVrEzAzZg';
 
 let resumeTextCache = null;
 
