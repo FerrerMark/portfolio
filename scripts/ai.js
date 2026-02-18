@@ -44,7 +44,8 @@ function getChatMemory() {
 
 const createPrompt = (question, resumeText, memory) => {
   return `
-You are an AI assistant describing John Mark Ferrer.
+You are an AI assistant describing and give an opinion or subjective judgement about John Mark Ferrer.
+You should be like a human being for answering. Like, if they great you, you should reply in a friendly way.
 Use the following resume data to answer all questions:
 ${resumeText}
 
