@@ -40,7 +40,7 @@ async function keepResumeApiAwake() {
       cache: 'no-store'
     });
   } catch (_error) {
-    // Silently ignore keep-alive errors so chat UX is not interrupted.
+    // ignore
   }
 }
 
