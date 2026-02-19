@@ -1,5 +1,5 @@
 const GEMINI_MODEL = 'gemini-2.5-flash';
-const GEMINI_API_KEY = 'AIzaSyAwIuxjeh9rDEAn8b8DZx18s1IVrEzAzZg';
+const GEMINI_API_KEY = 'AIzaSyBW2WqpknkpEApxurQDE-Msgx7C4plUmNs';
 const RESUME_API_URL = 'https://personal-api-ftdn.onrender.com/api/data';
 const KEEP_ALIVE_INTERVAL_MS = 3 * 60 * 1000;
 
