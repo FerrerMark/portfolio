@@ -1,12 +1,14 @@
 const GEMINI_MODEL = 'gemini-2.5-flash';
 const GEMINI_API_KEY = 'AIzaSyAwIuxjeh9rDEAn8b8DZx18s1IVrEzAzZg';
+const RESUME_API_URL = 'https://personal-api-ftdn.onrender.com/api/data';
+const KEEP_ALIVE_INTERVAL_MS = 3 * 60 * 1000;
 
 let resumeTextCache = null;
 
 async function getResumeText() {
   if (resumeTextCache) return resumeTextCache;
 
-  const res = await fetch('https://personal-api-ftdn.onrender.com/api/data');
+  const res = await fetch(RESUME_API_URL);
   if (!res.ok) throw new Error('Failed to fetch resume data');
 
   const data = await res.json();
@@ -29,6 +31,17 @@ async function getResumeText() {
 
   resumeTextCache = text;
   return text;
+}
+
+async function keepResumeApiAwake() {
+  try {
+    await fetch(`${RESUME_API_URL}?wake=${Date.now()}`, {
+      method: 'GET',
+      cache: 'no-store'
+    });
+  } catch (_error) {
+    // Silently ignore keep-alive errors so chat UX is not interrupted.
+  }
 }
 
 function getChatMemory() {
@@ -85,6 +98,9 @@ async function getGeminiResponse(question) {
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('botForm');
   const input = document.getElementById('userInput');
+
+  keepResumeApiAwake();
+  setInterval(keepResumeApiAwake, KEEP_ALIVE_INTERVAL_MS);
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
