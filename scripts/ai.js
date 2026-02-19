@@ -44,6 +44,9 @@ async function keepResumeApiAwake() {
   }
 }
 
+keepResumeApiAwake();
+setInterval(keepResumeApiAwake, KEEP_ALIVE_INTERVAL_MS);
+
 function getChatMemory() {
   const messages = document.querySelectorAll('#botModal .message > div');
   let memory = '';
