@@ -4,7 +4,7 @@ const projects = [
         description: "Simple library management system using MERN stack",
         image: "./img/projects/Group2@3x.png",
         link: "https://github.com/FerrerMark/Mini-Library-Manager-Front",
-        deployed: "https://mini-library-manager.onrender.com/"
+        deployed: "https://mini-library-system.onrender.com"
     },
     {
         title: "DIY Resume using React JS",
