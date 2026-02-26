@@ -3,7 +3,7 @@ const projects = [
         title: "Mini library system",
         description: "Simple library management system using MERN stack",
         image: "./img/projects/Group2@3x.png",
-        link: "https://github.com/FerrerMark/Mini-Library-Manager-Front",
+        link: "https://github.com/FerrerMark/mini-library-system",
         deployed: "https://mini-library-system.onrender.com"
     },
     {
