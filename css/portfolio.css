@@ -147,7 +147,9 @@ img#backg {
 
 #welcome-section .bg,
 #welcome-section .data {
-  transition: opacity 0.1s ease, transform 0.1s ease;
+  transition:
+    opacity 0.1s ease,
+    transform 0.1s ease;
   will-change: opacity, transform;
 }
 
@@ -279,7 +281,9 @@ h2 {
   padding: 13px;
   border-radius: 10px;
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   width: 350px;
   height: 333px;
   box-shadow: inset 0px 0 35px #ffffff42;
@@ -354,7 +358,9 @@ h2 {
   max-height: 90vh;
   transform: scale(0.7);
   opacity: 0;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
 }
 
 .modal.show .modal-content {
@@ -521,7 +527,9 @@ h2 {
   padding: 0.5rem 10px;
   border-radius: 10px;
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   flex-direction: column;
   justify-content: space-between;
   width: 210px;
@@ -575,7 +583,9 @@ h2 {
   border-radius: 50%;
   opacity: 0;
   transform: scale(0.5);
-  transition: opacity 0.4s ease, transform 0.4s ease;
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
   z-index: 0;
 }
 
@@ -596,7 +606,9 @@ h2 {
   border-radius: 50%;
   opacity: 0;
   transform: scale(0.5);
-  transition: opacity 0.4s ease, transform 0.4s ease;
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
   z-index: 0;
 }
 .certificates.dragging {
@@ -869,7 +881,9 @@ nav ul li a {
   color: white;
   text-decoration: none;
   padding: 10px;
-  transition: color 0.3s ease, border-bottom 0.3s ease;
+  transition:
+    color 0.3s ease,
+    border-bottom 0.3s ease;
 }
 
 nav ul li a.active {
@@ -893,7 +907,9 @@ li.hover {
   border-radius: 50%;
   opacity: 0;
   transform: scale(0.5);
-  transition: opacity 0.4s ease, transform 0.4s ease;
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
   z-index: 0;
   filter: blur(4px);
 }
@@ -914,7 +930,9 @@ li.hover {
   border-radius: 50%;
   opacity: 0;
   transform: scale(0.5);
-  transition: opacity 0.4s ease, transform 0.4s ease;
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
   z-index: 0;
   filter: blur(4px);
 }
@@ -939,14 +957,20 @@ textarea {
 section#contact form {
   display: flex;
   flex-direction: column;
-  width: 272px;
+  width: 86vw;
+  height: 370px;
   gap: 10px;
   padding: 16px;
   border: 1px solid #f5deb363;
   border-radius: 10px;
   box-shadow: 3px 3px 5px 0px black;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  min-height: 182px;
+  align-items: flex-start;
+}
+
+textarea.emailContent {
+    height: 100%;
+    width: -webkit-fill-available;
 }
 
 section#contact form h5 {
@@ -959,7 +983,6 @@ section#contact form button {
   border: 1px solid black;
   border-radius: 4px;
   color: var(--txt-color);
-  margin: auto;
 }
 
 section#contact form button:hover {
@@ -975,7 +998,9 @@ section#contact form button:hover {
   text-decoration: none;
   font-weight: 600;
   border-radius: 8px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
   box-shadow: inset 0 0 20px 0px #ffffff42;
   backdrop-filter: blur(3px);
 }
@@ -1001,6 +1026,7 @@ section#contact form button:hover {
   position: fixed;
   backdrop-filter: blur(4px);
   box-shadow: inset 0 0 0px 3px #696969;
+  z-index: 1000;
 }
 
 @keyframes appear {
@@ -1067,14 +1093,14 @@ section#contact form button:hover {
 }
 
 button.deployed {
-padding: 2px 6px;
-    border-radius: 5px;
-    border: none;
-    font-weight: 700;
-    font-size: 15px;
-    display: flex;
-    align-items: center;
-    gap: 5px;
+  padding: 2px 6px;
+  border-radius: 5px;
+  border: none;
+  font-weight: 700;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .Info a {
