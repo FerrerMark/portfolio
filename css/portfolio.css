@@ -809,7 +809,7 @@ h2 {
   #welcome-section p {
     margin-bottom: 5px;
   }
-  p {
+  #projects .tiles .project-tile p {
     font-size: 10px !important;
   }
   .project-tile {
@@ -857,7 +857,7 @@ h2 {
 
 @media (max-width: 360px) {
   p {
-    font-size: 10px !important;
+    font-size: 15px !important;
   }
   .project-tile {
     width: 263px;

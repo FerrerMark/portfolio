@@ -171,7 +171,7 @@ const prevButton = document.querySelector(".prev");
 const nextButton = document.querySelector(".next");
 let currentIndex = 0;
 
-images.forEach((img) => {git
+images.forEach((img) => {
   img.addEventListener("click", function () {
     openProjectImageModal(this.src);
   });
@@ -208,3 +208,4 @@ function moveSlider(direction, containerId) {
 
   images[activeIndex].classList.add("active");
 }
+
