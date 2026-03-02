@@ -40,10 +40,7 @@ function renderProjects() {
   const projectImages = document.querySelectorAll(".project-tile img");
   projectImages.forEach((img) => {
     img.addEventListener("click", function () {
-      projectModal.style.display = "flex";
-      modalImg.src = this.src;
-      document.body.style.overflow = "hidden";
-      setTimeout(() => projectModal.classList.add("show"), 10);
+      openProjectImageModal(this.src);
     });
   });
 }
@@ -59,6 +56,13 @@ document.getElementById("icon").onclick = function () {
 const projectModal = document.getElementById("imageModal");
 const modalImg = document.getElementById("modalImage");
 const projectCloseBtn = document.querySelector("#imageModal .close");
+
+function openProjectImageModal(imageSrc) {
+  projectModal.style.display = "flex";
+  modalImg.src = imageSrc;
+  document.body.style.overflow = "hidden";
+  setTimeout(() => projectModal.classList.add("show"), 10);
+}
 
 projectCloseBtn.onclick = function () {
   projectModal.classList.remove("show");
@@ -166,6 +170,12 @@ const images = document.querySelectorAll(".images img");
 const prevButton = document.querySelector(".prev");
 const nextButton = document.querySelector(".next");
 let currentIndex = 0;
+
+images.forEach((img) => {
+  img.addEventListener("click", function () {
+    openProjectImageModal(this.src);
+  });
+});
 
 function showImage(index) {
   images.forEach((img, i) => {

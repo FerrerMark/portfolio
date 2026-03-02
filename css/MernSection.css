@@ -25,6 +25,7 @@
     width: 92%;
     height: auto;
     display: none;
+    cursor: pointer;
     transition: opacity 0.5s ease-in-out;
 }
 
