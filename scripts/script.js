@@ -85,7 +85,7 @@ const prevBtn = document.getElementById("prevImage");
 const nextBtn = document.getElementById("nextImage");
 
 const profileImages = [
-  "./img/pic/image.png",
+  "./img/pic/profile.png",
   "./img/pic/gradpic1.jpeg",
   "./img/pic/gradpic2.jpeg",
 ];

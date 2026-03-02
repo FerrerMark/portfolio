@@ -52,13 +52,7 @@
 
     <section id="welcome-section" class="">
       <div class="bg">
-        <img
-          id="backg"
-          src="./img/background/image.png"
-          class="hover"
-          id="profile-pic"
-          onclick="openProfileModal()"
-        />
+        <img id="backg" src="./img/background/image.png" class="hover" />
       </div>
       <div class="data">
         <h1 class="text"><span>Hi, I'm John Mark S. Ferrer</span></h1>
@@ -116,7 +110,7 @@
       <div class="tiles" id="projects-container"></div>
     </section>
 
-    <section id="projects" class="">
+    <section id="mern-project" class="">
       <h2 class="text">My MERN Project</h2>
       <div class="container">
         <div class="Info">
@@ -342,7 +336,6 @@
     <script src="scripts/gsap.min.js"></script>
     <script src="scripts/ScrollTrigger.min.js"></script>
     <script src="scripts/ScrollSmoother.min.js"></script>
-    <script src="scripts/effects.js"></script>
     <script src="scripts/certificates.js"></script>
     <script src="scripts/projects.js"></script>
     <script src="component/loading.js"></script>
@@ -352,24 +345,21 @@
     <script src="scripts/script.js"></script>
 
     <script type="module" src="scripts/effects.js"></script>
-    <style></style>
-    <script></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>
+      (function () {
+        emailjs.init("XKoTbmTIjQIbImxMb");
+      })();
+
+      document
+        .getElementById("contact-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          emailjs
+            .sendForm("service_efvjkg4", "template_s3nw7k4", this)
+            .then(() => alert("Message sent!"))
+            .catch((err) => alert("Failed: " + JSON.stringify(err)));
+        });
+    </script>
   </body>
 </html>
-
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-<script>
-  (function () {
-    emailjs.init("XKoTbmTIjQIbImxMb");
-  })();
-
-  document
-    .getElementById("contact-form")
-    .addEventListener("submit", function (e) {
-      e.preventDefault();
-      emailjs
-        .sendForm("service_efvjkg4", "template_s3nw7k4", this)
-        .then(() => alert("Message sent!"))
-        .catch((err) => alert("Failed: " + JSON.stringify(err)));
-    });
-</script>
