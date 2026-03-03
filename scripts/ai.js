@@ -1,5 +1,5 @@
 const GEMINI_MODEL = 'gemini-2.5-flash';
-const GEMINI_API_KEY = 'AIzaSyCV9wR-Y-FlMbfY860moXnf3nfV68R_aD4'; //sinadya ko to kasi free tier service lang gamit ko sa render.com. Di na pwede tulad ng dati na gumagana sa render. "- Gemini rejecting the request. The message “User location is not supported for the API use” means the API provider has blocked access from your region. It’s a policy restriction, not a coding error." Gets mo na kumag? Free tier lang din ako sa gemini na to kaya wala ka nang paki kung naka public itong api key.
+const GEMINI_API_KEY = 'AIzaSyA5qR6r-Jop5_reddC_fT7wSvdvDQE6VPo'; //sinadya ko to kasi free tier service lang gamit ko sa render.com. Di na pwede tulad ng dati na gumagana sa render. "- Gemini rejecting the request. The message “User location is not supported for the API use” means the API provider has blocked access from your region. It’s a policy restriction, not a coding error." Gets mo na kumag? Free tier lang din ako sa gemini na to kaya wala ka nang paki kung naka public itong api key.
 const RESUME_API_URL = 'https://personal-api-ftdn.onrender.com/api/data';
 const KEEP_ALIVE_INTERVAL_MS = 3 * 60 * 1000;
 
