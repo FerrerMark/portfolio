@@ -1,10 +1,29 @@
 const projects = [
-        {
+    {
         title: "Mini library system",
         description: "Simple library management system using MERN stack",
         image: "./img/projects/Group2@3x.png",
         link: "https://github.com/FerrerMark/mini-library-system",
         deployed: "https://mini-library-system.onrender.com"
+    },
+        {
+        title: "Web Portfolio",
+        description: "Web Portfolio. HTML, CSS, JS. This portfolio is project from freecodecamp. With Fetch API and Node JS backend for AI.",
+        image: "./img/projects/personalportfolio.png",
+        link: "https://github.com/FerrerMark/portfolio"
+    },
+        {
+        title: "API",
+        description: "API for ai",
+        image: "./img/projects/api.png",
+        link: "https://github.com/FerrerMark/personal_api/",
+        deployed: "https://personal-api-ftdn.onrender.com/"
+    },
+    {
+        title: "DBMS",
+        description: "Simple Database Management System made with Laravel.",
+        image: "./img/projects/image.png",
+        link: "https://github.com/FerrerMark/DBMS"
     },
     {
         title: "DIY Resume using React JS",
@@ -17,19 +36,6 @@ const projects = [
         description: "A program that automate quiz in LMS using Gemini API.",
         image: "./img/projects/Screenshot_17.png",
         link: "https://github.com/FerrerMark/lmsautomation"
-    },
-    {
-        title: "DBMS",
-        description: "Simple Database Management System made with Laravel.",
-        image: "./img/projects/image.png",
-        link: "https://github.com/FerrerMark/DBMS"
-    },
-    {
-        title: "API",
-        description: "API for ai",
-        image: "./img/projects/api.png",
-        link: "https://github.com/FerrerMark/personal_api/",
-        deployed: "https://personal-api-ftdn.onrender.com/"
     },
     {
         title: "SMS: Faculty Loading. HTML, CSS, JS, PHP",
@@ -54,12 +60,6 @@ const projects = [
         description: "Simple extension for accessing the plans, tasks, and etc.",
         image: "./img/projects/todolistext.png",
         link: "https://github.com/FerrerMark/todolist-ext"
-    },
-    {
-        title: "Web Portfolio",
-        description: "Web Portfolio. HTML, CSS, JS. This portfolio is project from freecodecamp. With Fetch API and Node JS backend for AI.",
-        image: "./img/projects/personalportfolio.png",
-        link: "https://github.com/FerrerMark/portfolio"
     },
     {
         title: "User Management CRUD (AJAX, PHP, MySQL)",
