@@ -961,6 +961,20 @@ textarea {
   border-radius: 5px;
 }
 
+section#contact form input[type="text"],
+section#contact form input[type="email"],
+section#contact form textarea {
+  background-color: #5f5f5f;
+  color: #ffffff;
+  border: 1px solid #3f3f3f;
+}
+
+section#contact form input[type="text"]::placeholder,
+section#contact form input[type="email"]::placeholder,
+section#contact form textarea::placeholder {
+  color: #ffffff;
+}
+
 section#contact form {
   display: flex;
   flex-direction: column;

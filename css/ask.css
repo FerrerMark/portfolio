@@ -134,10 +134,14 @@ input#userInput {
     width: 84%;
     height: 100%;
     border-radius: 0 0 0 9px;
-    background: none;
+    background: #5f5f5f;
     color: white;
     text-shadow: 2px 5px 1px #00000054;
     padding: 0 10px;
+}
+
+input#userInput::placeholder {
+    color: #ffffff;
 }
 
 form#botForm button{
