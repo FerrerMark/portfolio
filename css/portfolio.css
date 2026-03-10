@@ -234,7 +234,8 @@ h2 {
 
 /* Projects Section */
 #projects,
-#mern-project {
+#mern-project,
+#waygent-project {
   padding: 3rem 2rem 0.5rem 2rem;
   background-color: var(--sec-bg-color);
 }
@@ -245,7 +246,8 @@ h2 {
 }
 
 #projects h2,
-#mern-project h2 {
+#mern-project h2,
+#waygent-project h2 {
   text-align: center;
   font-size: 2.2rem;
   margin: 2.5rem 0 0.5rem 0;

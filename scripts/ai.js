@@ -1,37 +1,7 @@
-const GEMINI_MODEL = 'gemini-2.5-flash';
-const GEMINI_API_KEY = 'AIzaSyA5qR6r-Jop5_reddC_fT7wSvdvDQE6VPo'; //sinadya ko to kasi free tier service lang gamit ko sa render.com. Di na pwede tulad ng dati na gumagana sa render. "- Gemini rejecting the request. The message “User location is not supported for the API use” means the API provider has blocked access from your region. It’s a policy restriction, not a coding error." Gets mo na kumag? Free tier lang din ako sa gemini na to kaya wala ka nang paki kung naka public itong api key.
-const RESUME_API_URL = 'https://personal-api-ftdn.onrender.com/api/data';
+const API_BASE_URL = 'https://personal-api-ftdn.onrender.com';
+const RESUME_API_URL = `${API_BASE_URL}/api/data`;
+const AI_API_URL = `${API_BASE_URL}/api/ai/ask`;
 const KEEP_ALIVE_INTERVAL_MS = 3 * 60 * 1000;
-
-let resumeTextCache = null;
-
-async function getResumeText() {
-  if (resumeTextCache) return resumeTextCache;
-
-  const res = await fetch(RESUME_API_URL);
-  if (!res.ok) throw new Error('Failed to fetch resume data');
-
-  const data = await res.json();
-  let text = '';
-  for (const key in data) {
-    if (Array.isArray(data[key])) {
-      text += `${key}:\n`;
-      data[key].forEach((item, idx) => {
-        if (typeof item === 'object') {
-          text += `  - ${idx + 1}:\n`;
-          for (const k in item) text += `      ${k}: ${item[k]}\n`;
-        } else {
-          text += `  - ${item}\n`;
-        }
-      });
-    } else {
-      text += `${key}: ${data[key]}\n`;
-    }
-  }
-
-  resumeTextCache = text;
-  return text;
-}
 
 async function keepResumeApiAwake() {
   try {
@@ -58,43 +28,25 @@ function getChatMemory() {
   return memory;
 }
 
-const createPrompt = (question, resumeText, memory) => {
-  return `
-You are an AI assistant describing and give an opinion or subjective judgement about John Mark Ferrer.
-You should be like a human being for answering. Like, if they great you, you should reply in a friendly way.
-Use the following resume data to answer all questions:
-${resumeText}
-
-Here is the chat history so far:
-${memory}
-
-Visitor question: ${question}
-
-If the question is unrelated to him, politely reply: "I can only answer questions about John Mark Ferrer and his profile."
-`;
-};
-
 async function getGeminiResponse(question) {
-  const resumeText = await getResumeText();
   const memory = getChatMemory();
-  const prompt = createPrompt(question, resumeText, memory);
+  const questionWithContext = memory
+    ? `${question}\n\nChat history:\n${memory}`
+    : question;
 
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${encodeURIComponent(GEMINI_API_KEY)}`;
-  const response = await fetch(url, {
+  const response = await fetch(AI_API_URL, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      contents: [{ role: 'user', parts: [{ text: prompt }] }]
-    })
+    body: JSON.stringify({ question: questionWithContext })
   });
 
   if (!response.ok) {
     const details = await response.text();
-    throw new Error(`Gemini request failed (${response.status}): ${details}`);
+    throw new Error(`AI request failed (${response.status}): ${details}`);
   }
 
   const data = await response.json();
-  let fullText = data?.candidates?.[0]?.content?.parts?.map(p => p.text).join('') || 'No response from Gemini.';
+  const fullText = data?.answer || 'No response from AI.';
   return fullText.split(/\s+/).slice(0, 80).join(' ');
 }
 
@@ -159,3 +111,5 @@ function loading(isLoading, msg = 'Thinking...') {
     if (el) el.remove();
   }
 }
+
+
