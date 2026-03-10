@@ -6,6 +6,12 @@ const projects = [
         link: "https://github.com/FerrerMark/mini-library-system",
         deployed: "https://mini-library-system.onrender.com"
     },
+    {
+        title: "DBMS",
+        description: "Simple Database Management System made with Laravel.",
+        image: "./img/projects/image.png",
+        link: "https://github.com/FerrerMark/DBMS"
+    },
         {
         title: "Web Portfolio",
         description: "Web Portfolio. HTML, CSS, JS. This portfolio is project from freecodecamp. With Fetch API and Node JS backend for AI.",
