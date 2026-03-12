@@ -361,7 +361,8 @@ h2 {
   position: relative;
   margin: auto;
   padding: 20px;
-  max-width: 90%;
+  width: 95vw;
+  max-width: 95vw;
   max-height: 90vh;
   transform: scale(0.7);
   opacity: 0;
@@ -371,16 +372,17 @@ h2 {
 }
 
 .modal.show .modal-content {
-  /* transform: scale(1); */
+  transform: scale(1);
   opacity: 1;
   min-width: -webkit-fill-available;
 }
 
 #modalImage,
 #profileModalImage {
-  width: 100%;
+  width: 95vw;
+  max-width: 95vw;
   height: auto;
-  max-height: 80vh;
+  max-height: 85vh;
   object-fit: contain;
 }
 
