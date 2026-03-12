@@ -414,10 +414,20 @@
         .getElementById("contact-form")
         .addEventListener("submit", function (e) {
           e.preventDefault();
+          const emailInput = this.querySelector('input[name="user_email"]');
+          const messageInput = this.querySelector('textarea[name="message"]');
+          const originalMessage = messageInput ? messageInput.value : "";
+          const emailValue = emailInput ? emailInput.value.trim() : "";
+          if (messageInput && emailValue) {
+            messageInput.value = `From: ${emailValue}\n\n${originalMessage}`;
+          }
           emailjs
             .sendForm("service_efvjkg4", "template_s3nw7k4", this)
             .then(() => alert("Message sent!"))
-            .catch((err) => alert("Failed: " + JSON.stringify(err)));
+            .catch((err) => alert("Failed: " + JSON.stringify(err)))
+            .finally(() => {
+              if (messageInput) messageInput.value = originalMessage;
+            });
         });
     </script>
   </body>
