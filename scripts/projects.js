@@ -25,11 +25,11 @@ const projects = [
         link: "https://github.com/FerrerMark/personal_api/",
         deployed: "https://personal-api-ftdn.onrender.com/"
     },
-    {
-        title: "DBMS",
-        description: "Simple Database Management System made with Laravel.",
-        image: "./img/projects/image.png",
-        link: "https://github.com/FerrerMark/DBMS"
+{
+        title: "Push Up Counter",
+        description: "A simple react native android application for counting push-ups",
+        image: "./img/projects/pushupcounter.png",
+        link: "https://github.com/FerrerMark/push-up-counter"
     },
     {
         title: "DIY Resume using React JS",
