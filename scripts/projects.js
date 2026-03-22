@@ -27,7 +27,7 @@ const projects = [
     },
 {
         title: "Push Up Counter",
-        description: "A simple react native android application for counting push-ups",
+        description: "A React native application for counting push-ups with mongoDb",
         image: "./img/projects/pushupcounter.png",
         link: "https://github.com/FerrerMark/push-up-counter"
     },
@@ -38,7 +38,7 @@ const projects = [
         link: "https://github.com/FerrerMark/my-resume"
     },
     {
-        title: "Quiz scraper. Node JS with puppeteer",
+        title: "Quiz automation. Node JS with puppeteer",
         description: "A program that automate quiz in LMS using Gemini API.",
         image: "./img/projects/Screenshot_17.png",
         link: "https://github.com/FerrerMark/lmsautomation"
@@ -72,11 +72,5 @@ const projects = [
         description: "A real-time CRUD application using AJAX, PHP, and MySQL. My first try with ajax",
         image: "./img/projects/ajax.png",
         link: "https://github.com/FerrerMark/crud"
-    },
-    {
-        title: "Excel Assistant using Gemini API",
-        description: "An AI that can help you with your Excel tasks",
-        image: "./img/projects/image2.png",
-        link: "#"
     },
 ];
