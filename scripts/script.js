@@ -23,7 +23,7 @@ function renderProjects() {
     .map(
       (project) => `
         <div class="project-tile">
-            <img src="${project.image}" alt="${project.title}">
+            <img src="${project.image}" alt="${project.title}" loading="lazy" decoding="async">
             <h3>${project.title}</h3>
             <p>${project.description}</p>
             <a href="${project.link}" target="_blank">View More</a>
@@ -141,8 +141,9 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", function () {
   const sections = document.querySelectorAll("section");
   const navLinks = document.querySelectorAll("nav ul li a");
+  let isTicking = false;
 
-  window.addEventListener("scroll", () => {
+  const updateActiveSection = () => {
     let current = "";
 
     sections.forEach((section) => {
@@ -163,7 +164,22 @@ document.addEventListener("DOMContentLoaded", function () {
         link.classList.add("active");
       }
     });
-  });
+  };
+
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (isTicking) return;
+      isTicking = true;
+      window.requestAnimationFrame(() => {
+        updateActiveSection();
+        isTicking = false;
+      });
+    },
+    { passive: true }
+  );
+
+  updateActiveSection();
 });
 
 const images = document.querySelectorAll(".images img");
@@ -208,4 +224,3 @@ function moveSlider(direction, containerId) {
 
   images[activeIndex].classList.add("active");
 }
-

@@ -54,7 +54,14 @@
 
     <section id="welcome-section" class="">
       <div class="bg">
-        <img id="backg" src="./img/background/image.png" class="hover" />
+        <img
+          id="backg"
+          src="./img/background/image.png"
+          class="hover"
+          fetchpriority="high"
+          decoding="async"
+          alt="Background artwork"
+        />
       </div>
       <div class="data">
         <h1 class="text"><span>Hi, I'm John Mark S. Ferrer</span></h1>
@@ -99,6 +106,9 @@
         class="hover"
         id="profile-pic"
         onclick="openProfileModal()"
+        fetchpriority="high"
+        decoding="async"
+        alt="John Mark Ferrer profile image"
       />
     </section>
     <!-- <section id="certifications" class="box-bg-effect"> -->
@@ -161,11 +171,14 @@
             allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
             referrerpolicy="strict-origin-when-cross-origin"
             title="waygent"
+            loading="lazy"
           ></iframe>
           <img
             src="./img/waygent/waygent.png"
             alt="Waygent workflow canvas"
             onclick="openProjectImageModal(this.src)"
+            loading="lazy"
+            decoding="async"
           />
         </div>
       </div>
@@ -200,11 +213,13 @@
           </p>
         </div>
         <div class="waygent-media">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/eJQm7Z8E_xw?si=PuZVqKyKkH42k-Of" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/eJQm7Z8E_xw?si=PuZVqKyKkH42k-Of" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
           <img
             src="./img/monstruct/monstruct.png"
             alt="Monstruct interface"
             onclick="openProjectImageModal(this.src)"
+            loading="lazy"
+            decoding="async"
           />
         </div>
         
@@ -250,18 +265,18 @@
         </div>
         <div class="images">
 
-          <img src="./img/Mernproject/feed.png" alt="Image 1" class="active" />
-          <img src="./img/Mernproject/profile.png" alt="Image 2" />
-          <img src="./img/Mernproject/notification.png" alt="Image 2" />
-          <img src="./img/Mernproject/comment.png" alt="Image 2" />
-          <img src="./img/Mernproject/register.png" alt="Image 2" />
-          <img src="./img/Mernproject/login.png" alt="Image 2" />
-          <img src="./img/Mernproject/gallery.png" alt="Image 2" />
-          <img src="./img/Mernproject/search.png" alt="Image 2" />
-          <img src="./img/Mernproject/message.png" alt="Image 2" />
-          <img src="./img/Mernproject/postmodal.png" alt="Image 2" />
-          <img src="./img/Mernproject/story.png" alt="Image 2" />
-          <img src="./img/Mernproject/story2.png" alt="Image 2" />
+          <img src="./img/Mernproject/feed.png" alt="Image 1" class="active" loading="lazy" decoding="async" />
+          <img src="./img/Mernproject/profile.png" alt="Image 2" loading="lazy" decoding="async" />
+          <img src="./img/Mernproject/notification.png" alt="Image 2" loading="lazy" decoding="async" />
+          <img src="./img/Mernproject/comment.png" alt="Image 2" loading="lazy" decoding="async" />
+          <img src="./img/Mernproject/register.png" alt="Image 2" loading="lazy" decoding="async" />
+          <img src="./img/Mernproject/login.png" alt="Image 2" loading="lazy" decoding="async" />
+          <img src="./img/Mernproject/gallery.png" alt="Image 2" loading="lazy" decoding="async" />
+          <img src="./img/Mernproject/search.png" alt="Image 2" loading="lazy" decoding="async" />
+          <img src="./img/Mernproject/message.png" alt="Image 2" loading="lazy" decoding="async" />
+          <img src="./img/Mernproject/postmodal.png" alt="Image 2" loading="lazy" decoding="async" />
+          <img src="./img/Mernproject/story.png" alt="Image 2" loading="lazy" decoding="async" />
+          <img src="./img/Mernproject/story2.png" alt="Image 2" loading="lazy" decoding="async" />
 
           <button class="prev">&#10094;</button>
           <button class="next">&#10095;</button>
@@ -434,19 +449,19 @@
 
     <div class="circle"></div>
 
-    <script src="scripts/gsap.min.js"></script>
-    <script src="scripts/ScrollTrigger.min.js"></script>
-    <script src="scripts/ScrollSmoother.min.js"></script>
-    <script src="scripts/certificates.js"></script>
-    <script src="scripts/projects.js"></script>
-    <script src="component/loading.js"></script>
-    <script src="scripts/gemini-config.js"></script>
-    <script src="scripts/data.js"></script>
-    <script src="scripts/ai.js"></script>
-    <script src="scripts/script.js"></script>
+    <script defer src="scripts/gsap.min.js"></script>
+    <script defer src="scripts/ScrollTrigger.min.js"></script>
+    <script defer src="scripts/ScrollSmoother.min.js"></script>
+    <script defer src="scripts/certificates.js"></script>
+    <script defer src="scripts/projects.js"></script>
+    <script defer src="component/loading.js"></script>
+    <script defer src="scripts/gemini-config.js"></script>
+    <script defer src="scripts/data.js"></script>
+    <script defer src="scripts/ai.js"></script>
+    <script defer src="scripts/script.js"></script>
 
     <script type="module" src="scripts/effects.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
     <script>
       (function () {
         emailjs.init("XKoTbmTIjQIbImxMb");
