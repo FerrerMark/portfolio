@@ -239,6 +239,8 @@ h2 {
 #monstruct-project {
   padding: 3rem 2rem 0.5rem 2rem;
   background-color: var(--sec-bg-color);
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 1200px;
 }
 
 #projects-container.active {
@@ -495,6 +497,8 @@ h2 {
   padding: 3rem 2rem 0.5rem 2rem;
   /* background-color: var(--sec-bg-color); */
   text-align: center;
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 1000px;
 }
 
 #certifications h2 {

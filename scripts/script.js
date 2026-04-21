@@ -23,7 +23,7 @@ function renderProjects() {
     .map(
       (project) => `
         <div class="project-tile">
-            <img src="${project.image}" alt="${project.title}">
+            <img src="${project.image}" alt="${project.title}" loading="lazy" decoding="async">
             <h3>${project.title}</h3>
             <p>${project.description}</p>
             <a href="${project.link}" target="_blank">View More</a>
@@ -43,6 +43,43 @@ function renderProjects() {
       openProjectImageModal(this.src);
     });
   });
+}
+
+function renderWhenVisible(sectionId, renderFn) {
+  const section = document.getElementById(sectionId);
+
+  if (!section) {
+    return;
+  }
+
+  const renderOnce = () => {
+    if (section.dataset.rendered === "true") {
+      return;
+    }
+
+    section.dataset.rendered = "true";
+    renderFn();
+  };
+
+  if (!("IntersectionObserver" in window)) {
+    renderOnce();
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      if (entries.some((entry) => entry.isIntersecting)) {
+        renderOnce();
+        observer.disconnect();
+      }
+    },
+    {
+      rootMargin: "250px 0px",
+      threshold: 0.01,
+    }
+  );
+
+  observer.observe(section);
 }
 
 document.getElementById("menu").onclick = function () {
@@ -134,8 +171,8 @@ profileModal.onclick = function (event) {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-  renderCertifications();
-  renderProjects();
+  renderWhenVisible("certifications", renderCertifications);
+  renderWhenVisible("projects", renderProjects);
 });
 
 document.addEventListener("DOMContentLoaded", function () {
