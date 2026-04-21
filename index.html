@@ -461,15 +461,23 @@
     <script defer src="scripts/script.js"></script>
 
     <script type="module" src="scripts/effects.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"
+      onload="initEmailForm()"
+    ></script>
     <script>
-      (function () {
-        emailjs.init("XKoTbmTIjQIbImxMb");
-      })();
+      let emailFormInitialized = false;
 
-      document
-        .getElementById("contact-form")
-        .addEventListener("submit", function (e) {
+      function initEmailForm() {
+        if (emailFormInitialized || !window.emailjs) return;
+        const form = document.getElementById("contact-form");
+        if (!form) return;
+
+        emailFormInitialized = true;
+        emailjs.init("XKoTbmTIjQIbImxMb");
+
+        form.addEventListener("submit", function (e) {
           e.preventDefault();
           const emailInput = this.querySelector('input[name="user_email"]');
           const messageInput = this.querySelector('textarea[name="message"]');
@@ -486,6 +494,13 @@
               if (messageInput) messageInput.value = originalMessage;
             });
         });
+      }
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", initEmailForm);
+      } else {
+        initEmailForm();
+      }
     </script>
   </body>
 </html>
